@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZOH-Io-w1Y">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--视听-->
+        <scene sceneID="VdC-JR-PFU">
+            <objects>
+                <navigationController id="ZOH-Io-w1Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="视听" image="tabbar_icon_media_normal" selectedImage="tabbar_icon_media_highlight" id="X4O-gM-Ft5"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ltz-0W-Y7e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HRt-bw-QLP" kind="relationship" relationship="rootViewController" id="D8O-4y-WUn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QcT-SR-oUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-873" y="215"/>
+        </scene>
+        <!--视听-->
+        <scene sceneID="4ar-be-g93">
+            <objects>
+                <viewController id="HRt-bw-QLP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4yc-L6-8DP"/>
+                        <viewControllerLayoutGuide type="bottom" id="8q4-q9-fU8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QKx-De-KSj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="视听" id="72Y-rl-A8P"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvo-Lf-WyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-195" y="91"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_icon_media_highlight" width="19" height="19"/>
+        <image name="tabbar_icon_media_normal" width="19" height="19"/>
+    </resources>
+</document>
