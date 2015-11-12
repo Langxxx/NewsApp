@@ -20,6 +20,11 @@
 		77E37A671BF361DB003E2F44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E37A5C1BF361DB003E2F44 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		77E37A691BF3650C003E2F44 /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E37A681BF3650C003E2F44 /* TabBarExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		77E37A6B1BF36B38003E2F44 /* NavgationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E37A6A1BF36B38003E2F44 /* NavgationBarExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		77E37A6F1BF3752E003E2F44 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E37A6E1BF3752E003E2F44 /* NewsController.swift */; settings = {ASSET_TAGS = (); }; };
+		77E37A7D1BF37DBA003E2F44 /* SecondLaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A7B1BF37DBA003E2F44 /* SecondLaunchView.xib */; settings = {ASSET_TAGS = (); }; };
+		77E37A7E1BF37DBA003E2F44 /* SecondLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E37A7C1BF37DBA003E2F44 /* SecondLaunchView.swift */; settings = {ASSET_TAGS = (); }; };
+		77E37A861BF3835F003E2F44 /* DataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E37A851BF3835F003E2F44 /* DataTool.swift */; settings = {ASSET_TAGS = (); }; };
+		AB5C5665446058479C2675F9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46874A2F9A228B6B0ECF1983 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46874A2F9A228B6B0ECF1983 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		775C216BA8EC4AA967E13C66 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		77E37A151BF35A04003E2F44 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E37A1D1BF35A04003E2F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77E37A1F1BF35A04003E2F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +66,11 @@
 		77E37A5C1BF361DB003E2F44 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E37A681BF3650C003E2F44 /* TabBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
 		77E37A6A1BF36B38003E2F44 /* NavgationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavgationBarExtension.swift; sourceTree = "<group>"; };
+		77E37A6E1BF3752E003E2F44 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		77E37A7B1BF37DBA003E2F44 /* SecondLaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondLaunchView.xib; sourceTree = "<group>"; };
+		77E37A7C1BF37DBA003E2F44 /* SecondLaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLaunchView.swift; sourceTree = "<group>"; };
+		77E37A851BF3835F003E2F44 /* DataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTool.swift; sourceTree = "<group>"; };
+		9CE2551E5C85473B88B38E76 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5C5665446058479C2675F9 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47756820B2776B99B38719CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				775C216BA8EC4AA967E13C66 /* Pods.debug.xcconfig */,
+				9CE2551E5C85473B88B38E76 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		77E37A0C1BF35A04003E2F44 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +115,8 @@
 				77E37A2C1BF35A04003E2F44 /* 网易新闻Tests */,
 				77E37A371BF35A04003E2F44 /* 网易新闻UITests */,
 				77E37A161BF35A04003E2F44 /* Products */,
+				47756820B2776B99B38719CC /* Pods */,
+				FB9253A4C570FF3F73B37B20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				77E37A1C1BF35A04003E2F44 /* Main.storyboard */,
+				77E37A841BF38329003E2F44 /* Tool */,
 				77E37A5A1BF361DB003E2F44 /* Controller */,
 				77E37A5B1BF361DB003E2F44 /* Other */,
 			);
@@ -227,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				77E37A491BF35CC4003E2F44 /* News.storyboard */,
+				77E37A701BF37629003E2F44 /* View */,
 				77E37A641BF361DB003E2F44 /* Controller */,
 			);
 			path = News;
@@ -235,6 +261,7 @@
 		77E37A641BF361DB003E2F44 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				77E37A6E1BF3752E003E2F44 /* NewsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,6 +282,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		77E37A701BF37629003E2F44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77E37A7B1BF37DBA003E2F44 /* SecondLaunchView.xib */,
+				77E37A7C1BF37DBA003E2F44 /* SecondLaunchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77E37A841BF38329003E2F44 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				77E37A851BF3835F003E2F44 /* DataTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		FB9253A4C570FF3F73B37B20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46874A2F9A228B6B0ECF1983 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,9 +314,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77E37A3D1BF35A04003E2F44 /* Build configuration list for PBXNativeTarget "网易新闻" */;
 			buildPhases = (
+				A188EE20785D2B82F2AC9960 /* Check Pods Manifest.lock */,
 				77E37A111BF35A04003E2F44 /* Sources */,
 				77E37A121BF35A04003E2F44 /* Frameworks */,
 				77E37A131BF35A04003E2F44 /* Resources */,
+				35D4C576FC2832EBE0A259E4 /* Embed Pods Frameworks */,
+				756BF005D7C13A85E525C6C0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -363,6 +418,7 @@
 			files = (
 				77E37A231BF35A04003E2F44 /* LaunchScreen.storyboard in Resources */,
 				77E37A201BF35A04003E2F44 /* Assets.xcassets in Resources */,
+				77E37A7D1BF37DBA003E2F44 /* SecondLaunchView.xib in Resources */,
 				77E37A511BF35DC5003E2F44 /* Media.storyboard in Resources */,
 				77E37A1E1BF35A04003E2F44 /* Main.storyboard in Resources */,
 				77E37A4E1BF35D50003E2F44 /* Read.storyboard in Resources */,
@@ -388,6 +444,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35D4C576FC2832EBE0A259E4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		756BF005D7C13A85E525C6C0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A188EE20785D2B82F2AC9960 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		77E37A111BF35A04003E2F44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -395,6 +499,9 @@
 			files = (
 				77E37A671BF361DB003E2F44 /* AppDelegate.swift in Sources */,
 				77E37A691BF3650C003E2F44 /* TabBarExtension.swift in Sources */,
+				77E37A7E1BF37DBA003E2F44 /* SecondLaunchView.swift in Sources */,
+				77E37A6F1BF3752E003E2F44 /* NewsController.swift in Sources */,
+				77E37A861BF3835F003E2F44 /* DataTool.swift in Sources */,
 				77E37A6B1BF36B38003E2F44 /* NavgationBarExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +686,7 @@
 		};
 		77E37A3E1BF35A04003E2F44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 775C216BA8EC4AA967E13C66 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "网易新闻/Info.plist";
@@ -590,6 +698,7 @@
 		};
 		77E37A3F1BF35A04003E2F44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CE2551E5C85473B88B38E76 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "网易新闻/Info.plist";
@@ -666,6 +775,7 @@
 				77E37A3F1BF35A04003E2F44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77E37A401BF35A04003E2F44 /* Build configuration list for PBXNativeTarget "网易新闻Tests" */ = {
 			isa = XCConfigurationList;
@@ -674,6 +784,7 @@
 				77E37A421BF35A04003E2F44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77E37A431BF35A04003E2F44 /* Build configuration list for PBXNativeTarget "网易新闻UITests" */ = {
 			isa = XCConfigurationList;
@@ -682,6 +793,7 @@
 				77E37A451BF35A04003E2F44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

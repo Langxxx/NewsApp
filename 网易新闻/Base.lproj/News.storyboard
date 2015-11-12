@@ -25,7 +25,7 @@
         <!--新闻-->
         <scene sceneID="sv9-W5-wj3">
             <objects>
-                <viewController id="dBa-Mm-8Pn" sceneMemberID="viewController">
+                <viewController id="dBa-Mm-8Pn" customClass="NewsController" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5m4-cE-9np"/>
                         <viewControllerLayoutGuide type="bottom" id="wDB-h2-fXZ"/>
