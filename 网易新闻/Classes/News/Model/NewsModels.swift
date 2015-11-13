@@ -6,7 +6,7 @@
 //  Copyright © 2015年 wl. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct ChannelModel {
     var channelName: String
@@ -36,6 +36,7 @@ struct ChannelBox {
         }
     }
 }
+
 
 
 

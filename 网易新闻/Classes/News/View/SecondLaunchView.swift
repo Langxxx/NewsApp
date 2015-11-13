@@ -36,7 +36,7 @@ class SecondLaunchView: UIView {
     }
     
     deinit {
-//        print("SecondLaunchView--deinit")
+        print("SecondLaunchView--deinit")
     }
     
 }

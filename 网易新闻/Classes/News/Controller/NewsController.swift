@@ -9,17 +9,25 @@
 import UIKit
 
 class NewsController: UIViewController, UIScrollViewDelegate {
-
+    
+ // MARK: - 属性
+//========================================================
+// MARK: 频道列表属性
+//========================================================
     @IBOutlet weak var channelScrollView: UIScrollView!
     var channels: ChannelBox = ChannelBox()
     var labelArray: [ChannelLabel] = []
-    var maxchannelsCount: Int = 10
+    var currentChannelsLabel: ChannelLabel!
+    var maxchannelsCount: Int = 20
     var channelCount: Int!
     let labelMargin: CGFloat = 25
-    
-    @IBOutlet weak var newsContainerView: UIScrollView!
+//========================================================
+// MARK: 新闻列表属性
+//========================================================
+    @IBOutlet weak var newsContainerView: NewsContainerView!
     var newsListVcArray: [NewsListContorller] = []
-    
+
+ // MARK: - 初始化方法
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -87,10 +95,10 @@ class NewsController: UIViewController, UIScrollViewDelegate {
     func showFirstNewsList() {
         
         let vc = self.newsListVcArray.first!
-        vc.tableView.frame = self.newsContainerView.bounds
-        self.newsContainerView.addSubview(vc.tableView)
-        
+        self.newsContainerView.showViewInScrollView(vc.tableView, showViewIndex: 0)
+
         let label = self.labelArray.first!
+        currentChannelsLabel = label
         label.scale = 1
     }
     /**
@@ -98,14 +106,19 @@ class NewsController: UIViewController, UIScrollViewDelegate {
     当点击事件发生后，将新闻列表切换到被点击label对应的新闻列表
     */
     func channelLabelClick(recognizer: UITapGestureRecognizer) {
-        
+    
         let label = recognizer.view as! ChannelLabel
         let index = label.tag
         
+        self.currentChannelsLabel.scale = 0
+        label.scale = 1
+        
         let offsetX = CGFloat(index) * self.newsContainerView.bounds.width
         let offset = CGPointMake(offsetX, 0)
-        //这个方法会导致scrollViewDidEndScrollingAnimation代理方法被调用
-        self.newsContainerView.setContentOffset(offset, animated: true)
+        //这个方法animated为true才会导致scrollViewDidEndScrollingAnimation代理方法被调用
+        self.newsContainerView.setContentOffset(offset, animated: false)
+        //代码滚动到显示了那一"页"
+        self.scrollViewDidEndScrollingAnimation(self.newsContainerView)
     }
 }
 
@@ -122,22 +135,22 @@ extension NewsController {
         let currentIndex = scrollView.contentOffset.x / scrollView.bounds.width
         let leftIndex = Int(currentIndex)
         let rightIndex = leftIndex + 1
+
         guard currentIndex > 0 && rightIndex <  self.labelArray.count else {
             return
         }
-        let leftScale = CGFloat(rightIndex) - currentIndex
         let rightScale = currentIndex - CGFloat(leftIndex)
+        let leftScale = CGFloat(rightIndex) - currentIndex
         
         let rightLabel = self.labelArray[rightIndex]
         let leftLabel = self.labelArray[leftIndex]
-        
+
         rightLabel.scale = rightScale
         leftLabel.scale = leftScale
-        
     }
     
     /**
-    这个是在newsContainerView停止滑动的时候调用，
+    这个是在newsContainerView减速停止的时候开始执行，
     用来切换需要显示的新闻列表和让频道标签处于合适的位置
     */
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
@@ -151,13 +164,9 @@ extension NewsController {
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
         let index = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         
-        // 切换需要显示的控制器
-        let vc = self.newsListVcArray[index]
-        vc.tableView.frame = scrollView.bounds
-        scrollView.addSubview(vc.tableView)
-        
         // 让频道标签处于合适的位置
         let currentLabel = self.labelArray[index]
+        self.currentChannelsLabel = currentLabel
         var offsetX = currentLabel.center.x - self.channelScrollView.bounds.width * 0.5
         let maxOffset = self.channelScrollView.contentSize.width - self.channelScrollView.bounds.width
         if offsetX > 0{
@@ -167,6 +176,11 @@ extension NewsController {
         }
         let offset = CGPointMake(offsetX, 0)
         self.channelScrollView.setContentOffset(offset, animated: true)
+        
+        // 切换需要显示的控制器
+        let vc = self.newsListVcArray[index]
+        self.newsContainerView.showViewInScrollView(vc.tableView, showViewIndex: index)
+
     }
 
 }

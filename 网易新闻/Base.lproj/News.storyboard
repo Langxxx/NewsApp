@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="30" id="1W0-9E-DpC"/>
                                 </constraints>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRQ-RC-Ef6">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRQ-RC-Ef6" customClass="NewsContainerView" customModule="网易新闻" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="94" width="600" height="457"/>
                             </scrollView>
                         </subviews>
