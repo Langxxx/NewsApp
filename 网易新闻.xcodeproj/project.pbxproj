@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771BDE2B1BF4CF2B00B38CE8 /* NewsListContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BDE2A1BF4CF2B00B38CE8 /* NewsListContorller.swift */; settings = {ASSET_TAGS = (); }; };
 		77E37A1E1BF35A04003E2F44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A1C1BF35A04003E2F44 /* Main.storyboard */; };
 		77E37A201BF35A04003E2F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A1F1BF35A04003E2F44 /* Assets.xcassets */; };
 		77E37A231BF35A04003E2F44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A211BF35A04003E2F44 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,9 @@
 		77E37A7D1BF37DBA003E2F44 /* SecondLaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A7B1BF37DBA003E2F44 /* SecondLaunchView.xib */; settings = {ASSET_TAGS = (); }; };
 		77E37A7E1BF37DBA003E2F44 /* SecondLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E37A7C1BF37DBA003E2F44 /* SecondLaunchView.swift */; settings = {ASSET_TAGS = (); }; };
 		77E37A861BF3835F003E2F44 /* DataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E37A851BF3835F003E2F44 /* DataTool.swift */; settings = {ASSET_TAGS = (); }; };
+		77F2C3E51BF482FA000BB753 /* channels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77F2C3E41BF482FA000BB753 /* channels.plist */; settings = {ASSET_TAGS = (); }; };
+		77F2C3E81BF49141000BB753 /* NewsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2C3E71BF49141000BB753 /* NewsModels.swift */; settings = {ASSET_TAGS = (); }; };
+		77F7E7A31BF57B7200DAA2F5 /* ChannelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F7E7A21BF57B7200DAA2F5 /* ChannelLabel.swift */; settings = {ASSET_TAGS = (); }; };
 		AB5C5665446058479C2675F9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46874A2F9A228B6B0ECF1983 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		46874A2F9A228B6B0ECF1983 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		771BDE2A1BF4CF2B00B38CE8 /* NewsListContorller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListContorller.swift; sourceTree = "<group>"; };
 		775C216BA8EC4AA967E13C66 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		77E37A151BF35A04003E2F44 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E37A1D1BF35A04003E2F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +75,9 @@
 		77E37A7B1BF37DBA003E2F44 /* SecondLaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondLaunchView.xib; sourceTree = "<group>"; };
 		77E37A7C1BF37DBA003E2F44 /* SecondLaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLaunchView.swift; sourceTree = "<group>"; };
 		77E37A851BF3835F003E2F44 /* DataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTool.swift; sourceTree = "<group>"; };
+		77F2C3E41BF482FA000BB753 /* channels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = channels.plist; sourceTree = "<group>"; };
+		77F2C3E71BF49141000BB753 /* NewsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModels.swift; sourceTree = "<group>"; };
+		77F7E7A21BF57B7200DAA2F5 /* ChannelLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelLabel.swift; sourceTree = "<group>"; };
 		9CE2551E5C85473B88B38E76 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +145,7 @@
 				77E37A1F1BF35A04003E2F44 /* Assets.xcassets */,
 				77E37A211BF35A04003E2F44 /* LaunchScreen.storyboard */,
 				77E37A241BF35A04003E2F44 /* Info.plist */,
+				77F2C3E41BF482FA000BB753 /* channels.plist */,
 			);
 			path = "网易新闻";
 			sourceTree = "<group>";
@@ -252,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				77E37A491BF35CC4003E2F44 /* News.storyboard */,
+				77F2C3E61BF49113000BB753 /* Model */,
 				77E37A701BF37629003E2F44 /* View */,
 				77E37A641BF361DB003E2F44 /* Controller */,
 			);
@@ -262,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				77E37A6E1BF3752E003E2F44 /* NewsController.swift */,
+				771BDE2A1BF4CF2B00B38CE8 /* NewsListContorller.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +298,7 @@
 			children = (
 				77E37A7B1BF37DBA003E2F44 /* SecondLaunchView.xib */,
 				77E37A7C1BF37DBA003E2F44 /* SecondLaunchView.swift */,
+				77F7E7A21BF57B7200DAA2F5 /* ChannelLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +309,14 @@
 				77E37A851BF3835F003E2F44 /* DataTool.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		77F2C3E61BF49113000BB753 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77F2C3E71BF49141000BB753 /* NewsModels.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FB9253A4C570FF3F73B37B20 /* Frameworks */ = {
@@ -420,6 +440,7 @@
 				77E37A201BF35A04003E2F44 /* Assets.xcassets in Resources */,
 				77E37A7D1BF37DBA003E2F44 /* SecondLaunchView.xib in Resources */,
 				77E37A511BF35DC5003E2F44 /* Media.storyboard in Resources */,
+				77F2C3E51BF482FA000BB753 /* channels.plist in Resources */,
 				77E37A1E1BF35A04003E2F44 /* Main.storyboard in Resources */,
 				77E37A4E1BF35D50003E2F44 /* Read.storyboard in Resources */,
 				77E37A541BF35DFC003E2F44 /* Discover.storyboard in Resources */,
@@ -498,9 +519,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				77E37A671BF361DB003E2F44 /* AppDelegate.swift in Sources */,
+				771BDE2B1BF4CF2B00B38CE8 /* NewsListContorller.swift in Sources */,
 				77E37A691BF3650C003E2F44 /* TabBarExtension.swift in Sources */,
 				77E37A7E1BF37DBA003E2F44 /* SecondLaunchView.swift in Sources */,
+				77F7E7A31BF57B7200DAA2F5 /* ChannelLabel.swift in Sources */,
 				77E37A6F1BF3752E003E2F44 /* NewsController.swift in Sources */,
+				77F2C3E81BF49141000BB753 /* NewsModels.swift in Sources */,
 				77E37A861BF3835F003E2F44 /* DataTool.swift in Sources */,
 				77E37A6B1BF36B38003E2F44 /* NavgationBarExtension.swift in Sources */,
 			);

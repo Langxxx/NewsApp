@@ -20,9 +20,37 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSt-mK-5yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-387" y="-530"/>
+            <point key="canvasLocation" x="-303" y="-831"/>
         </scene>
-        <!--新闻-->
+        <!--News List Contorller-->
+        <scene sceneID="fp5-O9-eYg">
+            <objects>
+                <tableViewController storyboardIdentifier="NewsListContorller" id="qgg-af-w3p" customClass="NewsListContorller" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cQd-KF-aCx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsNormalCell" id="8Ug-zC-K3p">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Ug-zC-K3p" id="bYU-mg-dIf">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qgg-af-w3p" id="5C8-Wl-TMj"/>
+                            <outlet property="delegate" destination="qgg-af-w3p" id="avl-46-ymo"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ge-rC-hcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-269" y="-116"/>
+        </scene>
+        <!--News Controller-->
         <scene sceneID="sv9-W5-wj3">
             <objects>
                 <viewController id="dBa-Mm-8Pn" customClass="NewsController" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,17 +61,67 @@
                     <view key="view" contentMode="scaleToFill" id="iug-18-UPs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9p-2U-gBJ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="30"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1W0-9E-DpC"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRQ-RC-Ef6">
+                                <rect key="frame" x="0.0" y="94" width="600" height="457"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="m9p-2U-gBJ" secondAttribute="trailing" id="Ml4-yD-OdK"/>
+                            <constraint firstAttribute="trailing" secondItem="VRQ-RC-Ef6" secondAttribute="trailing" id="VsT-2p-GOe"/>
+                            <constraint firstItem="m9p-2U-gBJ" firstAttribute="leading" secondItem="iug-18-UPs" secondAttribute="leading" id="dIk-Yc-Apx"/>
+                            <constraint firstItem="VRQ-RC-Ef6" firstAttribute="leading" secondItem="iug-18-UPs" secondAttribute="leading" id="hE3-TI-Ygr"/>
+                            <constraint firstItem="VRQ-RC-Ef6" firstAttribute="top" secondItem="m9p-2U-gBJ" secondAttribute="bottom" id="o7F-3O-RNi"/>
+                            <constraint firstItem="wDB-h2-fXZ" firstAttribute="top" secondItem="VRQ-RC-Ef6" secondAttribute="bottom" id="tIB-mL-IoG"/>
+                            <constraint firstItem="m9p-2U-gBJ" firstAttribute="top" secondItem="5m4-cE-9np" secondAttribute="bottom" id="wgH-Q7-M0q"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="新闻" id="LOW-Uf-te9"/>
+                    <navigationItem key="navigationItem" id="LOW-Uf-te9">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="navigation_bell_normal" id="ko1-5G-rLH"/>
+                        <view key="titleView" contentMode="scaleToFill" id="aCv-oE-i1e">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titile" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-7g-vuB">
+                                    <rect key="frame" x="85" y="4" width="70" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="4gO-mU-mgx"/>
+                                        <constraint firstAttribute="width" constant="70" id="DsM-mz-Wkz"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="RAj-7g-vuB" firstAttribute="centerY" secondItem="aCv-oE-i1e" secondAttribute="centerY" id="6ct-NM-is9"/>
+                                <constraint firstItem="RAj-7g-vuB" firstAttribute="centerX" secondItem="aCv-oE-i1e" secondAttribute="centerX" id="mwX-O1-Ak1"/>
+                            </constraints>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" image="navigation_square" id="wnW-P8-aDy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="channelScrollView" destination="m9p-2U-gBJ" id="GuJ-CX-B7G"/>
+                        <outlet property="newsContainerView" destination="VRQ-RC-Ef6" id="7oc-YV-KOX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWV-kp-zJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="-618"/>
+            <point key="canvasLocation" x="349" y="-831"/>
         </scene>
     </scenes>
     <resources>
+        <image name="navigation_bell_normal" width="24" height="24"/>
+        <image name="navigation_square" width="19" height="19"/>
         <image name="tabbar_icon_news_highlight" width="21" height="16"/>
         <image name="tabbar_icon_news_normal" width="21" height="16"/>
+        <image name="titile" width="70" height="33"/>
     </resources>
 </document>

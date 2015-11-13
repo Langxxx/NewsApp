@@ -25,14 +25,12 @@ class SecondLaunchView: UIView {
     
         vc.view.addSubview(self)
         self.frame = vc.view.bounds
-        vc.navigationController?.navigationBar.hidden = true
-        vc.tabBarController?.tabBar.hidden = true
+        let window = UIApplication.sharedApplication().keyWindow
+        window?.addSubview(self)
         
         self.imageView.kf_setImageWithURL(NSURL(string: imageStr)!)
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) { () -> Void in
-            vc.navigationController?.navigationBar.hidden = false
-            vc.tabBarController?.tabBar.hidden = false
             self.removeFromSuperview()
         }
     }
