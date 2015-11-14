@@ -14,6 +14,9 @@ struct DataTool {
     
     static let imageUrlKey = "imageUrlKey"
     
+    /**
+    网络请求启动图片的url，并保存在本地
+    */
     static func requestLuanchImageUrl() {
 
         let urlStr = "http://g1.163.com/madr"
@@ -48,6 +51,10 @@ struct DataTool {
         }
     }
     
+    /**
+    从本地获得启动图片的url(可能不存在)，
+    更新下一次需要的启动图片
+    */
     static func getLuanchImageUrl() -> String? {
         
         //从本地取出
@@ -63,13 +70,77 @@ struct DataTool {
         
         return imageArray[Int(i)]
     }
+    
+    /**
+    加载新闻数据
+    
+    - parameter urlStr:            请求地址
+    - parameter completionHandler: 回调闭包
+    */
+    static func loadNewsData(urlStr: String, completionHandler: [NewsModel]? -> Void) {
+
+        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
+            guard response.result.error == nil else {
+                print("load news error!")
+                completionHandler(nil)
+                return
+            }
+            
+            let data = JSON(response.result.value!)
+            let news = data["T1348647853363"]
+            var array: [NewsModel] = []
+            for (_, dict) in news {
+                
+                array.append(NewsModel(json: dict))
+            }
+            completionHandler(array)
+        }
+    }
+
 }
 
+
+/*
+    这个扩展是无奈之举，目的是为了将JSON数据中的数组转化成
+swift中的数组，这是仿照oc中的实现，如果你有更好或者合理的方式
+请一定要联系我。
+*/
+extension Array {
+
+    static func arrayWithJson(json: JSON) -> [String]?{
+        
+        guard json != nil else {
+            return nil
+        }
+        
+        var array: [String] = []
+        for (_, dict) in json {
+            array.append(dict["imgsrc"].stringValue)
+        }
+        
+        return array
+    }
+    
+    static func arrayWithJson(json: JSON) -> [Ads]?{
+        
+        guard json != nil else {
+            return nil
+        }
+        
+        var array: [Ads] = []
+        for (_, dict) in json {
+            array.append(Ads(json: dict))
+        }
+        return array
+    }
+
+}
 
 extension NSDate {
     class func TimeIntervalSince1970() -> NSTimeInterval{
         let nowTime = NSDate()
         return nowTime.timeIntervalSince1970
+
     }
 
 }

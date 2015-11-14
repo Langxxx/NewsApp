@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 struct ChannelModel {
     var channelName: String
@@ -38,5 +39,53 @@ struct ChannelBox {
 }
 
 
+class Ads {
+    var title: String
+    var tag: String
+    var imgsrc: String
+    var subtitle: String
+    var url: String
+    
+    init(json: JSON) {
+        title = json["title"].stringValue
+        tag = json["tag"].stringValue
+        imgsrc = json["imgsrc"].stringValue
+        subtitle = json["subtitle"].stringValue
+        url = json["url"].stringValue
+    }
+}
+
+class NewsModel {
+ /// 新闻所属于频道(类别)
+    var tname: String
+ /// 新闻标题
+    var title: String
+ /// 新闻发布的时间
+    var ptime: String
+ /// 图片地址
+    var imgsrc: String
+ /// 新闻的简介
+    var digest: String?
+ /// 多组图片
+    var imgextra: [String]?
+ /// 头部滚动视图
+    var ads: [Ads]?
+ /// 跟帖人数
+    var replyCount: Int?
+ /// 网址链接
+    var url_3w: String?
+    
+    init(json: JSON) {
+        tname = json["tname"].stringValue
+        title = json["title"].stringValue
+        ptime = json["ptime"].stringValue
+        imgsrc = json["imgsrc"].stringValue
+        digest = json["tname"].string
+        imgextra = [String].arrayWithJson(json["imgextra"])
+        replyCount = json["replyCount"].int
+        url_3w = json["url_3w"].string
+        ads = [Ads].arrayWithJson(json["ads"])
+    }
+}
 
 

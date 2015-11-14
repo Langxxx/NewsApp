@@ -82,6 +82,7 @@ class NewsController: UIViewController, UIScrollViewDelegate {
         for i in 0..<self.channelCount {
             let vc = storyboard?.instantiateViewControllerWithIdentifier("NewsListContorller") as! NewsListContorller
             vc.channel = self.channels[i].channelName
+            vc.channelUrl = self.channels[i].channelUrl
             self.newsListVcArray.append(vc)
         }
         
