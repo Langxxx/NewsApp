@@ -14,19 +14,20 @@ class NewsListContorller: UITableViewController {
     var channelUrl: String! {
         didSet {
             urlStr = "http://c.m.163.com/nc/article/\(channelUrl)/0-20.html"
+            
         }
     }
     var urlStr: String!
     var newsModelArray: [NewsModel]? {
         didSet {
-            print(newsModelArray)
+            self.tableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        DataTool.loadNewsData(urlStr) { (newsArray) -> Void in
+        
+        DataTool.loadNewsData(urlStr, newsKey: channelUrl.channelKey()) { (newsArray) -> Void in
             self.newsModelArray = newsArray
         }
     }
@@ -35,19 +36,51 @@ class NewsListContorller: UITableViewController {
         super.viewWillAppear(animated)
         print("viewWillAppear")
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+//        print("viewDidDisappear\(self.channel)")
+    }
+    
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("tableView")
-        return 20
+//        print("tableView")
+        return self.newsModelArray?.count ?? 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("NewsNormalCell", forIndexPath: indexPath)
         
-        // Configure the cell...
-        cell.textLabel?.text = "\(self.channel)\(indexPath.row)"
+        assert(self.newsModelArray != nil)
+        let newsModel = self.newsModelArray![indexPath.row]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(newsModel.cellType.rawValue, forIndexPath: indexPath) as! NewsCell
+            cell.newsModel = newsModel
+        
         return cell
+
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let newsModel = self.newsModelArray![indexPath.row]
+        switch newsModel.cellType! {
+        case .ScrollPictureCell, .TopBigPicture:
+            return 222
+        case .NormalNewsCell:
+            return 90
+        case .ThreePictureCell:
+            return 108
+        case .BigPictureCell:
+            return 177
+        }
+    }
+    
+}
+
+extension String {
+    
+    func channelKey() -> String{
+        let index = self.rangeOfString("/")
+        let key = self.substringFromIndex(index!.endIndex)
+        return key
+    }
 }

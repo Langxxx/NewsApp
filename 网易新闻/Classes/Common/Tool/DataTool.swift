@@ -77,7 +77,7 @@ struct DataTool {
     - parameter urlStr:            请求地址
     - parameter completionHandler: 回调闭包
     */
-    static func loadNewsData(urlStr: String, completionHandler: [NewsModel]? -> Void) {
+    static func loadNewsData(urlStr: String, newsKey: String, completionHandler: [NewsModel]? -> Void) {
 
         Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
             guard response.result.error == nil else {
@@ -87,7 +87,7 @@ struct DataTool {
             }
             
             let data = JSON(response.result.value!)
-            let news = data["T1348647853363"]
+            let news = data[newsKey]
             var array: [NewsModel] = []
             for (_, dict) in news {
                 
