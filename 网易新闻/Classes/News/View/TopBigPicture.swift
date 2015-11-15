@@ -32,7 +32,7 @@ class TopBigPicture: NewsCell {
     }
     func setupSubView() {
         
-        self.bigImageView?.kf_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
+        self.bigImageView?.sd_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = self.newsModel?.title
         
     }

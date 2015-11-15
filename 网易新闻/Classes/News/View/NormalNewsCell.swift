@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class NormalNewsCell: NewsCell {
 
     @IBOutlet weak var newsImageView: UIImageView!
@@ -35,7 +36,8 @@ class NormalNewsCell: NewsCell {
     }
     
     func setupSubView() {
-        self.newsImageView?.kf_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
+
+        self.newsImageView.sd_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = self.newsModel?.title
         self.digestLabel.text = self.newsModel?.digest
         

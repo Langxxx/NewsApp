@@ -41,8 +41,10 @@ class ThreePictureCell: NewsCell {
         if let replyCount = self.newsModel?.replyCount {
             self.replyCountLabel.text = "\(replyCount)跟贴"
         }
-        self.firstImageView.kf_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
-        self.secondImageView.kf_setImageWithURL(NSURL(string: self.newsModel!.imgextra![0])!, placeholderImage: UIImage(named: "placeholder"))
-        self.thirdImageView.kf_setImageWithURL(NSURL(string: self.newsModel!.imgextra![1])!, placeholderImage: UIImage(named: "placeholder"))
+        
+        self.firstImageView.sd_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
+        self.secondImageView.sd_setImageWithURL(NSURL(string: self.newsModel!.imgextra![0])!, placeholderImage: UIImage(named: "placeholder"))
+        self.thirdImageView.sd_setImageWithURL(NSURL(string: self.newsModel!.imgextra![1])!, placeholderImage: UIImage(named: "placeholder"))
+        
     }
 }

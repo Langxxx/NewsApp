@@ -32,7 +32,8 @@ class BigPictureCell: NewsCell {
         // Configure the view for the selected state
     }
     func setupSubView() {
-        self.bigImageView?.kf_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
+
+        self.bigImageView?.sd_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = self.newsModel?.title
         self.digestLabel.text = self.newsModel?.digest
 

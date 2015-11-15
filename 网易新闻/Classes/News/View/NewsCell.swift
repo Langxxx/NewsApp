@@ -7,6 +7,7 @@
 //  一个基类
 
 import UIKit
+import SDWebImage
 
 class NewsCell: UITableViewCell {
     
@@ -22,5 +23,5 @@ class NewsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

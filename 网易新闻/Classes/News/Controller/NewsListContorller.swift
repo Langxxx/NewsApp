@@ -11,13 +11,18 @@ import UIKit
 class NewsListContorller: UITableViewController {
 
     var channel: String!
-    var channelUrl: String! {
-        didSet {
-            urlStr = "http://c.m.163.com/nc/article/\(channelUrl)/0-20.html"
-            
+    var channelUrl: String!
+    
+    var urlStr: String {
+        var str = ""
+        if self.channel == "热点" {
+            str = "http://c.3g.163.com/recommend/getSubDocPic?size=20&spever=false&ts=\(NSDate.TimeIntervalSince1970())&encryption=1"
+        }else {
+            str = "http://c.m.163.com/nc/article/\(channelUrl)/0-20.html"
         }
+        return str
     }
-    var urlStr: String!
+    
     var newsModelArray: [NewsModel]? {
         didSet {
             self.tableView.reloadData()
@@ -27,16 +32,24 @@ class NewsListContorller: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataTool.loadNewsData(urlStr, newsKey: channelUrl.channelKey()) { (newsArray) -> Void in
-            self.newsModelArray = newsArray
+        if self.channel == "热点" {
+            DataTool.loadNewsData(urlStr, newsKey: "推荐") { (newsArray) -> Void in
+                self.newsModelArray = newsArray
+            }
+        }else {
+            DataTool.loadNewsData(urlStr, newsKey: channelUrl.channelKey()) { (newsArray) -> Void in
+                self.newsModelArray = newsArray
+            }
         }
+
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
+//        print("viewWillAppear")
     }
     
+
     override func viewDidDisappear(animated: Bool) {
 //        print("viewDidDisappear\(self.channel)")
     }
