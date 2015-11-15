@@ -4,7 +4,7 @@
 //
 //  Created by wl on 15/11/11.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  获得数据的工具
 
 import Foundation
 import Alamofire
@@ -79,9 +79,25 @@ struct DataTool {
     */
     static func loadNewsData(urlStr: String, newsKey: String, completionHandler: [NewsModel]? -> Void) {
 
+//        let parameter: [String : AnyObject] = [
+//            "from" : "toutiao",
+//            "passport" : "",
+//            "devId" : "A0Cp2+N+rjf0omX89lrAjgQKQEJW5A+PW5bQ8YhwOFORHg+iKhQhomSEhUb//lw3",
+//            "size" : 20,
+//            "version" : "5.4.2",
+//            "spever" : false,
+//            "net" : "wifi",
+//            "lat" : "",
+//            "lon" : "",
+//            "ts" : NSDate.TimeIntervalSince1970(),
+//            "sign" :  "cxyTeVe+qHTZeu1VlfaTFROsW/0BiNEuaBAWkIbVbT148ErR02zJ6/KXOnxX046I",
+//            "encryption" : 1
+//            
+//        ]
+        
         Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
             guard response.result.error == nil else {
-                print("load news error!")
+                print("load news error!:\(response.request?.URLString)")
                 completionHandler(nil)
                 return
             }

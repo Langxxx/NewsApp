@@ -126,7 +126,7 @@ extension NewsModel {
             self.cellType = .ScrollPictureCell
         }else if self.hasHead != nil {
             self.cellType = .TopBigPicture
-        }else if self.imgType != nil {
+        }else if let imgType = self.imgType where imgType > 0 {
             self.cellType = .BigPictureCell
         }else if self.imgextra != nil {
             self.cellType = .ThreePictureCell
