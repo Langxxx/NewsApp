@@ -87,6 +87,8 @@ class NewsModel {
     var specialID: String?
  /// 一些新闻的类别
     var tags: String?
+    /// 新闻id，用来链接新闻详情
+    var docid: String?
     
     var imgType: Int?
     var hasHead: Int?
@@ -106,6 +108,7 @@ class NewsModel {
         tags = json["TAGS"].string
         imgType = json["imgType"].int
         hasHead = json["hasHead"].int
+        docid = json["docid"].string
         
         self.judgeCellType()
     }
@@ -136,3 +139,39 @@ extension NewsModel {
     }
 }
 
+
+class NewsDetailImgModel {
+    /// 图片的位置
+    var ref: String
+    /// 图片大小
+    var pixel: String
+    /// 图片的描述信息
+    var alt: String
+    /// 图片位置
+    var src: String
+    
+    init(json: JSON) {
+        ref = json["ref"].stringValue
+        pixel = json["pixel"].stringValue
+        alt = json["alt"].stringValue
+        src = json["src"].stringValue
+    }
+}
+
+class NewsDetailModel {
+ /// 新闻标题
+    var title: String
+ /// 新闻发布时间
+    var ptime: String
+ /// 新闻内容
+    var body: String
+ /// 新闻详情的图片模型
+    var img: [NewsDetailImgModel]
+    init(json: JSON) {
+        title = json["title"].stringValue
+        ptime = json["ptime"].stringValue
+        body = json["body"].stringValue
+        img = [NewsDetailImgModel].arrayWithJson(json["img"])
+    }
+    
+}

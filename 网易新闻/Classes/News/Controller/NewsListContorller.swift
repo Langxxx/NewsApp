@@ -15,8 +15,6 @@ class NewsListContorller: UITableViewController {
     
     var newsModelArray: [NewsModel]? {
         didSet {
-            self.tableView.mj_header.endRefreshing()
-            self.tableView.mj_footer.endRefreshing()
             self.tableView.reloadData()
         }
     }
@@ -28,6 +26,7 @@ class NewsListContorller: UITableViewController {
         self.tableView.mj_header.beginRefreshing()
         
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: Selector("requestMoreInfo"))
+
     }
     
     /**
@@ -36,10 +35,12 @@ class NewsListContorller: UITableViewController {
     func requestInfo() {
         if self.channel == "热点" {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.Recommend), newsKey: "推荐") { (newsArray) -> Void in
+                self.tableView.mj_header.endRefreshing()
                 self.newsModelArray = newsArray
             }
         }else {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.Default), newsKey: channelUrl.channelKey()) { (newsArray) -> Void in
+                self.tableView.mj_header.endRefreshing()
                 self.newsModelArray = newsArray
             }
         }
@@ -50,6 +51,7 @@ class NewsListContorller: UITableViewController {
     func requestMoreInfo() {
         if self.channel == "热点" {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.Recommend), newsKey: "推荐") { (newsArray) -> Void in
+                self.tableView.mj_footer.endRefreshing()
                 guard let newDataes = newsArray else {
                     return
                 }
@@ -57,7 +59,7 @@ class NewsListContorller: UITableViewController {
             }
         }else {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.MoreInfo), newsKey: channelUrl.channelKey()) { (var newsArray) -> Void in
-                
+                self.tableView.mj_footer.endRefreshing()
                 newsArray?.removeFirst()
                 guard let newDataes = newsArray else {
                     return
@@ -82,9 +84,22 @@ class NewsListContorller: UITableViewController {
         return str
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        let vc = segue.destinationViewController as! NewsDetailController
+        let index = self.tableView.indexPathForSelectedRow?.row
+        vc.newsModel = self.newsModelArray![index!]
+        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+            // TODO: 为什么手势还是会失效？
+            interactivePopGestureRecognizer.delegate = nil
+        }
+        
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 //        print("viewWillAppear")
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 
@@ -135,7 +150,7 @@ enum RequestType {
 
 extension String {
     
-    func channelKey() -> String{
+    func channelKey() -> String {
         let index = self.rangeOfString("/")
         let key = self.substringFromIndex(index!.endIndex)
         return key

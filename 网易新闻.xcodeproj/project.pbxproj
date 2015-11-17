@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		771BDE2B1BF4CF2B00B38CE8 /* NewsListContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BDE2A1BF4CF2B00B38CE8 /* NewsListContorller.swift */; settings = {ASSET_TAGS = (); }; };
+		77501B3A1BF9EFEC001B8F28 /* NewsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77501B391BF9EFEC001B8F28 /* NewsDetailController.swift */; settings = {ASSET_TAGS = (); }; };
+		77501B3C1BFA1968001B8F28 /* Details.css in Resources */ = {isa = PBXBuildFile; fileRef = 77501B3B1BFA1968001B8F28 /* Details.css */; settings = {ASSET_TAGS = (); }; };
 		775CA4171BF7414900106851 /* ScrollPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CA4161BF7414900106851 /* ScrollPictureCell.swift */; settings = {ASSET_TAGS = (); }; };
 		775CA41C1BF741F200106851 /* AuxiliaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CA4191BF741F200106851 /* AuxiliaryModels.swift */; settings = {ASSET_TAGS = (); }; };
 		775CA41D1BF741F200106851 /* CyclePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CA41A1BF741F200106851 /* CyclePictureCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -80,6 +82,8 @@
 /* Begin PBXFileReference section */
 		46874A2F9A228B6B0ECF1983 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		771BDE2A1BF4CF2B00B38CE8 /* NewsListContorller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListContorller.swift; sourceTree = "<group>"; };
+		77501B391BF9EFEC001B8F28 /* NewsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailController.swift; sourceTree = "<group>"; };
+		77501B3B1BFA1968001B8F28 /* Details.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Details.css; sourceTree = "<group>"; };
 		775C216BA8EC4AA967E13C66 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		775CA4161BF7414900106851 /* ScrollPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPictureCell.swift; sourceTree = "<group>"; };
 		775CA4191BF741F200106851 /* AuxiliaryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuxiliaryModels.swift; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 				77E37A211BF35A04003E2F44 /* LaunchScreen.storyboard */,
 				77E37A241BF35A04003E2F44 /* Info.plist */,
 				77F2C3E41BF482FA000BB753 /* channels.plist */,
+				77501B3B1BFA1968001B8F28 /* Details.css */,
 			);
 			path = "网易新闻";
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 			children = (
 				77E37A6E1BF3752E003E2F44 /* NewsController.swift */,
 				771BDE2A1BF4CF2B00B38CE8 /* NewsListContorller.swift */,
+				77501B391BF9EFEC001B8F28 /* NewsDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -645,6 +651,7 @@
 				77E37A4E1BF35D50003E2F44 /* Read.storyboard in Resources */,
 				777C96AA1BF89DCF00519375 /* MJRefresh.bundle in Resources */,
 				77E37A541BF35DFC003E2F44 /* Discover.storyboard in Resources */,
+				77501B3C1BFA1968001B8F28 /* Details.css in Resources */,
 				77E37A571BF35E2C003E2F44 /* Me.storyboard in Resources */,
 				77E37A4B1BF35CC4003E2F44 /* News.storyboard in Resources */,
 			);
@@ -742,6 +749,7 @@
 				777C969C1BF89DCF00519375 /* MJRefreshAutoFooter.m in Sources */,
 				77E37A7E1BF37DBA003E2F44 /* SecondLaunchView.swift in Sources */,
 				777C96A51BF89DCF00519375 /* MJRefreshBackNormalFooter.m in Sources */,
+				77501B3A1BF9EFEC001B8F28 /* NewsDetailController.swift in Sources */,
 				77F7E7A31BF57B7200DAA2F5 /* ChannelLabel.swift in Sources */,
 				777C96A31BF89DCF00519375 /* MJRefreshAutoStateFooter.m in Sources */,
 				777C96A91BF89DCF00519375 /* MJRefreshStateHeader.m in Sources */,

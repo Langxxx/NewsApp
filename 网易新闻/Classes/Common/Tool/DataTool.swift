@@ -79,25 +79,10 @@ struct DataTool {
     */
     static func loadNewsData(urlStr: String, newsKey: String, completionHandler: [NewsModel]? -> Void) {
 
-//        let parameter: [String : AnyObject] = [
-//            "from" : "toutiao",
-//            "passport" : "",
-//            "devId" : "A0Cp2+N+rjf0omX89lrAjgQKQEJW5A+PW5bQ8YhwOFORHg+iKhQhomSEhUb//lw3",
-//            "size" : 20,
-//            "version" : "5.4.2",
-//            "spever" : false,
-//            "net" : "wifi",
-//            "lat" : "",
-//            "lon" : "",
-//            "ts" : NSDate.TimeIntervalSince1970(),
-//            "sign" :  "cxyTeVe+qHTZeu1VlfaTFROsW/0BiNEuaBAWkIbVbT148ErR02zJ6/KXOnxX046I",
-//            "encryption" : 1
-//            
-//        ]
         
         Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
             guard response.result.error == nil else {
-                print("load news error!:\(response.request?.URLString)")
+                print("load news error!")
                 completionHandler(nil)
                 return
             }
@@ -110,6 +95,24 @@ struct DataTool {
                 array.append(NewsModel(json: dict))
             }
             completionHandler(array)
+        }
+    }
+    
+    
+    static func loadNewsDetailData(docid: String, completionHandler: NewsDetailModel? -> Void) {
+        let urlStr = "http://c.m.163.com/nc/article/\(docid)/full.html"
+        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
+            guard response.result.error == nil else {
+                print("loadNewsDetailData error!")
+                completionHandler(nil)
+                return
+            }
+            
+            let data = JSON(response.result.value!)
+            let news = data[docid]
+            
+            let newsDetailModel = NewsDetailModel(json: news)
+            completionHandler(newsDetailModel)
         }
     }
 
@@ -130,10 +133,10 @@ extension Array {
         }
         
         var array: [String] = []
+
         for (_, dict) in json {
-            array.append(dict["imgsrc"].stringValue)
+            array.append(dict["imgextra"].stringValue)
         }
-        
         return array
     }
     
@@ -146,6 +149,17 @@ extension Array {
         var array: [Ads] = []
         for (_, dict) in json {
             array.append(Ads(json: dict))
+        }
+        return array
+    }
+    
+    static func arrayWithJson(json: JSON) -> [NewsDetailImgModel]{
+        
+        assert(json != nil)
+        
+        var array: [NewsDetailImgModel] = []
+        for (_, dict) in json {
+            array.append(NewsDetailImgModel(json: dict))
         }
         return array
     }

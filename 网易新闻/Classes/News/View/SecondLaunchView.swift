@@ -17,21 +17,22 @@ class SecondLaunchView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func showAtController(vc: UIViewController, image: String?) {
+    static func showAtWindow(image: String?) {
         
         guard let imageStr = image  else {
             return
         }
-    
-        vc.view.addSubview(self)
-        self.frame = vc.view.bounds
-        let window = UIApplication.sharedApplication().keyWindow
-        window?.addSubview(self)
         
-        self.imageView.kf_setImageWithURL(NSURL(string: imageStr)!)
+        let secondLaunchView = NSBundle.mainBundle().loadNibNamed("SecondLaunchView", owner: self, options: nil).first as! SecondLaunchView
+
+        let window = UIApplication.sharedApplication().keyWindow
+        secondLaunchView.frame = window!.bounds
+        window?.addSubview(secondLaunchView)
+        
+        secondLaunchView.imageView.sd_setImageWithURL(NSURL(string: imageStr)!)
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) { () -> Void in
-            self.removeFromSuperview()
+            secondLaunchView.removeFromSuperview()
         }
     }
     

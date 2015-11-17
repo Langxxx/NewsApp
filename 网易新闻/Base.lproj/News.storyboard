@@ -27,7 +27,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSt-mK-5yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-303" y="-831"/>
+            <point key="canvasLocation" x="-339" y="-831"/>
         </scene>
         <!--News List Contorller-->
         <scene sceneID="fp5-O9-eYg">
@@ -95,11 +95,11 @@
                                     <outlet property="titleLabel" destination="MRl-YC-v4q" id="0jT-6D-JQF"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NormalNewsCell" rowHeight="80" id="TaJ-aa-6l0" customClass="NormalNewsCell" customModule="网易新闻" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NormalNewsCell" rowHeight="80" id="TaJ-aa-6l0" customClass="NormalNewsCell" customModule="网易新闻" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="274" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TaJ-aa-6l0" id="EbL-93-yZh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-QH-BVw">
@@ -110,28 +110,28 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0跟贴" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFm-sH-vkB">
-                                            <rect key="frame" x="512" y="54" width="83" height="15"/>
+                                            <rect key="frame" x="479" y="54" width="83" height="15"/>
                                             <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="10"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="专题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsG-Iw-e6W">
-                                            <rect key="frame" x="571" y="54" width="24" height="15"/>
+                                            <rect key="frame" x="538" y="54" width="24" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="巴黎发生多起枪击爆炸事件，目前已部署1500名警察巡逻。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4c-iT-Ptl">
-                                            <rect key="frame" x="98" y="35" width="492" height="15"/>
+                                            <rect key="frame" x="98" y="35" width="459" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="replyCount" translatesAutoresizingMaskIntoConstraints="NO" id="sir-uo-sYS">
-                                            <rect key="frame" x="517" y="54" width="73" height="15"/>
+                                            <rect key="frame" x="484" y="54" width="73" height="15"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西安货车刹车失灵致18车连撞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-OB-DhL">
-                                            <rect key="frame" x="98" y="8" width="492" height="17"/>
+                                            <rect key="frame" x="98" y="8" width="459" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -169,6 +169,7 @@
                                     <outlet property="replyImageView" destination="sir-uo-sYS" id="WWE-u1-xcd"/>
                                     <outlet property="subjectLabel" destination="qsG-Iw-e6W" id="8qh-VL-gvU"/>
                                     <outlet property="titleLabel" destination="eDh-OB-DhL" id="oip-y3-rl0"/>
+                                    <segue destination="6zh-Lg-Ti8" kind="show" id="Uij-Y0-bs3"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreePictureCell" rowHeight="108" id="yB4-GS-zer" customClass="ThreePictureCell" customModule="网易新闻" customModuleProvider="target">
@@ -307,12 +308,110 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ge-rC-hcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-622" y="-181"/>
+            <point key="canvasLocation" x="-509" y="-7"/>
+        </scene>
+        <!--新闻详情-->
+        <scene sceneID="yVq-cQ-bTE">
+            <objects>
+                <viewController id="6zh-Lg-Ti8" customClass="NewsDetailController" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Wd-Cz-mKB"/>
+                        <viewControllerLayoutGuide type="bottom" id="9td-La-jFl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2hf-zA-Vxd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Emg-JK-QDJ">
+                                <rect key="frame" x="0.0" y="55" width="600" height="545"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHe-vR-Wgg" userLabel="topVIew">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRc-xD-Adh">
+                                        <rect key="frame" x="0.0" y="12" width="42" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4El-vp-FMa"/>
+                                            <constraint firstAttribute="width" constant="42" id="cPK-B2-hs5"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="night_icon_back">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtnClik" destination="6zh-Lg-Ti8" eventType="touchUpInside" id="oLd-K8-bIx"/>
+                                        </connections>
+                                    </button>
+                                    <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWK-dV-jm9">
+                                        <rect key="frame" x="0.0" y="53" width="600" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="4vc-NB-Eh9"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7z-Dd-uNF">
+                                        <rect key="frame" x="520" y="19" width="80" height="35"/>
+                                        <rect key="contentStretch" x="0.5" y="0.5" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="2B5-SG-mJR"/>
+                                            <constraint firstAttribute="height" constant="35" id="gcV-tP-vMi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <state key="normal" title="100跟帖" backgroundImage="redReplyCount">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="CRc-xD-Adh" firstAttribute="top" secondItem="yHe-vR-Wgg" secondAttribute="top" constant="12" id="3ht-NW-cSd"/>
+                                    <constraint firstAttribute="bottom" secondItem="RWK-dV-jm9" secondAttribute="bottom" constant="1" id="8XW-4u-CfT"/>
+                                    <constraint firstItem="RWK-dV-jm9" firstAttribute="leading" secondItem="yHe-vR-Wgg" secondAttribute="leading" id="DOg-fh-eco"/>
+                                    <constraint firstAttribute="trailing" secondItem="n7z-Dd-uNF" secondAttribute="trailing" id="Xov-Pn-sNS"/>
+                                    <constraint firstAttribute="height" constant="55" id="cOa-Pk-ZPj"/>
+                                    <constraint firstItem="CRc-xD-Adh" firstAttribute="leading" secondItem="yHe-vR-Wgg" secondAttribute="leading" id="e56-21-GAv"/>
+                                    <constraint firstItem="n7z-Dd-uNF" firstAttribute="top" secondItem="yHe-vR-Wgg" secondAttribute="top" constant="19" id="knm-im-Q3b"/>
+                                    <constraint firstAttribute="trailing" secondItem="RWK-dV-jm9" secondAttribute="trailing" id="z01-jb-Aqq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9td-La-jFl" firstAttribute="top" secondItem="Emg-JK-QDJ" secondAttribute="bottom" id="HaQ-GF-LXQ"/>
+                            <constraint firstAttribute="trailing" secondItem="yHe-vR-Wgg" secondAttribute="trailing" id="RF1-6Q-p1U"/>
+                            <constraint firstItem="yHe-vR-Wgg" firstAttribute="top" secondItem="9Wd-Cz-mKB" secondAttribute="bottom" id="WbB-lK-jFQ"/>
+                            <constraint firstItem="yHe-vR-Wgg" firstAttribute="top" secondItem="2hf-zA-Vxd" secondAttribute="top" id="chV-l8-c6r"/>
+                            <constraint firstAttribute="trailing" secondItem="Emg-JK-QDJ" secondAttribute="trailing" id="fyk-ds-Tfx"/>
+                            <constraint firstItem="yHe-vR-Wgg" firstAttribute="leading" secondItem="2hf-zA-Vxd" secondAttribute="leading" id="hqm-1Z-M8w"/>
+                            <constraint firstItem="Emg-JK-QDJ" firstAttribute="top" secondItem="yHe-vR-Wgg" secondAttribute="bottom" id="vAG-Fd-kLY"/>
+                            <constraint firstItem="Emg-JK-QDJ" firstAttribute="leading" secondItem="2hf-zA-Vxd" secondAttribute="leading" id="vnK-Qo-PLz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WbB-lK-jFQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="新闻详情" id="v0N-7W-pIy">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="3mW-2u-t5y"/>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="backBtn" destination="CRc-xD-Adh" id="ixv-o3-BnF"/>
+                        <outlet property="replyCountBtn" destination="n7z-Dd-uNF" id="L7h-41-o98"/>
+                        <outlet property="webView" destination="Emg-JK-QDJ" id="i3D-4s-nDT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLx-mm-gge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="-14"/>
         </scene>
         <!--News Controller-->
         <scene sceneID="sv9-W5-wj3">
             <objects>
-                <viewController id="dBa-Mm-8Pn" customClass="NewsController" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="dBa-Mm-8Pn" customClass="NewsController" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5m4-cE-9np"/>
                         <viewControllerLayoutGuide type="bottom" id="wDB-h2-fXZ"/>
@@ -379,6 +478,8 @@
     <resources>
         <image name="navigation_bell_normal" width="24" height="24"/>
         <image name="navigation_square" width="19" height="19"/>
+        <image name="night_icon_back" width="54" height="44"/>
+        <image name="redReplyCount" width="59" height="88"/>
         <image name="replyCount" width="73" height="15"/>
         <image name="tabbar_icon_news_highlight" width="21" height="16"/>
         <image name="tabbar_icon_news_normal" width="21" height="16"/>

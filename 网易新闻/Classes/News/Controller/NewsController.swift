@@ -31,10 +31,9 @@ class NewsController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        let secondLaunchView = NSBundle.mainBundle().loadNibNamed("SecondLaunchView", owner: self, options: nil).first as! SecondLaunchView
-        
-        secondLaunchView.showAtController(self, image: DataTool.getLuanchImageUrl())
-        
+
+        SecondLaunchView.showAtWindow(DataTool.getLuanchImageUrl())
+
         self.setupChannelScrollView()
         self.setupNewsContainerView()
         self.showFirstNewsList()
@@ -84,6 +83,8 @@ class NewsController: UIViewController, UIScrollViewDelegate {
             vc.channel = self.channels[i].channelName
             vc.channelUrl = self.channels[i].channelUrl
             self.newsListVcArray.append(vc)
+            //成为自控制器，方便以后调用
+            self.addChildViewController(vc)
         }
         
         self.newsContainerView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width * CGFloat(self.newsListVcArray.count), 0)
