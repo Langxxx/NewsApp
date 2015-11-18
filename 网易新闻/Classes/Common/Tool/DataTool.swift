@@ -29,7 +29,7 @@ struct DataTool {
         ]
         Alamofire.request(.GET, urlStr, parameters: parameter).responseJSON { (response) -> Void in
             guard response.result.error == nil else {
-                print("getLuanchImageUrl error")
+                print("getLuanchImageUrl error\(response.request?.URLString)")
                 return
             }
             

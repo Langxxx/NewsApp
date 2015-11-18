@@ -105,6 +105,12 @@ class NewsDetailController: UIViewController, UIWebViewDelegate {
                 width = maxWidth
             }
             
+            // 这里是添加图片点击事件
+            imgTag += "onload="
+            imgTag += "\""
+            imgTag += "this.onclick = function() {  window.location.href = 'sx:index=' +this.id;};"
+            imgTag += "\""
+           
             imgTag += "width=\(width) "
             imgTag += "height=\(height) "
             imgTag += "src=\(detailImageModel.src)>"
@@ -130,4 +136,14 @@ class NewsDetailController: UIViewController, UIWebViewDelegate {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    
+     // MARK: - UIWebView代理
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        let str = request.URL?.absoluteString
+        if let temp = str?.componentsSeparatedByString("=") where temp.count > 1{
+            DetailPictureView.showAtWindow(self.newsDetailModel!, index: Int(temp.last!)!)
+        }
+        return true
+    }
 }

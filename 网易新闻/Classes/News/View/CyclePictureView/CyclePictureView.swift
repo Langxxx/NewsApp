@@ -15,6 +15,8 @@ import UIKit
 
 protocol CyclePictureViewDelegate: class{
     func cyclePictureView(cyclePictureView: CyclePictureView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    func cyclePictureViewDidEndDecelerating(cyclePictureView: CyclePictureView)
+    
 }
 
 class CyclePictureView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, PageControlAlimentProtocol, EndlessCycleProtocol {
@@ -64,6 +66,8 @@ class CyclePictureView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     var pageControlAliment: PageControlAliment = .CenterBottom
     /// 加载网络图片使用的占位图片
     var placeholderImage: UIImage?
+    /// 图片的对齐模式
+    var pictureContentMode: UIViewContentMode?
     
     // 一些cell文字描述的属性
     var detailLableTextFont: UIFont?
@@ -113,7 +117,7 @@ class CyclePictureView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     var timer: NSTimer?     // EndlessCycleProtocol提供
     
     private var pageControl: UIPageControl?
-    private var collectionView: UICollectionView!
+    var collectionView: UICollectionView!
     private let cellID: String = "CyclePictureCell"
     private var flowLayout: UICollectionViewFlowLayout?
 //    override var frame: CGRect {
@@ -174,7 +178,7 @@ class CyclePictureView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         self.flowLayout = flowLayout
         
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: flowLayout)
-        collectionView.backgroundColor = UIColor.orangeColor()
+//        collectionView.backgroundColor = UIColor.orangeColor()
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.bounces = false
@@ -258,12 +262,14 @@ class CyclePictureView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         //解决从SB中加载时，contentInset.Top默认为64的问题
         self.collectionView.contentInset = UIEdgeInsetsZero
         
+        self.showFirstImagePageInCollectionView(self.collectionView)
+        
         guard let pageControl = self.pageControl else {
             return
         }
         //PageControlAlimentProtocol协议方法，用于调整对齐
         self.AdjustPageControlPlace(pageControl)
-        self.showFirstImagePageInCollectionView(self.collectionView)
+        
     }
     /**
     设置定时器,EndlessCycleProtocol提供
@@ -300,6 +306,10 @@ extension CyclePictureView {
         }
     }
     
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        self.delegate?.cyclePictureViewDidEndDecelerating(self)
+    }
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         guard let pageControl = self.pageControl else {
             return
@@ -325,6 +335,10 @@ extension CyclePictureView {
         
         if let placeholderImage = self.placeholderImage {
             cell.placeholderImage = placeholderImage
+        }
+        
+        if let pictureContentMode = self.pictureContentMode {
+            cell.pictureContentMode = pictureContentMode
         }
         
         if let imageBox = self.imageBox {
@@ -357,6 +371,7 @@ extension CyclePictureView {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
         self.delegate?.cyclePictureView(self, didSelectItemAtIndexPath: NSIndexPath(forItem: indexPath.item % self.imageBox!.imageArray.count, inSection: indexPath.section))
     }
     

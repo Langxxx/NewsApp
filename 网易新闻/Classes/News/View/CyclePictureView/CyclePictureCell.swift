@@ -66,6 +66,12 @@ class CyclePictureCell: UICollectionViewCell {
         }
     }
     
+    var pictureContentMode: UIViewContentMode = .ScaleAspectFill {
+        didSet {
+            imageView.contentMode = pictureContentMode
+        }
+    }
+    
     private var imageView: UIImageView!
     private var detailLable: UILabel!
     
@@ -74,12 +80,12 @@ class CyclePictureCell: UICollectionViewCell {
 
         self.setupImageView()
         self.setupDetailLable()
-        self.backgroundColor = UIColor.grayColor()
+//        self.backgroundColor = UIColor.grayColor()
     }
     
     private func setupImageView() {
         imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = pictureContentMode
         imageView.clipsToBounds = true
         self.addSubview(imageView)
     }

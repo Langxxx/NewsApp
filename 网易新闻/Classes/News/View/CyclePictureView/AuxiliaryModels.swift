@@ -126,7 +126,7 @@ protocol EndlessCycleProtocol: class{
     func showFirstImagePageInCollectionView(collectionView: UICollectionView)
 }
 
-extension EndlessCycleProtocol where Self : UIView {
+extension EndlessCycleProtocol where Self : UIView  {
     
     func autoChangePicture(collectionView: UICollectionView) {
         
