@@ -1,5 +1,5 @@
 //
-//  NewsDetailController.swift
+//  DetaillNewsController.swift
 //  网易新闻
 //
 //  Created by wl on 15/11/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsDetailController: UIViewController, UIWebViewDelegate {
+class DetaillNewsController: UIViewController, UIWebViewDelegate {
 
     var newsModel: NewsModel?
     var newsDetailModel: NewsDetailModel? {
@@ -39,7 +39,7 @@ class NewsDetailController: UIViewController, UIWebViewDelegate {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func setupSubView() {
@@ -96,8 +96,8 @@ class NewsDetailController: UIViewController, UIWebViewDelegate {
             imgTag += "<img id=\"\(index)\" "
             //用 * 符号切割字符串，"haha*hehe*xixi" ==>  "haha" "hehe" "xixi"
             let pixel = detailImageModel.pixel.componentsSeparatedByString("*")
-            var width = Float(pixel.first!)!
-            var height = Float(pixel.last!)!
+            var width = Float(pixel.first!) ?? 0
+            var height = Float(pixel.last!) ?? 0
             
             let maxWidth = Float(self.view.bounds.width * 0.95)
             if width > maxWidth {

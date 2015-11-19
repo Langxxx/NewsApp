@@ -94,6 +94,7 @@ struct DataTool {
                 
                 array.append(NewsModel(json: dict))
             }
+            
             completionHandler(array)
         }
     }
@@ -107,12 +108,27 @@ struct DataTool {
                 completionHandler(nil)
                 return
             }
-            
             let data = JSON(response.result.value!)
             let news = data[docid]
             
             let newsDetailModel = NewsDetailModel(json: news)
             completionHandler(newsDetailModel)
+        }
+    }
+    
+    static func loadSpecialNewsData(specialID: String, completionHandler: NewsSpecialModel? -> Void) {
+        let urlStr = "http://c.3g.163.com/nc/special/\(specialID).html"
+        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
+            guard response.result.error == nil else {
+                print("loadSpecialNewsData error!")
+                completionHandler(nil)
+                return
+            }
+            let data = JSON(response.result.value!)
+            let news = data[specialID]
+            
+            let sewsSpecialModel = NewsSpecialModel(json: news)
+            completionHandler(sewsSpecialModel)
         }
     }
 
@@ -125,7 +141,31 @@ swift中的数组，这是仿照oc中的实现，如果你有更好或者合理�
 请一定要联系我。
 */
 extension Array {
-
+ 
+    static func arrayWithJson(json: JSON) -> [NewsModel] {
+        
+        assert(json != nil)
+        
+        var array: [NewsModel] = []
+        for (_, dict) in json {
+            
+            array.append(NewsModel(json: dict))
+        }
+        return array
+    }
+    
+    static func arrayWithJson(json: JSON) -> [Topic] {
+        
+        assert(json != nil)
+        
+        var array: [Topic] = []
+        for (_, dict) in json {
+            
+            array.append(Topic(json: dict))
+        }
+        return array
+    }
+    
     static func arrayWithJson(json: JSON) -> [String]?{
         
         guard json != nil else {

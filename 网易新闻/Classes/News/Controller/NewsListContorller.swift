@@ -86,13 +86,13 @@ class NewsListContorller: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        let vc = segue.destinationViewController as! NewsDetailController
-        let index = self.tableView.indexPathForSelectedRow?.row
-        vc.newsModel = self.newsModelArray![index!]
-        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
-            // TODO: 为什么手势还是会失效？
-            interactivePopGestureRecognizer.delegate = nil
-        }
+//        let vc = segue.destinationViewController as! DetaillNewsController
+//        let index = self.tableView.indexPathForSelectedRow?.row
+//        vc.newsModel = self.newsModelArray![index!]
+//        
+//        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+//            interactivePopGestureRecognizer.delegate = nil
+//        }
         
     }
     
@@ -102,15 +102,9 @@ class NewsListContorller: UITableViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-
-    override func viewDidDisappear(animated: Bool) {
-//        print("viewDidDisappear\(self.channel)")
-    }
-    
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        print("tableView")
+
         return self.newsModelArray?.count ?? 0
     }
 
@@ -138,6 +132,43 @@ class NewsListContorller: UITableViewController {
         case .BigPictureCell:
             return 177
         }
+    }
+    
+    // MARK: - Table view 代理
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //取消选中
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let newsModel = self.newsModelArray![indexPath.row]
+        switch newsModel.cellType! {
+        case .ScrollPictureCell, .TopBigPicture:
+            break
+        case .NormalNewsCell:
+            
+            if let _ = newsModel.specialID {
+                let vc = storyboard?.instantiateViewControllerWithIdentifier("SpecialNewsController") as! SpecialNewsController
+                vc.newsModel = newsModel
+                self.navigationController?.pushViewController(vc, animated: true)
+
+                if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+                    interactivePopGestureRecognizer.delegate = nil
+                }
+            }else {
+                let vc = storyboard?.instantiateViewControllerWithIdentifier("DetailPictureView") as! DetaillNewsController
+                vc.newsModel = newsModel
+                self.navigationController?.pushViewController(vc, animated: true)
+                if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+                    interactivePopGestureRecognizer.delegate = nil
+                }
+            }
+            
+        case .ThreePictureCell:
+            break
+        case .BigPictureCell:
+            break
+        }
+    
     }
     
 }

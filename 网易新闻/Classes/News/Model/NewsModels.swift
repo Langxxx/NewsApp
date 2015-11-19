@@ -38,7 +38,6 @@ struct ChannelBox {
     }
 }
 
-
 /*
  这个是新闻轮播器的数据模型
  */
@@ -49,7 +48,7 @@ class Ads {
     var subtitle: String
     var url: String
     
-    init(json: JSON) {
+    required init(json: JSON) {
         title = json["title"].stringValue
         tag = json["tag"].stringValue
         imgsrc = json["imgsrc"].stringValue
@@ -93,7 +92,7 @@ class NewsModel {
     var imgType: Int?
     var hasHead: Int?
     
-    init(json: JSON) {
+    required init(json: JSON) {
         
         tname = json["tname"].stringValue
         title = json["title"].stringValue
@@ -112,6 +111,7 @@ class NewsModel {
         
         self.judgeCellType()
     }
+
 }
 
 enum CellType: String{
@@ -157,7 +157,9 @@ class NewsDetailImgModel {
         src = json["src"].stringValue
     }
 }
-
+/*
+    新闻详情模型
+*/
 class NewsDetailModel {
  /// 新闻标题
     var title: String
@@ -174,4 +176,42 @@ class NewsDetailModel {
         img = [NewsDetailImgModel].arrayWithJson(json["img"])
     }
     
+}
+
+/*
+    专题内的子话题模型
+*/
+class Topic {
+    /// 话题名
+    var tname: String
+    /// 索引
+    var index: Int
+    /// 话题内的新闻
+    var docs: [NewsModel]
+    
+    init(json: JSON) {
+        tname = json["tname"].stringValue
+        index = json["index"].intValue
+        docs = [NewsModel].arrayWithJson(json["docs"])
+    }
+}
+/*
+    专题新闻模型
+*/
+class NewsSpecialModel {
+ /// 新闻专题名
+    var sname: String
+ /// 发布时间
+    var ptime: String
+ /// 图片
+    var banner: String
+ /// 子话题
+    var topics: [Topic]
+    
+    init(json: JSON) {
+        sname = json["sname"].stringValue
+        ptime = json["ptime"].stringValue
+        banner = json["banner"].stringValue
+        topics = [Topic].arrayWithJson(json["topics"])
+    }
 }
