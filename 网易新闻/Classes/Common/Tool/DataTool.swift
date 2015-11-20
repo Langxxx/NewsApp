@@ -127,8 +127,26 @@ struct DataTool {
             let data = JSON(response.result.value!)
             let news = data[specialID]
             
-            let sewsSpecialModel = NewsSpecialModel(json: news)
-            completionHandler(sewsSpecialModel)
+            let newsSpecialModel = NewsSpecialModel(json: news)
+            completionHandler(newsSpecialModel)
+        }
+    }
+    
+    static func loadPictureNewsData(photosetID: String, completionHandler: NewsPictureModel? -> Void) {
+        
+        let subStr = (photosetID as NSString).substringFromIndex(4)
+        let strArray = subStr.componentsSeparatedByString("|")
+        
+        let urlStr = "http://c.m.163.com/photo/api/set/\(strArray.first!)/\(strArray.last!).json"
+        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
+            guard response.result.error == nil else {
+                print("loadPictureNewsData error!")
+                completionHandler(nil)
+                return
+            }
+            let data = JSON(response.result.value!)
+            let newsPictureModel = NewsPictureModel(json: data)
+            completionHandler(newsPictureModel)
         }
     }
 
@@ -141,31 +159,34 @@ swift中的数组，这是仿照oc中的实现，如果你有更好或者合理�
 请一定要联系我。
 */
 extension Array {
- 
-    static func arrayWithJson(json: JSON) -> [NewsModel] {
-        
-        assert(json != nil)
-        
-        var array: [NewsModel] = []
-        for (_, dict) in json {
-            
-            array.append(NewsModel(json: dict))
-        }
-        return array
-    }
     
-    static func arrayWithJson(json: JSON) -> [Topic] {
-        
-        assert(json != nil)
-        
-        var array: [Topic] = []
-        for (_, dict) in json {
-            
-            array.append(Topic(json: dict))
+    static func arrayModel<T: NewsModelInitProtocol>(anyClass: AnyClass,json: JSON) -> [T]? {
+        guard json != nil else {
+            return nil
         }
-        return array
+        if anyClass is T.Type {
+            let model = anyClass as! T.Type
+            var array = [T]()
+            for (_, dict) in json {
+                array.append(model.init(json: dict))
+            }
+            return array
+        }else {
+            return nil
+        }
     }
-    
+    // 这个是探索中的第一个版本，留给需要的人参考
+//    static func arrayModel<T: NewsModelInitProtocol>(model: T, json: JSON) -> [T]? {
+//        guard json != nil else {
+//            return nil
+//        }
+//        var array = [T]()
+//        for (_, dict) in json {
+//            array.append(model.dynamicType.init(json: dict))
+//        }
+//        return array
+//    }
+
     static func arrayWithJson(json: JSON) -> [String]?{
         
         guard json != nil else {
@@ -179,30 +200,7 @@ extension Array {
         }
         return array
     }
-    
-    static func arrayWithJson(json: JSON) -> [Ads]?{
-        
-        guard json != nil else {
-            return nil
-        }
-        
-        var array: [Ads] = []
-        for (_, dict) in json {
-            array.append(Ads(json: dict))
-        }
-        return array
-    }
-    
-    static func arrayWithJson(json: JSON) -> [NewsDetailImgModel]{
-        
-        assert(json != nil)
-        
-        var array: [NewsDetailImgModel] = []
-        for (_, dict) in json {
-            array.append(NewsDetailImgModel(json: dict))
-        }
-        return array
-    }
+
 
 }
 

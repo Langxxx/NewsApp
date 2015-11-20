@@ -30,6 +30,7 @@ class DetailPictureView: UIView, CyclePictureViewDelegate {
         detailPictureView.cycPictureView.showPageControl = false
         detailPictureView.cycPictureView.delegate = detailPictureView
         detailPictureView.cycPictureView.imageURLArray =  urlArrya
+        detailPictureView.cycPictureView.placeholderImage = UIImage(named: "placeholder")
         detailPictureView.cycPictureView.pictureContentMode = .ScaleAspectFit
         window?.addSubview(detailPictureView)
         

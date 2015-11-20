@@ -38,10 +38,14 @@ struct ChannelBox {
     }
 }
 
+protocol NewsModelInitProtocol {
+    init(json: JSON)
+}
+
 /*
  这个是新闻轮播器的数据模型
  */
-class Ads {
+class Ads: NewsModelInitProtocol {
     var title: String
     var tag: String
     var imgsrc: String
@@ -60,7 +64,7 @@ class Ads {
   这个是新闻数据模型，每一个模型对应一个cell。
 这些属性只是暂时提取出来的一小部分，以后会有添加
  */
-class NewsModel {
+class NewsModel: NewsModelInitProtocol{
     
     var cellType: CellType!
     
@@ -88,6 +92,8 @@ class NewsModel {
     var tags: String?
     /// 新闻id，用来链接新闻详情
     var docid: String?
+    /// 图片新闻id
+    var photosetID: String?
     
     var imgType: Int?
     var hasHead: Int?
@@ -102,12 +108,13 @@ class NewsModel {
         imgextra = [String].arrayWithJson(json["imgextra"])
         replyCount = json["replyCount"].int
         url_3w = json["url_3w"].string
-        ads = [Ads].arrayWithJson(json["ads"])
+        ads = [Ads].arrayModel(Ads.self, json: json["ads"])
         specialID = json["specialID"].string
         tags = json["TAGS"].string
         imgType = json["imgType"].int
         hasHead = json["hasHead"].int
         docid = json["docid"].string
+        photosetID = json["photosetID"].string
         
         self.judgeCellType()
     }
@@ -140,7 +147,7 @@ extension NewsModel {
 }
 
 
-class NewsDetailImgModel {
+class NewsDetailImgModel: NewsModelInitProtocol{
     /// 图片的位置
     var ref: String
     /// 图片大小
@@ -150,7 +157,7 @@ class NewsDetailImgModel {
     /// 图片位置
     var src: String
     
-    init(json: JSON) {
+    required init(json: JSON) {
         ref = json["ref"].stringValue
         pixel = json["pixel"].stringValue
         alt = json["alt"].stringValue
@@ -173,7 +180,7 @@ class NewsDetailModel {
         title = json["title"].stringValue
         ptime = json["ptime"].stringValue
         body = json["body"].stringValue
-        img = [NewsDetailImgModel].arrayWithJson(json["img"])
+        img = [NewsDetailImgModel].arrayModel(NewsDetailImgModel.self, json: json["img"])!
     }
     
 }
@@ -181,7 +188,7 @@ class NewsDetailModel {
 /*
     专题内的子话题模型
 */
-class Topic {
+class Topic: NewsModelInitProtocol{
     /// 话题名
     var tname: String
     /// 索引
@@ -189,10 +196,10 @@ class Topic {
     /// 话题内的新闻
     var docs: [NewsModel]
     
-    init(json: JSON) {
+    required init(json: JSON) {
         tname = json["tname"].stringValue
         index = json["index"].intValue
-        docs = [NewsModel].arrayWithJson(json["docs"])
+        docs = [NewsModel].arrayModel(NewsModel.self, json: json["docs"])!
     }
 }
 /*
@@ -212,6 +219,39 @@ class NewsSpecialModel {
         sname = json["sname"].stringValue
         ptime = json["ptime"].stringValue
         banner = json["banner"].stringValue
-        topics = [Topic].arrayWithJson(json["topics"])
+        topics = [Topic].arrayModel(Topic.self, json: json["topics"])!
     }
+}
+
+
+/*
+    图片新闻内容模型
+*/
+class Photo: NewsModelInitProtocol{
+    /// 描述
+    var note: String
+    var imgurl: String
+    
+    required init(json: JSON) {
+        note = json["note"].stringValue
+        imgurl = json["imgurl"].stringValue
+    }
+}
+/*
+    图片新闻的模型
+*/
+class NewsPictureModel {
+ /// 图片新闻内容
+    var photos: [Photo]
+ /// 名称
+    var setname: String
+ /// 数量
+    var imgsum: Int
+    
+    init(json: JSON) {
+        setname = json["setname"].stringValue
+        imgsum = json["imgsum"].intValue
+        photos = [Photo].arrayModel(Photo.self, json: json["photos"])!
+    }
+    
 }

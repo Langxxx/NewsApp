@@ -84,17 +84,6 @@ class NewsListContorller: UITableViewController {
         return str
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
-//        let vc = segue.destinationViewController as! DetaillNewsController
-//        let index = self.tableView.indexPathForSelectedRow?.row
-//        vc.newsModel = self.newsModelArray![index!]
-//        
-//        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
-//            interactivePopGestureRecognizer.delegate = nil
-//        }
-        
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -109,29 +98,14 @@ class NewsListContorller: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        assert(self.newsModelArray != nil)
-        let newsModel = self.newsModelArray![indexPath.row]
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(newsModel.cellType.rawValue, forIndexPath: indexPath) as! NewsCell
-            cell.newsModel = newsModel
-        
-        return cell
+
+        return CellProvider.provideCell(tableView, newsModelArray: self.newsModelArray!, indexPath: indexPath)
 
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let newsModel = self.newsModelArray![indexPath.row]
-        switch newsModel.cellType! {
-        case .ScrollPictureCell, .TopBigPicture:
-            return 222
-        case .NormalNewsCell:
-            return 90
-        case .ThreePictureCell:
-            return 108
-        case .BigPictureCell:
-            return 177
-        }
+
+        return CellProvider.provideCellHeight(self.newsModelArray!, indexPath: indexPath)
     }
     
     // MARK: - Table view 代理
@@ -140,33 +114,13 @@ class NewsListContorller: UITableViewController {
         //取消选中
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let newsModel = self.newsModelArray![indexPath.row]
-        switch newsModel.cellType! {
-        case .ScrollPictureCell, .TopBigPicture:
-            break
-        case .NormalNewsCell:
-            
-            if let _ = newsModel.specialID {
-                let vc = storyboard?.instantiateViewControllerWithIdentifier("SpecialNewsController") as! SpecialNewsController
-                vc.newsModel = newsModel
-                self.navigationController?.pushViewController(vc, animated: true)
-
-                if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
-                    interactivePopGestureRecognizer.delegate = nil
-                }
-            }else {
-                let vc = storyboard?.instantiateViewControllerWithIdentifier("DetailPictureView") as! DetaillNewsController
-                vc.newsModel = newsModel
-                self.navigationController?.pushViewController(vc, animated: true)
-                if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
-                    interactivePopGestureRecognizer.delegate = nil
-                }
-            }
-            
-        case .ThreePictureCell:
-            break
-        case .BigPictureCell:
-            break
+        let vc = CellProvider.provideSelectedNewsVc(self.newsModelArray!, indexPath: indexPath)
+        guard vc != nil else {
+            return
+        }
+        self.navigationController?.pushViewController(vc!, animated: true)
+        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+            interactivePopGestureRecognizer.delegate = nil
         }
     
     }

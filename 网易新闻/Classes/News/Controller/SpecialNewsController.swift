@@ -15,7 +15,6 @@ class SpecialNewsController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
 
-    
     var newsModel: NewsModel?
     var newsSpecialModel: NewsSpecialModel? {
         didSet {
@@ -68,20 +67,8 @@ class SpecialNewsController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
         let topics = self.newsSpecialModel?.topics[indexPath.section]
-        let newsModel = topics?.docs[indexPath.row]
-        assert(newsModel != nil)
-        switch newsModel!.cellType! {
-        case .ScrollPictureCell, .TopBigPicture:
-            return 222
-        case .NormalNewsCell:
-            return 90
-        case .ThreePictureCell:
-            return 108
-        case .BigPictureCell:
-            return 177
-        }
+        return CellProvider.provideCellHeight(topics!.docs, indexPath: indexPath)
     }
     
     
@@ -104,13 +91,7 @@ class SpecialNewsController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let topics = self.newsSpecialModel?.topics[indexPath.section]
-        let newsModel = topics?.docs[indexPath.row]
-        
-        assert(newsModel != nil)
-        let cell = tableView.dequeueReusableCellWithIdentifier(newsModel!.cellType.rawValue, forIndexPath: indexPath) as! NewsCell
-        cell.newsModel = newsModel
-        
-        return cell
+        return CellProvider.provideCell(tableView, newsModelArray: topics!.docs, indexPath: indexPath)
     }
     
      // MARK: - tableView代理
@@ -119,34 +100,13 @@ class SpecialNewsController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let topics = self.newsSpecialModel?.topics[indexPath.section]
-        let newsModel = topics!.docs[indexPath.row]
-        
-        switch newsModel.cellType! {
-        case .ScrollPictureCell, .TopBigPicture:
-            break
-        case .NormalNewsCell:
-            
-            if let _ = newsModel.specialID {
-                let vc = storyboard?.instantiateViewControllerWithIdentifier("SpecialNewsController") as! SpecialNewsController
-                vc.newsModel = newsModel
-                self.navigationController?.pushViewController(vc, animated: true)
-                
-                if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
-                    interactivePopGestureRecognizer.delegate = nil
-                }
-            }else {
-                let vc = storyboard?.instantiateViewControllerWithIdentifier("DetailPictureView") as! DetaillNewsController
-                vc.newsModel = newsModel
-                self.navigationController?.pushViewController(vc, animated: true)
-                if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
-                    interactivePopGestureRecognizer.delegate = nil
-                }
-            }
-            
-        case .ThreePictureCell:
-            break
-        case .BigPictureCell:
-            break
+        let vc = CellProvider.provideSelectedNewsVc(topics!.docs, indexPath: indexPath)
+        guard vc != nil else {
+            return
+        }
+        self.navigationController?.pushViewController(vc!, animated: true)
+        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+            interactivePopGestureRecognizer.delegate = nil
         }
         
     }
