@@ -30,8 +30,6 @@ class PictureNewsController: UIViewController, CyclePictureViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(self.newsModel?.photosetID != nil)
- 
-        self.view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: Selector("panScreen")))
         
         DataTool.loadPictureNewsData(self.newsModel!.photosetID!) { (newsPictureModel) -> Void in
             guard newsPictureModel != nil else {

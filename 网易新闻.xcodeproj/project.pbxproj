@@ -15,6 +15,7 @@
 		775CA4171BF7414900106851 /* ScrollPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CA4161BF7414900106851 /* ScrollPictureCell.swift */; settings = {ASSET_TAGS = (); }; };
 		775CA4201BF75D6500106851 /* NormalNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CA41F1BF75D6500106851 /* NormalNewsCell.swift */; settings = {ASSET_TAGS = (); }; };
 		775CA4221BF76DAA00106851 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CA4211BF76DAA00106851 /* NewsCell.swift */; settings = {ASSET_TAGS = (); }; };
+		7764709D1C00129300C92066 /* ImportantNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7764709C1C00129300C92066 /* ImportantNewsController.swift */; settings = {ASSET_TAGS = (); }; };
 		777C96361BF828B600519375 /* ThreePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C96351BF828B600519375 /* ThreePictureCell.swift */; settings = {ASSET_TAGS = (); }; };
 		777C96381BF85BC300519375 /* BigPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C96371BF85BC300519375 /* BigPictureCell.swift */; settings = {ASSET_TAGS = (); }; };
 		777C963A1BF8652000519375 /* TopBigPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C96391BF8652000519375 /* TopBigPicture.swift */; settings = {ASSET_TAGS = (); }; };
@@ -98,6 +99,7 @@
 		775CA4161BF7414900106851 /* ScrollPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPictureCell.swift; sourceTree = "<group>"; };
 		775CA41F1BF75D6500106851 /* NormalNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NormalNewsCell.swift; path = "网易新闻/Classes/News/View/NormalNewsCell.swift"; sourceTree = SOURCE_ROOT; };
 		775CA4211BF76DAA00106851 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		7764709C1C00129300C92066 /* ImportantNewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportantNewsController.swift; sourceTree = "<group>"; };
 		777C96351BF828B600519375 /* ThreePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreePictureCell.swift; sourceTree = "<group>"; };
 		777C96371BF85BC300519375 /* BigPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigPictureCell.swift; sourceTree = "<group>"; };
 		777C96391BF8652000519375 /* TopBigPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBigPicture.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 				77501B391BF9EFEC001B8F28 /* DetaillNewsController.swift */,
 				77B78C281BFC992F00FA7F69 /* SpecialNewsController.swift */,
 				77C9E7411BFEC37900D62326 /* PictureNewsController.swift */,
+				7764709C1C00129300C92066 /* ImportantNewsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				777C96A91BF89DCF00519375 /* MJRefreshStateHeader.m in Sources */,
 				77E37A6F1BF3752E003E2F44 /* NewsController.swift in Sources */,
 				777C96361BF828B600519375 /* ThreePictureCell.swift in Sources */,
+				7764709D1C00129300C92066 /* ImportantNewsController.swift in Sources */,
 				777C96A21BF89DCF00519375 /* MJRefreshAutoNormalFooter.m in Sources */,
 				77F2C3E81BF49141000BB753 /* NewsModels.swift in Sources */,
 				77B78C291BFC992F00FA7F69 /* SpecialNewsController.swift in Sources */,

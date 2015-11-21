@@ -122,6 +122,18 @@ class NewsController: UIViewController, UIScrollViewDelegate {
         //代码滚动到显示了那一"页"
         self.scrollViewDidEndScrollingAnimation(self.newsContainerView)
     }
+    
+
+    @IBAction func importantNewsBtnClik(sender: AnyObject) {
+        let sb = UIStoryboard(name: "NewsList", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("ImportantNewsController") as! ImportantNewsController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+            interactivePopGestureRecognizer.delegate = nil
+        }
+    }
+    
 }
 
 
