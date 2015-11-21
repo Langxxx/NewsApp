@@ -101,10 +101,8 @@ class SpecialNewsController: UIViewController, UITableViewDelegate, UITableViewD
         
         let topics = self.newsSpecialModel?.topics[indexPath.section]
         let vc = CellProvider.provideSelectedNewsVc(topics!.docs, indexPath: indexPath)
-        guard vc != nil else {
-            return
-        }
-        self.navigationController?.pushViewController(vc!, animated: true)
+
+        self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
             interactivePopGestureRecognizer.delegate = nil
         }

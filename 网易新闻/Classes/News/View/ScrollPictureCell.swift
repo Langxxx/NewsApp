@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollPictureCell: NewsCell{
+class ScrollPictureCell: NewsCell, CyclePictureViewDelegate{
 
     @IBOutlet weak var cyclePictureView: CyclePictureView!
     
@@ -25,7 +25,6 @@ class ScrollPictureCell: NewsCell{
         self.cyclePictureView.pageControlAliment = .RightBottom
         self.cyclePictureView.detailLableTextFont = UIFont.systemFontOfSize(15)
         self.cyclePictureView.placeholderImage = UIImage(named: "placeholder")
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -38,6 +37,8 @@ class ScrollPictureCell: NewsCell{
         self.cyclePictureView.imageURLArray = {
             assert(self.newsModel!.ads != nil)
             var array: [String] = []
+
+            array.append(self.newsModel!.imgsrc)
             for ads in self.newsModel!.ads! {
                 array.append(ads.imgsrc)
             }
@@ -47,11 +48,23 @@ class ScrollPictureCell: NewsCell{
         self.cyclePictureView.imageDetailArray = {
             assert(self.newsModel!.ads != nil)
             var array: [String] = []
+            
+            array.append(self.newsModel!.title)
             for ads in self.newsModel!.ads! {
                 array.append(ads.title)
             }
             return array
         }()
+        // 这个cell的控制器为代理
+        self.cyclePictureView.delegate = {
+                for (var next = self.superview; next != nil; next = next?.superview) {
+                    let nextResponder = next?.nextResponder()
+                    if nextResponder!.isKindOfClass(NewsListContorller.self) {
+                        return nextResponder as! NewsListContorller
+                    }
+                }
+                return nil
+            }()
     }
 
 }

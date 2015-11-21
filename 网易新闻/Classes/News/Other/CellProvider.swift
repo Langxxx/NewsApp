@@ -35,36 +35,30 @@ struct CellProvider {
     }
     
     // TODO: 为了方便当前的测试，先暂时这样设置，以后肯定要改
-    static func provideSelectedNewsVc(newsModelArray: [NewsModel], indexPath: NSIndexPath) -> UIViewController? {
-        
-        let newsModel = newsModelArray[indexPath.row]
+    static func provideSelectedNewsVc(newsModelArray: [NewsModel], indexPath: NSIndexPath) -> UIViewController {
 
-        switch newsModel.cellType! {
-        case .ScrollPictureCell, .TopBigPicture:
-            return nil
-        case .NormalNewsCell:
-            
-            if let _ = newsModel.specialID {
-                let sb = UIStoryboard(name: "NewsList", bundle: nil)
-                let vc = sb.instantiateViewControllerWithIdentifier("SpecialNewsController") as! SpecialNewsController
-                vc.newsModel = newsModel
-                return vc
-            }else {
-                let sb = UIStoryboard(name: "NewsList", bundle: nil)
-                let vc = sb.instantiateViewControllerWithIdentifier("DetaillNewsController") as! DetaillNewsController
-                vc.newsModel = newsModel
-                return vc
-            }
-            
-        case .ThreePictureCell:
+        let newsModel = newsModelArray[indexPath.row]
+        return CellProvider.provideVcWithNewsModel(newsModel)
+       
+    }
+    
+    static func provideVcWithNewsModel(newsModel: NewsModel) -> UIViewController {
+        if newsModel.specialID != nil {
+            let sb = UIStoryboard(name: "NewsList", bundle: nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("SpecialNewsController") as! SpecialNewsController
+            vc.newsModel = newsModel
+            return vc
+        }else if newsModel.photosetID != nil {
             let sb = UIStoryboard(name: "NewsList", bundle: nil)
             let vc = sb.instantiateViewControllerWithIdentifier("PictureNewsController") as! PictureNewsController
             vc.newsModel = newsModel
             return vc
-        case .BigPictureCell:
-            return nil
+        }else {
+            let sb = UIStoryboard(name: "NewsList", bundle: nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("DetaillNewsController") as! DetaillNewsController
+            vc.newsModel = newsModel
+            return vc
         }
-        
     }
 
 }

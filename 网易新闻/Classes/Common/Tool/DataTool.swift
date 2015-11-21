@@ -32,7 +32,6 @@ struct DataTool {
                 print("getLuanchImageUrl error\(response.request?.URLString)")
                 return
             }
-            
             let data = JSON(response.result.value!)
             let ads = data["ads"]
             

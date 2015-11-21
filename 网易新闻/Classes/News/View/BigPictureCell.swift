@@ -14,6 +14,7 @@ class BigPictureCell: NewsCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bigImageView: UIImageView!
     @IBOutlet weak var digestLabel: UILabel!
+    @IBOutlet weak var subjectLabel: UILabel!
     
     override var newsModel: NewsModel? {
         didSet {
@@ -36,7 +37,12 @@ class BigPictureCell: NewsCell {
         self.bigImageView?.sd_setImageWithURL(NSURL(string: self.newsModel!.imgsrc)!, placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = self.newsModel?.title
         self.digestLabel.text = self.newsModel?.digest
-
+        self.subjectLabel.hidden = true
+        if let tags = self.newsModel?.tags {
+            self.subjectLabel.hidden = false
+            self.subjectLabel.text = tags
+            self.subjectLabel.textColor = UIColor.blueColor()
+        }
         
     }
 }

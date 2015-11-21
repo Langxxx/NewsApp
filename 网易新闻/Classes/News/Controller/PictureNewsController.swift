@@ -47,6 +47,7 @@ class PictureNewsController: UIViewController, CyclePictureViewDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    
     func setupSubview() {
         
         guard let newsPictureModel = self.newsPictureModel else {

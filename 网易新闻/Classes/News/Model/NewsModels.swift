@@ -51,6 +51,10 @@ class Ads: NewsModelInitProtocol {
     var imgsrc: String
     var subtitle: String
     var url: String
+    /// 新闻id，用来链接新闻详情
+    var docid: String?
+    /// 专题新闻
+    var specialID: String?
     
     required init(json: JSON) {
         title = json["title"].stringValue
@@ -58,6 +62,8 @@ class Ads: NewsModelInitProtocol {
         imgsrc = json["imgsrc"].stringValue
         subtitle = json["subtitle"].stringValue
         url = json["url"].stringValue
+        docid = json["docid"].string
+        specialID = json["specialID"].string
     }
 }
 /*

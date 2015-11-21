@@ -13,9 +13,9 @@
 
 import UIKit
 
-protocol CyclePictureViewDelegate: class{
-    func cyclePictureView(cyclePictureView: CyclePictureView, didSelectItemAtIndexPath indexPath: NSIndexPath)
-    func cyclePictureViewDidEndDecelerating(cyclePictureView: CyclePictureView)
+@objc protocol CyclePictureViewDelegate: class{
+    optional func cyclePictureView(cyclePictureView: CyclePictureView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    optional func cyclePictureViewDidEndDecelerating(cyclePictureView: CyclePictureView)
     
 }
 
@@ -307,7 +307,7 @@ extension CyclePictureView {
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        self.delegate?.cyclePictureViewDidEndDecelerating(self)
+        self.delegate?.cyclePictureViewDidEndDecelerating?(self)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -372,7 +372,7 @@ extension CyclePictureView {
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 
-        self.delegate?.cyclePictureView(self, didSelectItemAtIndexPath: NSIndexPath(forItem: indexPath.item % self.imageBox!.imageArray.count, inSection: indexPath.section))
+        self.delegate?.cyclePictureView?(self, didSelectItemAtIndexPath: NSIndexPath(forItem: indexPath.item % self.imageBox!.imageArray.count, inSection: indexPath.section))
     }
     
 }

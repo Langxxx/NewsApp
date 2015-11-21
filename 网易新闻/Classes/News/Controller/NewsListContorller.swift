@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsListContorller: UITableViewController {
+class NewsListContorller: UITableViewController, CyclePictureViewDelegate{
 
     var channel: String!
     var channelUrl: String!
@@ -115,16 +115,40 @@ class NewsListContorller: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let vc = CellProvider.provideSelectedNewsVc(self.newsModelArray!, indexPath: indexPath)
-        guard vc != nil else {
-            return
-        }
-        self.navigationController?.pushViewController(vc!, animated: true)
+
+        self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
             interactivePopGestureRecognizer.delegate = nil
         }
     
     }
+    // MARK: - CyclePictureViewDelegate
     
+    /**
+    当头部滚动新闻点击的时候被调用
+    */
+    func cyclePictureView(cyclePictureView: CyclePictureView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let index = indexPath.row
+
+        // 取出新闻模型
+        let newsModel = self.newsModelArray![0]
+        // 取出对应图片的模型
+        if index == 0 {
+            //do nothing
+        }else if let ads = newsModel.ads?[index - 1] {
+            newsModel.photosetID = ads.url
+            newsModel.title = ads.title
+            newsModel.docid = ads.docid
+            newsModel.specialID = ads.specialID
+        }
+        
+        let vc = CellProvider.provideVcWithNewsModel(newsModel)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+            interactivePopGestureRecognizer.delegate = nil
+        }
+    }
 }
 
 enum RequestType {
