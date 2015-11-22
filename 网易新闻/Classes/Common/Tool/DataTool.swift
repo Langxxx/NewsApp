@@ -29,7 +29,7 @@ struct DataTool {
         ]
         Alamofire.request(.GET, urlStr, parameters: parameter).responseJSON { (response) -> Void in
             guard response.result.error == nil else {
-                print("getLuanchImageUrl error\(response.request?.URLString)")
+                print("getLuanchImageUrl error:\(response.result.error)")
                 return
             }
             let data = JSON(response.result.value!)
@@ -71,10 +71,11 @@ struct DataTool {
     }
     
     /**
-    加载新闻数据
+    加载新闻数据，主要是新闻列表数据
     
     - parameter urlStr:            请求地址
-    - parameter completionHandler: 回调闭包
+    - parameter newsKey:           获得数据的key
+    - parameter completionHandler: 返回数据的回调闭包
     */
     static func loadNewsData(urlStr: String, newsKey: String, completionHandler: [NewsModel]? -> Void) {
 
@@ -98,7 +99,12 @@ struct DataTool {
         }
     }
     
+    /**
+    获得某一个新闻数据的详情内容
     
+    - parameter docid:             代表这条新闻的id
+    - parameter completionHandler: 返回数据的回调闭包
+    */
     static func loadNewsDetailData(docid: String, completionHandler: NewsDetailModel? -> Void) {
         let urlStr = "http://c.m.163.com/nc/article/\(docid)/full.html"
         Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
@@ -115,6 +121,12 @@ struct DataTool {
         }
     }
     
+    /**
+    获得一个专题新闻的数据列表
+    
+    - parameter specialID:         专题新闻的唯一id
+    - parameter completionHandler: 返回数据的回调闭包
+    */
     static func loadSpecialNewsData(specialID: String, completionHandler: NewsSpecialModel? -> Void) {
         let urlStr = "http://c.3g.163.com/nc/special/\(specialID).html"
         Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
@@ -130,7 +142,12 @@ struct DataTool {
             completionHandler(newsSpecialModel)
         }
     }
+    /**
+    获得图片新闻数据
     
+    - parameter photosetID:        专题新闻的唯一id
+    - parameter completionHandler: 返回数据的回调闭包
+    */
     static func loadPictureNewsData(photosetID: String, completionHandler: NewsPictureModel? -> Void) {
         
         let subStr = (photosetID as NSString).substringFromIndex(4)
@@ -151,65 +168,11 @@ struct DataTool {
 
 }
 
-
-/*
-    这个扩展是无奈之举，目的是为了将JSON数据中的数组转化成
-swift中的数组，这是仿照oc中的实现，如果你有更好或者合理的方式
-请一定要联系我。
-*/
-extension Array {
-    
-    static func arrayModel<T: NewsModelInitProtocol>(anyClass: AnyClass,json: JSON) -> [T]? {
-        guard json != nil else {
-            return nil
-        }
-        if anyClass is T.Type {
-            let model = anyClass as! T.Type
-            var array = [T]()
-            for (_, dict) in json {
-                array.append(model.init(json: dict))
-            }
-            return array
-        }else {
-            return nil
-        }
-    }
-    // 这个是探索中的第一个版本，留给需要的人参考
-//    static func arrayModel<T: NewsModelInitProtocol>(model: T, json: JSON) -> [T]? {
-//        guard json != nil else {
-//            return nil
-//        }
-//        var array = [T]()
-//        for (_, dict) in json {
-//            array.append(model.dynamicType.init(json: dict))
-//        }
-//        return array
-//    }
-
-    static func arrayWithJson(json: JSON) -> [String]?{
-        
-        guard json != nil else {
-            return nil
-        }
-        
-        var array: [String] = []
-
-        for (_, dict) in json {
-            array.append(dict["imgextra"].stringValue)
-        }
-        return array
-    }
-
-
-}
-
 extension NSDate {
     class func TimeIntervalSince1970() -> NSTimeInterval{
         let nowTime = NSDate()
         return nowTime.timeIntervalSince1970
-
     }
-
 }
 
 

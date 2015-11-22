@@ -4,28 +4,39 @@
 //
 //  Created by wl on 15/11/12.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  新闻列表控制器，用来展示当前频道所有新闻
 
 import UIKit
 
-class NewsListContorller: UITableViewController, CyclePictureViewDelegate{
-
+class NewsListContorller: UITableViewController {
+//========================================================
+// MARK: - 一些属性
+//========================================================
+    /// 当前频道
     var channel: String!
+    /// 当前频道的url
     var channelUrl: String!
     
+    // 充当tableView的数据源
+    let newsListProvider = NewsListProvider()
     var newsModelArray: [NewsModel]? {
         didSet {
-            self.tableView.reloadData()
+            self.newsListProvider.newsModelArray = newsModelArray
         }
     }
-    
+//========================================================
+// MARK: - 一些方法
+//========================================================
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: Selector("requestInfo"))
-        self.tableView.mj_header.beginRefreshing()
+        self.tableView.dataSource = self.newsListProvider
+        self.newsListProvider.tableView = self.tableView
         
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: Selector("requestInfo"))
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: Selector("requestMoreInfo"))
+    
+        self.tableView.mj_header.beginRefreshing()
 
     }
     
@@ -35,13 +46,19 @@ class NewsListContorller: UITableViewController, CyclePictureViewDelegate{
     func requestInfo() {
         if self.channel == "热点" {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.Recommend), newsKey: "推荐") { (newsArray) -> Void in
+                guard let newDataes = newsArray else {
+                    return
+                }
                 self.tableView.mj_header.endRefreshing()
-                self.newsModelArray = newsArray
+                self.newsModelArray = newDataes
             }
         }else {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.Default), newsKey: channelUrl.channelKey()) { (newsArray) -> Void in
+                guard let newDataes = newsArray else {
+                    return
+                }
                 self.tableView.mj_header.endRefreshing()
-                self.newsModelArray = newsArray
+                self.newsModelArray = newDataes
             }
         }
     }
@@ -51,6 +68,7 @@ class NewsListContorller: UITableViewController, CyclePictureViewDelegate{
     func requestMoreInfo() {
         if self.channel == "热点" {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.Recommend), newsKey: "推荐") { (newsArray) -> Void in
+                
                 self.tableView.mj_footer.endRefreshing()
                 guard let newDataes = newsArray else {
                     return
@@ -59,6 +77,7 @@ class NewsListContorller: UITableViewController, CyclePictureViewDelegate{
             }
         }else {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.MoreInfo), newsKey: channelUrl.channelKey()) { (var newsArray) -> Void in
+                
                 self.tableView.mj_footer.endRefreshing()
                 newsArray?.removeFirst()
                 guard let newDataes = newsArray else {
@@ -87,49 +106,41 @@ class NewsListContorller: UITableViewController, CyclePictureViewDelegate{
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        print("viewWillAppear")
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    // MARK: - Table view data source
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return self.newsModelArray?.count ?? 0
-    }
+}
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        return CellProvider.provideCell(tableView, newsModelArray: self.newsModelArray!, indexPath: indexPath)
-
-    }
-    
+// MARK: - Table view 代理
+extension NewsListContorller {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-
+        
         return CellProvider.provideCellHeight(self.newsModelArray!, indexPath: indexPath)
     }
-    
-    // MARK: - Table view 代理
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //取消选中
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let vc = CellProvider.provideSelectedNewsVc(self.newsModelArray!, indexPath: indexPath)
-
+        
         self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
             interactivePopGestureRecognizer.delegate = nil
         }
-    
+        
     }
+}
+
     // MARK: - CyclePictureViewDelegate
-    
+extension NewsListContorller: CyclePictureViewDelegate {
     /**
     当头部滚动新闻点击的时候被调用
     */
+
     func cyclePictureView(cyclePictureView: CyclePictureView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
-
+        
         // 取出新闻模型
         let newsModel = self.newsModelArray![0]
         // 取出对应图片的模型

@@ -4,7 +4,7 @@
 //
 //  Created by wl on 15/11/13.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  这个类原本打算用来循环利用，但是实际作用并不大
 
 import UIKit
 
@@ -17,7 +17,6 @@ class NewsContainerView: UIScrollView, CycleCacheProtocol {
 
 /**
 *  缓存协议，用来优化scrollView的显示
-*
 */
 protocol CycleCacheProtocol {
     /// 存储所有可能显示的view

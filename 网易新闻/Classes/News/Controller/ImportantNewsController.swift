@@ -4,22 +4,25 @@
 //
 //  Created by wl on 15/11/21.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  24小时要闻界面控制器
 
 import UIKit
 
-class ImportantNewsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ImportantNewsController: UIViewController {
+//========================================================
+// MARK: - 一些属性
+//========================================================
     @IBOutlet weak var tableView: UITableView!
+    /// 顶部背景图
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topView: UIView!
+    /// 24小时要闻标题
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    /// 顶部背景图距离顶部的约束(X)
     @IBOutlet weak var imageViewXConstraint: NSLayoutConstraint!
     @IBOutlet weak var title2subtitleConstraint: NSLayoutConstraint!
     @IBOutlet weak var title2topviewConstraint: NSLayoutConstraint!
-
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
     
     lazy var tableViewInsetTop: CGFloat = {
         return self.imageView.frame.height + 10
@@ -31,9 +34,10 @@ class ImportantNewsController: UIViewController, UITableViewDelegate, UITableVie
     
     let maxScale: CGFloat = 1.5
     
+    let newsListProvider = NewsListProvider()
     var newsModelArray: [NewsModel]? {
         didSet {
-            self.tableView.reloadData()
+            self.newsListProvider.newsModelArray = self.newsModelArray
         }
     }
     
@@ -48,12 +52,11 @@ class ImportantNewsController: UIViewController, UITableViewDelegate, UITableVie
             }
             self.newsModelArray = newsArray
         }
+
+        self.tableView.dataSource = self.newsListProvider
+        self.newsListProvider.tableView = self.tableView
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,24 +68,17 @@ class ImportantNewsController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-     // MARK: - tableVIew 数据源
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.newsModelArray?.count ?? 0
+    deinit {
+
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        return CellProvider.provideCell(tableView, newsModelArray: self.newsModelArray!, indexPath: indexPath)
-        
-    }
-    
+}
+// MARK: - Table view 代理
+extension ImportantNewsController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return CellProvider.provideCellHeight(self.newsModelArray!, indexPath: indexPath)
     }
-    
-    // MARK: - Table view 代理
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //取消选中
@@ -96,7 +92,7 @@ class ImportantNewsController: UIViewController, UITableViewDelegate, UITableVie
         }
         
     }
-
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let offsetY = scrollView.contentOffset.y
@@ -114,12 +110,12 @@ class ImportantNewsController: UIViewController, UITableViewDelegate, UITableVie
             self.subtitleLabel.alpha = 1 - ratio * 2
             // sb里需要将title2subtitleConstraint初始值设置为999(不能为1000)
             self.title2subtitleConstraint.priority = self.subtitleLabel.frame.origin.y - self.title2topviewConstraint.constant <= CGRectGetMaxY(self.topView.frame)  ? 500 : 999
-       
+            
             self.titleLabel.transform = CGAffineTransformMakeScale(scale, scale)
             
         }
         self.imageViewXConstraint.constant = constant
-
-       
+        
+        
     }
 }

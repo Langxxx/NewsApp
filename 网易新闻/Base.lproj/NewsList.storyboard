@@ -47,7 +47,7 @@
                                     <outlet property="cyclePictureView" destination="3kH-4b-Txt" id="cxw-z1-evy"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopBigPicture" rowHeight="222" id="GF0-P0-WA6" customClass="TopBigPicture" customModule="网易新闻" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopBigPictureCell" rowHeight="222" id="GF0-P0-WA6" customClass="TopBigPictureCell" customModule="网易新闻" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="52" width="600" height="222"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GF0-P0-WA6" id="1Jy-fo-ZZK">
@@ -486,7 +486,7 @@
                                             <outlet property="titleLabel" destination="mOQ-eo-uYV" id="Pte-pc-10J"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopBigPicture" rowHeight="222" id="MWX-e1-lYT" customClass="TopBigPicture" customModule="网易新闻" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopBigPictureCell" rowHeight="222" id="MWX-e1-lYT" customClass="TopBigPictureCell" customModule="网易新闻" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="205" width="600" height="222"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWX-e1-lYT" id="Zot-E0-Omo">
@@ -678,7 +678,6 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="pgp-dA-C4R" id="efY-b5-J2L"/>
                                     <outlet property="delegate" destination="pgp-dA-C4R" id="8n3-88-jRw"/>
                                 </connections>
                             </tableView>
@@ -1083,7 +1082,7 @@
                                             <outlet property="titleLabel" destination="Dt4-EH-3Bz" id="2tU-4H-jZ5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopBigPicture" rowHeight="222" id="hPZ-If-9oG" customClass="TopBigPicture" customModule="网易新闻" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopBigPictureCell" rowHeight="222" id="hPZ-If-9oG" customClass="TopBigPictureCell" customModule="网易新闻" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="600" height="222"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hPZ-If-9oG" id="vAz-MD-3fq">

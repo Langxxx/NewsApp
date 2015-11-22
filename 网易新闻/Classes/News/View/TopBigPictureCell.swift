@@ -1,5 +1,5 @@
 //
-//  TopBigPicture.swift
+//  TopBigPictureCell.swift
 //  网易新闻
 //
 //  Created by wl on 15/11/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopBigPicture: NewsCell {
+class TopBigPictureCell: NewsCell {
 
 
     @IBOutlet weak var bigImageView: UIImageView!

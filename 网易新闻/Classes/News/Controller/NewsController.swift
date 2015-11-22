@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsController: UIViewController, UIScrollViewDelegate {
+class NewsController: UIViewController {
     
  // MARK: - 属性
 //========================================================
@@ -139,7 +139,7 @@ class NewsController: UIViewController, UIScrollViewDelegate {
 
 // MARK: - UIScrollView的代理方法(newsContainerView)
 
-extension NewsController {
+extension NewsController: UIScrollViewDelegate{
     
     /**
     每次滑动newsContainerView都会调用，用来制造频道label的动画效果

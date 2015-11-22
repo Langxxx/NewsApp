@@ -4,7 +4,7 @@
 //
 //  Created by wl on 15/11/13.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  自定义label，用于频道显示
 
 import UIKit
 

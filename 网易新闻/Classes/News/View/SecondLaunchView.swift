@@ -4,7 +4,7 @@
 //
 //  Created by wl on 15/11/11.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  第二启动页面，使用xib
 
 import UIKit
 import Kingfisher
@@ -37,7 +37,7 @@ class SecondLaunchView: UIView {
     }
     
     deinit {
-        print("SecondLaunchView--deinit")
+//        print("SecondLaunchView--deinit")
     }
     
 }

@@ -4,20 +4,30 @@
 //
 //  Created by wl on 15/11/20.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  图片新闻界面控制器
 
 import UIKit
 // TODO: 最后一页推荐页使用cyclePictureView是做不了的，暂时先这样
 class PictureNewsController: UIViewController, CyclePictureViewDelegate {
-
+//========================================================
+// MARK: - 一些属性
+//========================================================
+    /// 顶部类似导航栏的视图
     @IBOutlet weak var topView: UIView!
+    /// 底部类似于tableBar的视图
     @IBOutlet weak var bottomView: UIView!
+    /// 新闻标题的容器
     @IBOutlet weak var titleContainerView: UIView!
     
+    /// 跟帖按钮，点击进入跟帖界面
     @IBOutlet weak var replyCountBtn: UIButton!
+    /// 图片查看器
     @IBOutlet weak var cyclePictureView: CyclePictureView!
+    /// 标题
     @IBOutlet weak var titleLabel: UILabel!
+    /// 页数
     @IBOutlet weak var pageLabel: UILabel!
+    /// 图片的描述
     @IBOutlet weak var NewsTextView: UITextView!
     
     var newsModel: NewsModel?
@@ -26,7 +36,9 @@ class PictureNewsController: UIViewController, CyclePictureViewDelegate {
             self.setupSubview()
         }
     }
-    
+//========================================================
+// MARK: - 一些方法
+//========================================================
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(self.newsModel?.photosetID != nil)

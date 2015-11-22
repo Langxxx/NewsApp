@@ -4,12 +4,14 @@
 //
 //  Created by wl on 15/11/16.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  新闻详情界面看控制器
 
 import UIKit
 
 class DetaillNewsController: UIViewController, UIWebViewDelegate {
-
+//========================================================
+// MARK: - 一些属性
+//========================================================
     var newsModel: NewsModel?
     var newsDetailModel: NewsDetailModel? {
         didSet {
@@ -17,11 +19,15 @@ class DetaillNewsController: UIViewController, UIWebViewDelegate {
             self.setupSubView()
         }
     }
-    
+    /// 右上角的跟帖按钮，点击进入评论界面
     @IBOutlet weak var replyCountBtn: UIButton!
+    /// 左上角返回按钮
     @IBOutlet weak var backBtn: UIButton!
+    /// 展示新闻的view
     @IBOutlet weak var webView: UIWebView!
-    
+//========================================================
+// MARK: - 一些方法
+//========================================================
     override func viewDidLoad() {
         super.viewDidLoad()
         self.webView.delegate = self
@@ -74,7 +80,9 @@ class DetaillNewsController: UIViewController, UIWebViewDelegate {
         self.webView.loadHTMLString(html, baseURL: nil)
 
     }
-
+    /**
+    被loadNewsDetail方法调用，用来拼接<body>的内容
+    */
     func getBody() -> String{
         
         var body = "<body>"
@@ -138,6 +146,9 @@ class DetaillNewsController: UIViewController, UIWebViewDelegate {
     
     
      // MARK: - UIWebView代理
+    /**
+    这里用来显示被点击的那一张图片
+    */
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         let str = request.URL?.absoluteString

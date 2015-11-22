@@ -4,7 +4,7 @@
 //
 //  Created by wl on 15/11/19.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  专题新闻的头部
 
 import UIKit
 
@@ -15,19 +15,24 @@ protocol SpecialNewsHeardViewDelegate : class{
 class SpecialNewsHeardView: UIView {
 
     weak var delegate: SpecialNewsHeardViewDelegate?
-    
+    /// 头部图片
     var heardImageView: UIImageView
+    /// 话题标签的数组
     var topicBtnArray: [UIButton]
+    /// 每个标签之间的距离
     var btnMarign: CGFloat = 10
-    
+    /// 每一行的标签个数
     let row: Int = 4
+    /// 标签的宽度
     let btnHeight: CGFloat = 20
     var btnwidth: CGFloat {
         get {
             return (self.frame.width - (CGFloat(row) * btnMarign + btnMarign)) / CGFloat(row)
         }
     }
+    /// 头部图片高度
     let heardImageViewHeight: CGFloat = 64
+    
     init(topics: [Topic], topImageStr: String, delegate: SpecialNewsHeardViewDelegate) {
         
         heardImageView = UIImageView()
@@ -62,7 +67,6 @@ class SpecialNewsHeardView: UIView {
         self.heardImageView.frame = CGRectMake(0, 0, self.frame.width, heardImageViewHeight)
         heardImageView.backgroundColor = UIColor.blackColor()
         for (index, btn) in self.topicBtnArray.enumerate() {
-            
             let btnx = btnMarign + CGFloat(index % row) * (btnMarign + btnwidth)
             let btny = CGFloat(index / row) * (btnHeight + btnMarign) +  btnMarign + heardImageViewHeight
             btn.frame = CGRectMake(btnx, btny, btnwidth, btnHeight)
@@ -70,7 +74,9 @@ class SpecialNewsHeardView: UIView {
         }
 
     }
-    // 通知代理
+    /**
+    当某个话题标签点击时，被调用。通知代理
+    */
     func btnClik(btn: UIButton) {
         self.delegate?.specialNewsTopicBtnClik(btn.tag)
     }

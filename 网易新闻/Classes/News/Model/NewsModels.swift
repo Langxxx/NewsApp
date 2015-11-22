@@ -4,16 +4,18 @@
 //
 //  Created by wl on 15/11/12.
 //  Copyright © 2015年 wl. All rights reserved.
-//
+//  数据模型
 
 import UIKit
 import SwiftyJSON
 
+//========================================================
+// MARK: - 频道所用模型
+//========================================================
 struct ChannelModel {
     var channelName: String
     var channelUrl: String
 }
-
 struct ChannelBox {
     
     var channels: [ChannelModel]
@@ -37,14 +39,57 @@ struct ChannelBox {
         }
     }
 }
-
+//========================================================
+// MARK: - 新闻所用模型
+//========================================================
+/**
+*  新闻的基础协议
+*/
 protocol NewsModelInitProtocol {
     init(json: JSON)
 }
+/**
+*  为遵守NewsModelInitProtocol的模型类便捷创建
+* 对应的模型的数组
+*/
+struct ModelArrayProvider {
+    static func arrayModel<T: NewsModelInitProtocol>(anyClass: AnyClass,json: JSON) -> [T]? {
+        guard json != nil else {
+            return nil
+        }
+        if anyClass is T.Type {
+            let model = anyClass as! T.Type
+            var array = [T]()
+            for (_, dict) in json {
+                array.append(model.init(json: dict))
+            }
+            return array
+        }else {
+            return nil
+        }
+    }
+    
+    static func arrayWithJson(json: JSON) -> [String]?{
+        
+        guard json != nil else {
+            return nil
+        }
+        
+        var array: [String] = []
+        
+        for (_, dict) in json {
+            array.append(dict["imgextra"].stringValue)
+        }
+        return array
+    }
+}
 
-/*
- 这个是新闻轮播器的数据模型
- */
+//========================================================
+// MARK: 新闻列表所用模型
+//========================================================
+/**
+*  这个是新闻轮播器的数据模型
+*/
 class Ads: NewsModelInitProtocol {
     var title: String
     var tag: String
@@ -66,12 +111,11 @@ class Ads: NewsModelInitProtocol {
         specialID = json["specialID"].string
     }
 }
-/*
-  这个是新闻数据模型，每一个模型对应一个cell。
-这些属性只是暂时提取出来的一小部分，以后会有添加
- */
+/**
+*  这个是新闻数据模型，每一个模型对应一个cell。
+*/
 class NewsModel: NewsModelInitProtocol{
-    
+    // 这个模型对应cell的种类，自定义的数据，不是接受自网络
     var cellType: CellType!
     
  /// 新闻所属于频道(类别)
@@ -111,10 +155,10 @@ class NewsModel: NewsModelInitProtocol{
         ptime = json["ptime"].stringValue
         imgsrc = json["imgsrc"].stringValue
         digest = json["digest"].string
-        imgextra = [String].arrayWithJson(json["imgextra"])
+        imgextra = ModelArrayProvider.arrayWithJson(json["imgextra"])
         replyCount = json["replyCount"].int
         url_3w = json["url_3w"].string
-        ads = [Ads].arrayModel(Ads.self, json: json["ads"])
+        ads = ModelArrayProvider.arrayModel(Ads.self, json: json["ads"])
         specialID = json["specialID"].string
         tags = json["TAGS"].string
         imgType = json["imgType"].int
@@ -126,22 +170,12 @@ class NewsModel: NewsModelInitProtocol{
     }
 
 }
-
-enum CellType: String{
-    case ScrollPictureCell =  "ScrollPictureCell"
-    case NormalNewsCell = "NormalNewsCell"
-    case ThreePictureCell = "ThreePictureCell"
-    case BigPictureCell = "BigPictureCell"
-    case TopBigPicture = "TopBigPicture"
-}
-
 extension NewsModel {
-    
     func judgeCellType() {
         if self.ads != nil {
             self.cellType = .ScrollPictureCell
         }else if self.hasHead != nil {
-            self.cellType = .TopBigPicture
+            self.cellType = .TopBigPictureCell
         }else if let imgType = self.imgType where imgType > 0 {
             self.cellType = .BigPictureCell
         }else if self.imgextra != nil {
@@ -151,113 +185,29 @@ extension NewsModel {
         }
     }
 }
+/**
+每一种类型的新闻对应的应该展示的cell的种类
 
+- ScrollPictureCell: 滚动新闻
+- NormalNewsCell:    一般新闻(普通新闻、专题新闻、直播等等，这种cell主要特征是只有一张图片)
+- ThreePictureCell:  多图新闻(这种新闻cell有三张图片)
+- BigPictureCell:    大图新闻(这种cell主要特征是有一大张图片)
+- TopBigPictureCell: 顶部的大图(这种cell主要特征是有一大张图片)
+*/
+enum CellType: String{
+    
+    case ScrollPictureCell, NormalNewsCell, ThreePictureCell, BigPictureCell, TopBigPictureCell
 
-class NewsDetailImgModel: NewsModelInitProtocol{
-    /// 图片的位置
-    var ref: String
-    /// 图片大小
-    var pixel: String
-    /// 图片的描述信息
-    var alt: String
-    /// 图片位置
-    var src: String
-    
-    required init(json: JSON) {
-        ref = json["ref"].stringValue
-        pixel = json["pixel"].stringValue
-        alt = json["alt"].stringValue
-        src = json["src"].stringValue
+    func cellHeight() -> CGFloat {
+        switch self {
+        case .ScrollPictureCell, .TopBigPictureCell:
+            return 222
+        case .NormalNewsCell:
+            return 90
+        case .ThreePictureCell:
+            return 108
+        case .BigPictureCell:
+            return 177
+        }
     }
-}
-/*
-    新闻详情模型
-*/
-class NewsDetailModel {
- /// 新闻标题
-    var title: String
- /// 新闻发布时间
-    var ptime: String
- /// 新闻内容
-    var body: String
- /// 新闻详情的图片模型
-    var img: [NewsDetailImgModel]
-    init(json: JSON) {
-        title = json["title"].stringValue
-        ptime = json["ptime"].stringValue
-        body = json["body"].stringValue
-        img = [NewsDetailImgModel].arrayModel(NewsDetailImgModel.self, json: json["img"])!
-    }
-    
-}
-
-/*
-    专题内的子话题模型
-*/
-class Topic: NewsModelInitProtocol{
-    /// 话题名
-    var tname: String
-    /// 索引
-    var index: Int
-    /// 话题内的新闻
-    var docs: [NewsModel]
-    
-    required init(json: JSON) {
-        tname = json["tname"].stringValue
-        index = json["index"].intValue
-        docs = [NewsModel].arrayModel(NewsModel.self, json: json["docs"])!
-    }
-}
-/*
-    专题新闻模型
-*/
-class NewsSpecialModel {
- /// 新闻专题名
-    var sname: String
- /// 发布时间
-    var ptime: String
- /// 图片
-    var banner: String
- /// 子话题
-    var topics: [Topic]
-    
-    init(json: JSON) {
-        sname = json["sname"].stringValue
-        ptime = json["ptime"].stringValue
-        banner = json["banner"].stringValue
-        topics = [Topic].arrayModel(Topic.self, json: json["topics"])!
-    }
-}
-
-
-/*
-    图片新闻内容模型
-*/
-class Photo: NewsModelInitProtocol{
-    /// 描述
-    var note: String
-    var imgurl: String
-    
-    required init(json: JSON) {
-        note = json["note"].stringValue
-        imgurl = json["imgurl"].stringValue
-    }
-}
-/*
-    图片新闻的模型
-*/
-class NewsPictureModel {
- /// 图片新闻内容
-    var photos: [Photo]
- /// 名称
-    var setname: String
- /// 数量
-    var imgsum: Int
-    
-    init(json: JSON) {
-        setname = json["setname"].stringValue
-        imgsum = json["imgsum"].intValue
-        photos = [Photo].arrayModel(Photo.self, json: json["photos"])!
-    }
-    
 }
