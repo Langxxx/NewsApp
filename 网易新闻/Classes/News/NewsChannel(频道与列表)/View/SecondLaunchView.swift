@@ -7,7 +7,6 @@
 //  第二启动页面，使用xib
 
 import UIKit
-import Kingfisher
 
 class SecondLaunchView: UIView {
 
