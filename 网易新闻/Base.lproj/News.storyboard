@@ -58,7 +58,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LOW-Uf-te9">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="navigation_bell_normal" id="ko1-5G-rLH">
+                        <barButtonItem key="leftBarButtonItem" image="navigation_bell_normal" style="done" id="ko1-5G-rLH">
                             <connections>
                                 <action selector="importantNewsBtnClik:" destination="dBa-Mm-8Pn" id="CUR-wM-zXu"/>
                             </connections>
@@ -79,7 +79,7 @@
                                 <constraint firstAttribute="bottom" secondItem="RAj-7g-vuB" secondAttribute="bottom" id="yKd-51-XQb"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="5ga-Xi-Z8C">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="5ga-Xi-Z8C">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xRK-BT-CO4">
                                 <rect key="frame" x="558" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
