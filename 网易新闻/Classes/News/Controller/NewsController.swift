@@ -26,7 +26,13 @@ class NewsController: UIViewController {
 //========================================================
     @IBOutlet weak var newsContainerView: NewsContainerView!
     var newsListVcArray: [NewsListContorller] = []
-
+//========================================================
+// MARK: 天气按钮属性
+//========================================================
+    var weatherView: WeatherView!
+    var isShow: Bool = false
+    @IBOutlet weak var weatherBtn: UIButton!
+    
  // MARK: - 初始化方法
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +43,8 @@ class NewsController: UIViewController {
         self.setupChannelScrollView()
         self.setupNewsContainerView()
         self.showFirstNewsList()
+        self.setupWeatherView()
+        
     }
 
     /**
@@ -122,8 +130,23 @@ class NewsController: UIViewController {
         //代码滚动到显示了那一"页"
         self.scrollViewDidEndScrollingAnimation(self.newsContainerView)
     }
+    /**
+    初始化天气界面
+    */
+    func setupWeatherView() {
+        let weatherView = WeatherView.weatherView()
+        weatherView.alpha = 0.9;
+        weatherView.frame.size.width = UIScreen.mainScreen().bounds.width
+        weatherView.frame.size.height = UIScreen.mainScreen().bounds.height
+        weatherView.hidden = true
+        weatherView.delegate = self
+        self.view.addSubview(weatherView)
+        self.weatherView = weatherView
+    }
     
-
+//========================================================
+// MARK: - 监听方法
+//========================================================
     @IBAction func importantNewsBtnClik(sender: AnyObject) {
         let sb = UIStoryboard(name: "NewsList", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("ImportantNewsController") as! ImportantNewsController
@@ -134,8 +157,70 @@ class NewsController: UIViewController {
         }
     }
     
+    @IBAction func weatherBtnClik(btn: UIButton) {
+        let oldFrame = btn.frame
+        if self.isShow { //显示 ==》关闭
+            self.weatherView.hidden = true
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                btn.transform = CGAffineTransformRotate(btn.transform, CGFloat(M_1_PI * 4))
+                }, completion: { (finish) -> Void in
+                     btn.transform = CGAffineTransformIdentity
+                    btn.setImage(UIImage(named: "navigation_square"), forState: .Normal)
+                    btn.frame = oldFrame
+            })
+            
+        }else {
+            
+            btn.setImage(UIImage(named: "000"), forState: .Normal)
+            self.weatherView.show()
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                btn.transform = CGAffineTransformRotate(btn.transform, CGFloat(-M_1_PI * 4))
+                }, completion: { (finish) -> Void in
+                    btn.transform = CGAffineTransformIdentity
+                    btn.frame = oldFrame
+            })
+        }
+        
+        self.isShow = !self.isShow
+    }
+
+
+    
+}
+// MARK: - WeatherView的代理方法
+extension NewsController: WeatherViewDelegate {
+    /**
+    天气详情被点击
+    */
+    func detailBtnClik(weatherModel: WeatherModel) {
+        
+        let vc = UIStoryboard(name: "Weather", bundle: nil).instantiateInitialViewController() as! WeatherDetailController
+        vc.weatherModel = weatherModel
+        self.navigationController?.pushViewController(vc, animated: true)
+        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+            interactivePopGestureRecognizer.delegate = nil
+        }
+
+        self.weatherBtnClik(self.weatherBtn)
+    }
+    /**
+    选择城市的按钮被点击
+    */
+    func selectBtnClik() {
+        let vc = CitySelectController()
+        let nav = UINavigationController(rootViewController: vc)
+        vc.title = "您所在的城市"
+        vc.delegate = self
+        self.navigationController?.presentViewController(nav, animated: true, completion: nil)
+    }
 }
 
+// MARK: - CitySelectController的代理方法
+extension NewsController: CitySelectControllerDelegate{
+    func didSelectCity(citymodel: CityModel) {
+        self.weatherView.cityModel = citymodel
+    }
+}
 
 // MARK: - UIScrollView的代理方法(newsContainerView)
 

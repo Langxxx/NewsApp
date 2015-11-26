@@ -1,0 +1,2984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>A</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>阿坝</string>
+			<key>cityID</key>
+			<string>101271901</string>
+			<key>py</key>
+			<string>a ba</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阿克苏</string>
+			<key>cityID</key>
+			<string>101130801</string>
+			<key>py</key>
+			<string>a ke su</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阿拉尔</string>
+			<key>cityID</key>
+			<string>101130701</string>
+			<key>py</key>
+			<string>a la er</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阿拉善左旗</string>
+			<key>cityID</key>
+			<string>101081201</string>
+			<key>py</key>
+			<string>a la shan zuo qi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阿勒泰</string>
+			<key>cityID</key>
+			<string>101131401</string>
+			<key>py</key>
+			<string>a lei tai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阿里</string>
+			<key>cityID</key>
+			<string>101140701</string>
+			<key>py</key>
+			<string>a li</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阿图什</string>
+			<key>cityID</key>
+			<string>101131501</string>
+			<key>py</key>
+			<string>a tu shen</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>安康</string>
+			<key>cityID</key>
+			<string>101110701</string>
+			<key>py</key>
+			<string>an kang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>安庆</string>
+			<key>cityID</key>
+			<string>101220601</string>
+			<key>py</key>
+			<string>an qing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>鞍山</string>
+			<key>cityID</key>
+			<string>101070301</string>
+			<key>py</key>
+			<string>an shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>安顺</string>
+			<key>cityID</key>
+			<string>101260301</string>
+			<key>py</key>
+			<string>an shun</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>安阳</string>
+			<key>cityID</key>
+			<string>101180201</string>
+			<key>py</key>
+			<string>an yang</string>
+		</dict>
+	</array>
+	<key>B</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>巴中</string>
+			<key>cityID</key>
+			<string>101270901</string>
+			<key>py</key>
+			<string>ba zhong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>白城</string>
+			<key>cityID</key>
+			<string>101060601</string>
+			<key>py</key>
+			<string>bai cheng</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>百色</string>
+			<key>cityID</key>
+			<string>101301001</string>
+			<key>py</key>
+			<string>bai se</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>白沙</string>
+			<key>cityID</key>
+			<string>101310207</string>
+			<key>py</key>
+			<string>bai sha</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>白山</string>
+			<key>cityID</key>
+			<string>101060901</string>
+			<key>py</key>
+			<string>bai shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>白银</string>
+			<key>cityID</key>
+			<string>101161301</string>
+			<key>py</key>
+			<string>bai yin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>蚌埠</string>
+			<key>cityID</key>
+			<string>101220201</string>
+			<key>py</key>
+			<string>bang bu</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>保定</string>
+			<key>cityID</key>
+			<string>101090201</string>
+			<key>py</key>
+			<string>bao ding</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宝鸡</string>
+			<key>cityID</key>
+			<string>101110901</string>
+			<key>py</key>
+			<string>bao ji</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>保山</string>
+			<key>cityID</key>
+			<string>101290501</string>
+			<key>py</key>
+			<string>bao shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>保亭</string>
+			<key>cityID</key>
+			<string>101310214</string>
+			<key>py</key>
+			<string>bao ting</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>包头</string>
+			<key>cityID</key>
+			<string>101080201</string>
+			<key>py</key>
+			<string>bao tou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>北海</string>
+			<key>cityID</key>
+			<string>101301301</string>
+			<key>py</key>
+			<string>bei hai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>北京</string>
+			<key>cityID</key>
+			<string>101010100</string>
+			<key>py</key>
+			<string>bei jing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>本溪</string>
+			<key>cityID</key>
+			<string>101070501</string>
+			<key>py</key>
+			<string>ben xi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>毕节</string>
+			<key>cityID</key>
+			<string>101260701</string>
+			<key>py</key>
+			<string>bi jie</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>滨州</string>
+			<key>cityID</key>
+			<string>101121101</string>
+			<key>py</key>
+			<string>bin zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>博乐</string>
+			<key>cityID</key>
+			<string>101131601</string>
+			<key>py</key>
+			<string>bo le</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>亳州</string>
+			<key>cityID</key>
+			<string>101220901</string>
+			<key>py</key>
+			<string>bo zhou</string>
+		</dict>
+	</array>
+	<key>C</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>沧州</string>
+			<key>cityID</key>
+			<string>101090701</string>
+			<key>py</key>
+			<string>cang zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>常德</string>
+			<key>cityID</key>
+			<string>101250601</string>
+			<key>py</key>
+			<string>chang de</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>昌都</string>
+			<key>cityID</key>
+			<string>101140501</string>
+			<key>py</key>
+			<string>chang dou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>昌吉</string>
+			<key>cityID</key>
+			<string>101130401</string>
+			<key>py</key>
+			<string>chang ji</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>昌江</string>
+			<key>cityID</key>
+			<string>101310206</string>
+			<key>py</key>
+			<string>chang jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>常州</string>
+			<key>cityID</key>
+			<string>101191101</string>
+			<key>py</key>
+			<string>chang zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>巢湖</string>
+			<key>cityID</key>
+			<string>101221601</string>
+			<key>py</key>
+			<string>chao hu</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>朝阳</string>
+			<key>cityID</key>
+			<string>101071201</string>
+			<key>py</key>
+			<string>chao yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>潮州</string>
+			<key>cityID</key>
+			<string>101281501</string>
+			<key>py</key>
+			<string>chao zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>郴州</string>
+			<key>cityID</key>
+			<string>101250501</string>
+			<key>py</key>
+			<string>chen zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>承德</string>
+			<key>cityID</key>
+			<string>101090402</string>
+			<key>py</key>
+			<string>cheng de</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>成都</string>
+			<key>cityID</key>
+			<string>101270101</string>
+			<key>py</key>
+			<string>cheng dou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>澄迈</string>
+			<key>cityID</key>
+			<string>101310204</string>
+			<key>py</key>
+			<string>cheng mai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>赤峰</string>
+			<key>cityID</key>
+			<string>101080601</string>
+			<key>py</key>
+			<string>chi feng</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>池州</string>
+			<key>cityID</key>
+			<string>101221701</string>
+			<key>py</key>
+			<string>chi zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>重庆</string>
+			<key>cityID</key>
+			<string>101040100</string>
+			<key>py</key>
+			<string>chong qing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>崇左</string>
+			<key>cityID</key>
+			<string>101300201</string>
+			<key>py</key>
+			<string>chong zuo</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>楚雄</string>
+			<key>cityID</key>
+			<string>101290801</string>
+			<key>py</key>
+			<string>chu xiong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>滁州</string>
+			<key>cityID</key>
+			<string>101221101</string>
+			<key>py</key>
+			<string>chu zhou</string>
+		</dict>
+	</array>
+	<key>D</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>大理</string>
+			<key>cityID</key>
+			<string>101290201</string>
+			<key>py</key>
+			<string>da li</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>大连</string>
+			<key>cityID</key>
+			<string>101070201</string>
+			<key>py</key>
+			<string>da lian</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>大庆</string>
+			<key>cityID</key>
+			<string>101050901</string>
+			<key>py</key>
+			<string>da qing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>大同</string>
+			<key>cityID</key>
+			<string>101100201</string>
+			<key>py</key>
+			<string>da tong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>大兴安岭</string>
+			<key>cityID</key>
+			<string>101050701</string>
+			<key>py</key>
+			<string>da xing an ling</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>达州</string>
+			<key>cityID</key>
+			<string>101270601</string>
+			<key>py</key>
+			<string>da zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>丹东</string>
+			<key>cityID</key>
+			<string>101070601</string>
+			<key>py</key>
+			<string>dan dong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>儋州</string>
+			<key>cityID</key>
+			<string>101310205</string>
+			<key>py</key>
+			<string>dan zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>德宏</string>
+			<key>cityID</key>
+			<string>101291501</string>
+			<key>py</key>
+			<string>de hong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>德阳</string>
+			<key>cityID</key>
+			<string>101272001</string>
+			<key>py</key>
+			<string>de yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>德州</string>
+			<key>cityID</key>
+			<string>101120401</string>
+			<key>py</key>
+			<string>de zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>定安</string>
+			<key>cityID</key>
+			<string>101310209</string>
+			<key>py</key>
+			<string>ding an</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>定西</string>
+			<key>cityID</key>
+			<string>101160201</string>
+			<key>py</key>
+			<string>ding xi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>东方</string>
+			<key>cityID</key>
+			<string>101310202</string>
+			<key>py</key>
+			<string>dong fang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>东莞</string>
+			<key>cityID</key>
+			<string>101281601</string>
+			<key>py</key>
+			<string>dong guan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>东营</string>
+			<key>cityID</key>
+			<string>101121201</string>
+			<key>py</key>
+			<string>dong ying</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>都匀</string>
+			<key>cityID</key>
+			<string>101260401</string>
+			<key>py</key>
+			<string>dou yun</string>
+		</dict>
+	</array>
+	<key>E</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>鄂尔多斯</string>
+			<key>cityID</key>
+			<string>101080701</string>
+			<key>py</key>
+			<string>e er duo si</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>鄂州</string>
+			<key>cityID</key>
+			<string>101200301</string>
+			<key>py</key>
+			<string>e zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>恩施</string>
+			<key>cityID</key>
+			<string>101201001</string>
+			<key>py</key>
+			<string>en shi</string>
+		</dict>
+	</array>
+	<key>F</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>防城港</string>
+			<key>cityID</key>
+			<string>101301401</string>
+			<key>py</key>
+			<string>fang cheng gang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>佛山</string>
+			<key>cityID</key>
+			<string>101280800</string>
+			<key>py</key>
+			<string>fu shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>抚顺</string>
+			<key>cityID</key>
+			<string>101070401</string>
+			<key>py</key>
+			<string>fu shun</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阜新</string>
+			<key>cityID</key>
+			<string>101070901</string>
+			<key>py</key>
+			<string>fu xin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阜阳</string>
+			<key>cityID</key>
+			<string>101220801</string>
+			<key>py</key>
+			<string>fu yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>福州</string>
+			<key>cityID</key>
+			<string>101230101</string>
+			<key>py</key>
+			<string>fu zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>抚州</string>
+			<key>cityID</key>
+			<string>101240401</string>
+			<key>py</key>
+			<string>fu zhou</string>
+		</dict>
+	</array>
+	<key>G</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>赣州</string>
+			<key>cityID</key>
+			<string>101240701</string>
+			<key>py</key>
+			<string>gan zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>甘孜</string>
+			<key>cityID</key>
+			<string>101271801</string>
+			<key>py</key>
+			<string>gan zi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>高雄</string>
+			<key>cityID</key>
+			<string>101340201</string>
+			<key>py</key>
+			<string>gao xiong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>固原</string>
+			<key>cityID</key>
+			<string>101170401</string>
+			<key>py</key>
+			<string>gu yuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>广安</string>
+			<key>cityID</key>
+			<string>101270801</string>
+			<key>py</key>
+			<string>guang an</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>广元</string>
+			<key>cityID</key>
+			<string>101272101</string>
+			<key>py</key>
+			<string>guang yuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>广州</string>
+			<key>cityID</key>
+			<string>101280101</string>
+			<key>py</key>
+			<string>guang zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>贵港</string>
+			<key>cityID</key>
+			<string>101300801</string>
+			<key>py</key>
+			<string>gui gang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>桂林</string>
+			<key>cityID</key>
+			<string>101300501</string>
+			<key>py</key>
+			<string>gui lin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>贵阳</string>
+			<key>cityID</key>
+			<string>101260101</string>
+			<key>py</key>
+			<string>gui yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>果洛</string>
+			<key>cityID</key>
+			<string>101150501</string>
+			<key>py</key>
+			<string>guo luo</string>
+		</dict>
+	</array>
+	<key>H</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>哈尔滨</string>
+			<key>cityID</key>
+			<string>101050101</string>
+			<key>py</key>
+			<string>ha er bin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>哈密</string>
+			<key>cityID</key>
+			<string>101131201</string>
+			<key>py</key>
+			<string>ha mi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>海北</string>
+			<key>cityID</key>
+			<string>101150801</string>
+			<key>py</key>
+			<string>hai bei</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>海东</string>
+			<key>cityID</key>
+			<string>101150201</string>
+			<key>py</key>
+			<string>hai dong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>海口</string>
+			<key>cityID</key>
+			<string>101310101</string>
+			<key>py</key>
+			<string>hai kou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>海南</string>
+			<key>cityID</key>
+			<string>101150401</string>
+			<key>py</key>
+			<string>hai nan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>海西</string>
+			<key>cityID</key>
+			<string>101150701</string>
+			<key>py</key>
+			<string>hai xi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>邯郸</string>
+			<key>cityID</key>
+			<string>101091001</string>
+			<key>py</key>
+			<string>han dan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>汉中</string>
+			<key>cityID</key>
+			<string>101110801</string>
+			<key>py</key>
+			<string>han zhong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>杭州</string>
+			<key>cityID</key>
+			<string>101210101</string>
+			<key>py</key>
+			<string>hang zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>鹤壁</string>
+			<key>cityID</key>
+			<string>101181201</string>
+			<key>py</key>
+			<string>he bi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>河池</string>
+			<key>cityID</key>
+			<string>101301201</string>
+			<key>py</key>
+			<string>he chi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>合肥</string>
+			<key>cityID</key>
+			<string>101220101</string>
+			<key>py</key>
+			<string>he fei</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>鹤岗</string>
+			<key>cityID</key>
+			<string>101051201</string>
+			<key>py</key>
+			<string>he gang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>和田</string>
+			<key>cityID</key>
+			<string>101131301</string>
+			<key>py</key>
+			<string>he tian</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>河源</string>
+			<key>cityID</key>
+			<string>101281201</string>
+			<key>py</key>
+			<string>he yuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>菏泽</string>
+			<key>cityID</key>
+			<string>101121001</string>
+			<key>py</key>
+			<string>he ze</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>贺州</string>
+			<key>cityID</key>
+			<string>101300701</string>
+			<key>py</key>
+			<string>he zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>合作</string>
+			<key>cityID</key>
+			<string>101161201</string>
+			<key>py</key>
+			<string>he zuo</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>黑河</string>
+			<key>cityID</key>
+			<string>101050601</string>
+			<key>py</key>
+			<string>hei he</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>衡水</string>
+			<key>cityID</key>
+			<string>101090801</string>
+			<key>py</key>
+			<string>heng shui</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>衡阳</string>
+			<key>cityID</key>
+			<string>101250401</string>
+			<key>py</key>
+			<string>heng yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>红河</string>
+			<key>cityID</key>
+			<string>101290301</string>
+			<key>py</key>
+			<string>hong he</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>呼和浩特</string>
+			<key>cityID</key>
+			<string>101080101</string>
+			<key>py</key>
+			<string>hu he hao te</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>葫芦岛</string>
+			<key>cityID</key>
+			<string>101071401</string>
+			<key>py</key>
+			<string>hu lu dao</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>呼伦贝尔</string>
+			<key>cityID</key>
+			<string>101081000</string>
+			<key>py</key>
+			<string>hu lun bei er</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>湖州</string>
+			<key>cityID</key>
+			<string>101210201</string>
+			<key>py</key>
+			<string>hu zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>淮安</string>
+			<key>cityID</key>
+			<string>101190901</string>
+			<key>py</key>
+			<string>huai an</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>淮北</string>
+			<key>cityID</key>
+			<string>101221201</string>
+			<key>py</key>
+			<string>huai bei</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>怀化</string>
+			<key>cityID</key>
+			<string>101251201</string>
+			<key>py</key>
+			<string>huai hua</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>淮南</string>
+			<key>cityID</key>
+			<string>101220401</string>
+			<key>py</key>
+			<string>huai nan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>黄冈</string>
+			<key>cityID</key>
+			<string>101200501</string>
+			<key>py</key>
+			<string>huang gang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>黄南</string>
+			<key>cityID</key>
+			<string>101150301</string>
+			<key>py</key>
+			<string>huang nan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>黄山</string>
+			<key>cityID</key>
+			<string>101221001</string>
+			<key>py</key>
+			<string>huang shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>黄石</string>
+			<key>cityID</key>
+			<string>101200601</string>
+			<key>py</key>
+			<string>huang shi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>惠州</string>
+			<key>cityID</key>
+			<string>101280301</string>
+			<key>py</key>
+			<string>hui zhou</string>
+		</dict>
+	</array>
+	<key>J</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>吉林</string>
+			<key>cityID</key>
+			<string>101060201</string>
+			<key>py</key>
+			<string>ji lin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>济南</string>
+			<key>cityID</key>
+			<string>101120101</string>
+			<key>py</key>
+			<string>ji nan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>集宁</string>
+			<key>cityID</key>
+			<string>101080401</string>
+			<key>py</key>
+			<string>ji ning</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>济宁</string>
+			<key>cityID</key>
+			<string>101120701</string>
+			<key>py</key>
+			<string>ji ning</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>吉首</string>
+			<key>cityID</key>
+			<string>101251501</string>
+			<key>py</key>
+			<string>ji shou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>鸡西</string>
+			<key>cityID</key>
+			<string>101051101</string>
+			<key>py</key>
+			<string>ji xi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>济源</string>
+			<key>cityID</key>
+			<string>101181801</string>
+			<key>py</key>
+			<string>ji yuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>佳木斯</string>
+			<key>cityID</key>
+			<string>101050401</string>
+			<key>py</key>
+			<string>jia mu si</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>嘉兴</string>
+			<key>cityID</key>
+			<string>101210301</string>
+			<key>py</key>
+			<string>jia xing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>嘉峪关</string>
+			<key>cityID</key>
+			<string>101161401</string>
+			<key>py</key>
+			<string>jia yu guan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>江门</string>
+			<key>cityID</key>
+			<string>101281101</string>
+			<key>py</key>
+			<string>jiang men</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>焦作</string>
+			<key>cityID</key>
+			<string>101181101</string>
+			<key>py</key>
+			<string>jiao zuo</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>揭阳</string>
+			<key>cityID</key>
+			<string>101281901</string>
+			<key>py</key>
+			<string>jie yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>金昌</string>
+			<key>cityID</key>
+			<string>101160601</string>
+			<key>py</key>
+			<string>jin chang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>晋城</string>
+			<key>cityID</key>
+			<string>101100601</string>
+			<key>py</key>
+			<string>jin cheng</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>金华</string>
+			<key>cityID</key>
+			<string>101210901</string>
+			<key>py</key>
+			<string>jin hua</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>晋江</string>
+			<key>cityID</key>
+			<string>101230509</string>
+			<key>py</key>
+			<string>jin jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>晋中</string>
+			<key>cityID</key>
+			<string>101100401</string>
+			<key>py</key>
+			<string>jin zhong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>锦州</string>
+			<key>cityID</key>
+			<string>101070701</string>
+			<key>py</key>
+			<string>jin zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>景德镇</string>
+			<key>cityID</key>
+			<string>101240801</string>
+			<key>py</key>
+			<string>jing de zhen</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>景洪</string>
+			<key>cityID</key>
+			<string>101291601</string>
+			<key>py</key>
+			<string>jing hong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>荆门</string>
+			<key>cityID</key>
+			<string>101201401</string>
+			<key>py</key>
+			<string>jing men</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>荆州</string>
+			<key>cityID</key>
+			<string>101200801</string>
+			<key>py</key>
+			<string>jing zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>九江</string>
+			<key>cityID</key>
+			<string>101240201</string>
+			<key>py</key>
+			<string>jiu jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>酒泉</string>
+			<key>cityID</key>
+			<string>101160801</string>
+			<key>py</key>
+			<string>jiu quan</string>
+		</dict>
+	</array>
+	<key>K</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>喀什</string>
+			<key>cityID</key>
+			<string>101130901</string>
+			<key>py</key>
+			<string>ka shen</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>开封</string>
+			<key>cityID</key>
+			<string>101180801</string>
+			<key>py</key>
+			<string>kai feng</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>凯里</string>
+			<key>cityID</key>
+			<string>101260501</string>
+			<key>py</key>
+			<string>kai li</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>克拉玛依</string>
+			<key>cityID</key>
+			<string>101130201</string>
+			<key>py</key>
+			<string>ke la ma yi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>库尔勒</string>
+			<key>cityID</key>
+			<string>101130601</string>
+			<key>py</key>
+			<string>ku er lei</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>昆明</string>
+			<key>cityID</key>
+			<string>101290101</string>
+			<key>py</key>
+			<string>kun ming</string>
+		</dict>
+	</array>
+	<key>L</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>拉萨</string>
+			<key>cityID</key>
+			<string>101140101</string>
+			<key>py</key>
+			<string>la sa</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>来宾</string>
+			<key>cityID</key>
+			<string>101300401</string>
+			<key>py</key>
+			<string>lai bin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>莱芜</string>
+			<key>cityID</key>
+			<string>101121601</string>
+			<key>py</key>
+			<string>lai wu</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>兰州</string>
+			<key>cityID</key>
+			<string>101160101</string>
+			<key>py</key>
+			<string>lan zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>廊坊</string>
+			<key>cityID</key>
+			<string>101090601</string>
+			<key>py</key>
+			<string>lang fang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>乐东</string>
+			<key>cityID</key>
+			<string>101310221</string>
+			<key>py</key>
+			<string>le dong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>乐山</string>
+			<key>cityID</key>
+			<string>101271401</string>
+			<key>py</key>
+			<string>le shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>丽江</string>
+			<key>cityID</key>
+			<string>101291401</string>
+			<key>py</key>
+			<string>li jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>丽水</string>
+			<key>cityID</key>
+			<string>101210801</string>
+			<key>py</key>
+			<string>li shui</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>连云港</string>
+			<key>cityID</key>
+			<string>101191001</string>
+			<key>py</key>
+			<string>lian yun gang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>凉山</string>
+			<key>cityID</key>
+			<string>101271601</string>
+			<key>py</key>
+			<string>liang shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>聊城</string>
+			<key>cityID</key>
+			<string>101121701</string>
+			<key>py</key>
+			<string>liao cheng</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>辽阳</string>
+			<key>cityID</key>
+			<string>101071001</string>
+			<key>py</key>
+			<string>liao yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>辽源</string>
+			<key>cityID</key>
+			<string>101060701</string>
+			<key>py</key>
+			<string>liao yuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>临沧</string>
+			<key>cityID</key>
+			<string>101291101</string>
+			<key>py</key>
+			<string>lin cang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>临汾</string>
+			<key>cityID</key>
+			<string>101100701</string>
+			<key>py</key>
+			<string>lin fen</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>临高</string>
+			<key>cityID</key>
+			<string>101310203</string>
+			<key>py</key>
+			<string>lin gao</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>临河</string>
+			<key>cityID</key>
+			<string>101080801</string>
+			<key>py</key>
+			<string>lin he</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>临夏</string>
+			<key>cityID</key>
+			<string>101161101</string>
+			<key>py</key>
+			<string>lin xia</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>临沂</string>
+			<key>cityID</key>
+			<string>101120901</string>
+			<key>py</key>
+			<string>lin yi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>林芝</string>
+			<key>cityID</key>
+			<string>101140401</string>
+			<key>py</key>
+			<string>lin zhi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>陵水</string>
+			<key>cityID</key>
+			<string>101310216</string>
+			<key>py</key>
+			<string>ling shui</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>六安</string>
+			<key>cityID</key>
+			<string>101221501</string>
+			<key>py</key>
+			<string>liu an</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>六盘水</string>
+			<key>cityID</key>
+			<string>101260801</string>
+			<key>py</key>
+			<string>liu pan shui</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>柳州</string>
+			<key>cityID</key>
+			<string>101300301</string>
+			<key>py</key>
+			<string>liu zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>龙岩</string>
+			<key>cityID</key>
+			<string>101230701</string>
+			<key>py</key>
+			<string>long yan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>娄底</string>
+			<key>cityID</key>
+			<string>101250801</string>
+			<key>py</key>
+			<string>lou di</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>吕梁</string>
+			<key>cityID</key>
+			<string>101101100</string>
+			<key>py</key>
+			<string>lu liang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>泸州</string>
+			<key>cityID</key>
+			<string>101271001</string>
+			<key>py</key>
+			<string>lu zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>漯河</string>
+			<key>cityID</key>
+			<string>101181501</string>
+			<key>py</key>
+			<string>luo he</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>洛阳</string>
+			<key>cityID</key>
+			<string>101180901</string>
+			<key>py</key>
+			<string>luo yang</string>
+		</dict>
+	</array>
+	<key>M</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>马鞍山</string>
+			<key>cityID</key>
+			<string>101220501</string>
+			<key>py</key>
+			<string>ma an shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>茂名</string>
+			<key>cityID</key>
+			<string>101282001</string>
+			<key>py</key>
+			<string>mao ming</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>眉山</string>
+			<key>cityID</key>
+			<string>101271501</string>
+			<key>py</key>
+			<string>mei shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>梅州</string>
+			<key>cityID</key>
+			<string>101280401</string>
+			<key>py</key>
+			<string>mei zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>绵阳</string>
+			<key>cityID</key>
+			<string>101270401</string>
+			<key>py</key>
+			<string>mian yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>牡丹江</string>
+			<key>cityID</key>
+			<string>101050301</string>
+			<key>py</key>
+			<string>mu dan jiang</string>
+		</dict>
+	</array>
+	<key>N</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>那曲</string>
+			<key>cityID</key>
+			<string>101140601</string>
+			<key>py</key>
+			<string>na qu</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>南昌</string>
+			<key>cityID</key>
+			<string>101240101</string>
+			<key>py</key>
+			<string>nan chang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>南充</string>
+			<key>cityID</key>
+			<string>101270501</string>
+			<key>py</key>
+			<string>nan chong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>南京</string>
+			<key>cityID</key>
+			<string>101190101</string>
+			<key>py</key>
+			<string>nan jing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>南宁</string>
+			<key>cityID</key>
+			<string>101300101</string>
+			<key>py</key>
+			<string>nan ning</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>南平</string>
+			<key>cityID</key>
+			<string>101230901</string>
+			<key>py</key>
+			<string>nan ping</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>南沙岛</string>
+			<key>cityID</key>
+			<string>101310220</string>
+			<key>py</key>
+			<string>nan sha dao</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>南通</string>
+			<key>cityID</key>
+			<string>101190501</string>
+			<key>py</key>
+			<string>nan tong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>南阳</string>
+			<key>cityID</key>
+			<string>101180701</string>
+			<key>py</key>
+			<string>nan yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>内江</string>
+			<key>cityID</key>
+			<string>101271201</string>
+			<key>py</key>
+			<string>nei jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宁波</string>
+			<key>cityID</key>
+			<string>101210401</string>
+			<key>py</key>
+			<string>ning bo</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宁德</string>
+			<key>cityID</key>
+			<string>101230301</string>
+			<key>py</key>
+			<string>ning de</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>怒江</string>
+			<key>cityID</key>
+			<string>101291201</string>
+			<key>py</key>
+			<string>nu jiang</string>
+		</dict>
+	</array>
+	<key>P</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>攀枝花</string>
+			<key>cityID</key>
+			<string>101270201</string>
+			<key>py</key>
+			<string>pan zhi hua</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>平顶山</string>
+			<key>cityID</key>
+			<string>101180501</string>
+			<key>py</key>
+			<string>ping ding shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>平凉</string>
+			<key>cityID</key>
+			<string>101160301</string>
+			<key>py</key>
+			<string>ping liang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>萍乡</string>
+			<key>cityID</key>
+			<string>101240901</string>
+			<key>py</key>
+			<string>ping xiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>普洱</string>
+			<key>cityID</key>
+			<string>101290901</string>
+			<key>py</key>
+			<string>pu er</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>莆田</string>
+			<key>cityID</key>
+			<string>101230401</string>
+			<key>py</key>
+			<string>pu tian</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>濮阳</string>
+			<key>cityID</key>
+			<string>101181301</string>
+			<key>py</key>
+			<string>pu yang</string>
+		</dict>
+	</array>
+	<key>Q</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>齐齐哈尔</string>
+			<key>cityID</key>
+			<string>101050201</string>
+			<key>py</key>
+			<string>qi qi ha er</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>七台河</string>
+			<key>cityID</key>
+			<string>101051002</string>
+			<key>py</key>
+			<string>qi tai he</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>潜江</string>
+			<key>cityID</key>
+			<string>101201701</string>
+			<key>py</key>
+			<string>qian jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>黔阳</string>
+			<key>cityID</key>
+			<string>101251301</string>
+			<key>py</key>
+			<string>qian yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>秦皇岛</string>
+			<key>cityID</key>
+			<string>101091101</string>
+			<key>py</key>
+			<string>qin huang dao</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>钦州</string>
+			<key>cityID</key>
+			<string>101301101</string>
+			<key>py</key>
+			<string>qin zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>青岛</string>
+			<key>cityID</key>
+			<string>101120201</string>
+			<key>py</key>
+			<string>qing dao</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>庆阳</string>
+			<key>cityID</key>
+			<string>101160401</string>
+			<key>py</key>
+			<string>qing yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>清远</string>
+			<key>cityID</key>
+			<string>101281301</string>
+			<key>py</key>
+			<string>qing yuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>琼海</string>
+			<key>cityID</key>
+			<string>101310211</string>
+			<key>py</key>
+			<string>qiong hai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>琼山</string>
+			<key>cityID</key>
+			<string>101310102</string>
+			<key>py</key>
+			<string>qiong shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>琼中</string>
+			<key>cityID</key>
+			<string>101310208</string>
+			<key>py</key>
+			<string>qiong zhong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>曲靖</string>
+			<key>cityID</key>
+			<string>101290401</string>
+			<key>py</key>
+			<string>qu jing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>衢州</string>
+			<key>cityID</key>
+			<string>101211001</string>
+			<key>py</key>
+			<string>qu zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>泉州</string>
+			<key>cityID</key>
+			<string>101230501</string>
+			<key>py</key>
+			<string>quan zhou</string>
+		</dict>
+	</array>
+	<key>R</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>日喀则</string>
+			<key>cityID</key>
+			<string>101140201</string>
+			<key>py</key>
+			<string>ri ka ze</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>日照</string>
+			<key>cityID</key>
+			<string>101121501</string>
+			<key>py</key>
+			<string>ri zhao</string>
+		</dict>
+	</array>
+	<key>S</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>三门峡</string>
+			<key>cityID</key>
+			<string>101181701</string>
+			<key>py</key>
+			<string>san men xia</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>三明</string>
+			<key>cityID</key>
+			<string>101230801</string>
+			<key>py</key>
+			<string>san ming</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>三亚</string>
+			<key>cityID</key>
+			<string>101310201</string>
+			<key>py</key>
+			<string>san ya</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>厦门</string>
+			<key>cityID</key>
+			<string>101230201</string>
+			<key>py</key>
+			<string>sha men</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>山南</string>
+			<key>cityID</key>
+			<string>101140301</string>
+			<key>py</key>
+			<string>shan nan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>汕头</string>
+			<key>cityID</key>
+			<string>101280501</string>
+			<key>py</key>
+			<string>shan tou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>汕尾</string>
+			<key>cityID</key>
+			<string>101282101</string>
+			<key>py</key>
+			<string>shan wei</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>上海</string>
+			<key>cityID</key>
+			<string>101020100</string>
+			<key>py</key>
+			<string>shang hai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>商洛</string>
+			<key>cityID</key>
+			<string>101110601</string>
+			<key>py</key>
+			<string>shang luo</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>商丘</string>
+			<key>cityID</key>
+			<string>101181001</string>
+			<key>py</key>
+			<string>shang qiu</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>上饶</string>
+			<key>cityID</key>
+			<string>101240301</string>
+			<key>py</key>
+			<string>shang rao</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>韶关</string>
+			<key>cityID</key>
+			<string>101280201</string>
+			<key>py</key>
+			<string>shao guan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>绍兴</string>
+			<key>cityID</key>
+			<string>101210501</string>
+			<key>py</key>
+			<string>shao xing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>邵阳</string>
+			<key>cityID</key>
+			<string>101250901</string>
+			<key>py</key>
+			<string>shao yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>神农架</string>
+			<key>cityID</key>
+			<string>101201201</string>
+			<key>py</key>
+			<string>shen nong jia</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>沈阳</string>
+			<key>cityID</key>
+			<string>101070101</string>
+			<key>py</key>
+			<string>shen yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>深圳</string>
+			<key>cityID</key>
+			<string>101280601</string>
+			<key>py</key>
+			<string>shen zhen</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>石河子</string>
+			<key>cityID</key>
+			<string>101130301</string>
+			<key>py</key>
+			<string>shi he zi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>石家庄</string>
+			<key>cityID</key>
+			<string>101090101</string>
+			<key>py</key>
+			<string>shi jia zhuang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>十堰</string>
+			<key>cityID</key>
+			<string>101201101</string>
+			<key>py</key>
+			<string>shi yan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>石嘴山</string>
+			<key>cityID</key>
+			<string>101170201</string>
+			<key>py</key>
+			<string>shi zui shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>双鸭山</string>
+			<key>cityID</key>
+			<string>101051301</string>
+			<key>py</key>
+			<string>shuang ya shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>朔州</string>
+			<key>cityID</key>
+			<string>101100901</string>
+			<key>py</key>
+			<string>shuo zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>四平</string>
+			<key>cityID</key>
+			<string>101060401</string>
+			<key>py</key>
+			<string>si ping</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>松原</string>
+			<key>cityID</key>
+			<string>101060801</string>
+			<key>py</key>
+			<string>song yuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宿迁</string>
+			<key>cityID</key>
+			<string>101191301</string>
+			<key>py</key>
+			<string>su qian</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宿州</string>
+			<key>cityID</key>
+			<string>101220701</string>
+			<key>py</key>
+			<string>su zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>苏州</string>
+			<key>cityID</key>
+			<string>101190401</string>
+			<key>py</key>
+			<string>su zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>绥化</string>
+			<key>cityID</key>
+			<string>101050501</string>
+			<key>py</key>
+			<string>sui hua</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>遂宁</string>
+			<key>cityID</key>
+			<string>101270701</string>
+			<key>py</key>
+			<string>sui ning</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>随州</string>
+			<key>cityID</key>
+			<string>101201301</string>
+			<key>py</key>
+			<string>sui zhou</string>
+		</dict>
+	</array>
+	<key>T</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>塔城</string>
+			<key>cityID</key>
+			<string>101131101</string>
+			<key>py</key>
+			<string>ta cheng</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>泰安</string>
+			<key>cityID</key>
+			<string>101120801</string>
+			<key>py</key>
+			<string>tai an</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>台北县</string>
+			<key>cityID</key>
+			<string>101340101</string>
+			<key>py</key>
+			<string>tai bei xian</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>太原</string>
+			<key>cityID</key>
+			<string>101100101</string>
+			<key>py</key>
+			<string>tai yuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>台中</string>
+			<key>cityID</key>
+			<string>101340401</string>
+			<key>py</key>
+			<string>tai zhong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>泰州</string>
+			<key>cityID</key>
+			<string>101191201</string>
+			<key>py</key>
+			<string>tai zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>台州</string>
+			<key>cityID</key>
+			<string>101210601</string>
+			<key>py</key>
+			<string>tai zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>唐山</string>
+			<key>cityID</key>
+			<string>101090501</string>
+			<key>py</key>
+			<string>tang shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>天津</string>
+			<key>cityID</key>
+			<string>101030100</string>
+			<key>py</key>
+			<string>tian jin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>天门</string>
+			<key>cityID</key>
+			<string>101201501</string>
+			<key>py</key>
+			<string>tian men</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>天水</string>
+			<key>cityID</key>
+			<string>101160901</string>
+			<key>py</key>
+			<string>tian shui</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>铁岭</string>
+			<key>cityID</key>
+			<string>101071101</string>
+			<key>py</key>
+			<string>tie ling</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>铜川</string>
+			<key>cityID</key>
+			<string>101111001</string>
+			<key>py</key>
+			<string>tong chuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>通化</string>
+			<key>cityID</key>
+			<string>101060501</string>
+			<key>py</key>
+			<string>tong hua</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>通辽</string>
+			<key>cityID</key>
+			<string>101080501</string>
+			<key>py</key>
+			<string>tong liao</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>铜陵</string>
+			<key>cityID</key>
+			<string>101221301</string>
+			<key>py</key>
+			<string>tong ling</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>铜仁</string>
+			<key>cityID</key>
+			<string>101260601</string>
+			<key>py</key>
+			<string>tong ren</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>吐鲁番</string>
+			<key>cityID</key>
+			<string>101130501</string>
+			<key>py</key>
+			<string>tu lu fan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>屯昌</string>
+			<key>cityID</key>
+			<string>101310210</string>
+			<key>py</key>
+			<string>tun chang</string>
+		</dict>
+	</array>
+	<key>W</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>威海</string>
+			<key>cityID</key>
+			<string>101121301</string>
+			<key>py</key>
+			<string>wei hai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>渭南</string>
+			<key>cityID</key>
+			<string>101110501</string>
+			<key>py</key>
+			<string>wei nan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>文昌</string>
+			<key>cityID</key>
+			<string>101310212</string>
+			<key>py</key>
+			<string>wen chang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>文山</string>
+			<key>cityID</key>
+			<string>101290601</string>
+			<key>py</key>
+			<string>wen shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>温州</string>
+			<key>cityID</key>
+			<string>101210701</string>
+			<key>py</key>
+			<string>wen zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>武都</string>
+			<key>cityID</key>
+			<string>101161001</string>
+			<key>py</key>
+			<string>wu dou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>乌海</string>
+			<key>cityID</key>
+			<string>101080301</string>
+			<key>py</key>
+			<string>wu hai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>武汉</string>
+			<key>cityID</key>
+			<string>101200101</string>
+			<key>py</key>
+			<string>wu han</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>芜湖</string>
+			<key>cityID</key>
+			<string>101220301</string>
+			<key>py</key>
+			<string>wu hu</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>乌兰浩特</string>
+			<key>cityID</key>
+			<string>101081101</string>
+			<key>py</key>
+			<string>wu lan hao te</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>乌鲁木齐</string>
+			<key>cityID</key>
+			<string>101130101</string>
+			<key>py</key>
+			<string>wu lu mu qi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>武威</string>
+			<key>cityID</key>
+			<string>101160501</string>
+			<key>py</key>
+			<string>wu wei</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>无锡</string>
+			<key>cityID</key>
+			<string>101190201</string>
+			<key>py</key>
+			<string>wu xi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>五指山</string>
+			<key>cityID</key>
+			<string>101310222</string>
+			<key>py</key>
+			<string>wu zhi shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>吴忠</string>
+			<key>cityID</key>
+			<string>101170301</string>
+			<key>py</key>
+			<string>wu zhong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>梧州</string>
+			<key>cityID</key>
+			<string>101300601</string>
+			<key>py</key>
+			<string>wu zhou</string>
+		</dict>
+	</array>
+	<key>X</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>西安</string>
+			<key>cityID</key>
+			<string>101110101</string>
+			<key>py</key>
+			<string>xi an</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>锡林浩特</string>
+			<key>cityID</key>
+			<string>101080901</string>
+			<key>py</key>
+			<string>xi lin hao te</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>西宁</string>
+			<key>cityID</key>
+			<string>101150101</string>
+			<key>py</key>
+			<string>xi ning</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>西沙</string>
+			<key>cityID</key>
+			<string>101310217</string>
+			<key>py</key>
+			<string>xi sha</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>咸宁</string>
+			<key>cityID</key>
+			<string>101200701</string>
+			<key>py</key>
+			<string>xian ning</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>仙桃</string>
+			<key>cityID</key>
+			<string>101201601</string>
+			<key>py</key>
+			<string>xian tao</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>咸阳</string>
+			<key>cityID</key>
+			<string>101110200</string>
+			<key>py</key>
+			<string>xian yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>襄樊</string>
+			<key>cityID</key>
+			<string>101200201</string>
+			<key>py</key>
+			<string>xiang fan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>香格里拉</string>
+			<key>cityID</key>
+			<string>101291301</string>
+			<key>py</key>
+			<string>xiang ge li la</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>湘潭</string>
+			<key>cityID</key>
+			<string>101250201</string>
+			<key>py</key>
+			<string>xiang tan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>孝感</string>
+			<key>cityID</key>
+			<string>101200401</string>
+			<key>py</key>
+			<string>xiao gan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>新乡</string>
+			<key>cityID</key>
+			<string>101180301</string>
+			<key>py</key>
+			<string>xin xiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>信阳</string>
+			<key>cityID</key>
+			<string>101180601</string>
+			<key>py</key>
+			<string>xin yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>新余</string>
+			<key>cityID</key>
+			<string>101241001</string>
+			<key>py</key>
+			<string>xin yu</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>忻州</string>
+			<key>cityID</key>
+			<string>101101001</string>
+			<key>py</key>
+			<string>xin zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>邢台</string>
+			<key>cityID</key>
+			<string>101090901</string>
+			<key>py</key>
+			<string>xing tai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>兴义</string>
+			<key>cityID</key>
+			<string>101260906</string>
+			<key>py</key>
+			<string>xing yi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>许昌</string>
+			<key>cityID</key>
+			<string>101180401</string>
+			<key>py</key>
+			<string>xu chang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>徐州</string>
+			<key>cityID</key>
+			<string>101190801</string>
+			<key>py</key>
+			<string>xu zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宣城</string>
+			<key>cityID</key>
+			<string>101221401</string>
+			<key>py</key>
+			<string>xuan cheng</string>
+		</dict>
+	</array>
+	<key>Y</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>雅安</string>
+			<key>cityID</key>
+			<string>101271701</string>
+			<key>py</key>
+			<string>ya an</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>延安</string>
+			<key>cityID</key>
+			<string>101110300</string>
+			<key>py</key>
+			<string>yan an</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>盐城</string>
+			<key>cityID</key>
+			<string>101190701</string>
+			<key>py</key>
+			<string>yan cheng</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>延吉</string>
+			<key>cityID</key>
+			<string>101060301</string>
+			<key>py</key>
+			<string>yan ji</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>烟台</string>
+			<key>cityID</key>
+			<string>101120501</string>
+			<key>py</key>
+			<string>yan tai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阳江</string>
+			<key>cityID</key>
+			<string>101281801</string>
+			<key>py</key>
+			<string>yang jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>阳泉</string>
+			<key>cityID</key>
+			<string>101100301</string>
+			<key>py</key>
+			<string>yang quan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>扬州</string>
+			<key>cityID</key>
+			<string>101190601</string>
+			<key>py</key>
+			<string>yang zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宜宾</string>
+			<key>cityID</key>
+			<string>101271101</string>
+			<key>py</key>
+			<string>yi bin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宜昌</string>
+			<key>cityID</key>
+			<string>101200901</string>
+			<key>py</key>
+			<string>yi chang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>伊春</string>
+			<key>cityID</key>
+			<string>101050801</string>
+			<key>py</key>
+			<string>yi chun</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>宜春</string>
+			<key>cityID</key>
+			<string>101240501</string>
+			<key>py</key>
+			<string>yi chun</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>伊宁</string>
+			<key>cityID</key>
+			<string>101131001</string>
+			<key>py</key>
+			<string>yi ning</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>益阳</string>
+			<key>cityID</key>
+			<string>101250700</string>
+			<key>py</key>
+			<string>yi yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>银川</string>
+			<key>cityID</key>
+			<string>101170101</string>
+			<key>py</key>
+			<string>yin chuan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>营口</string>
+			<key>cityID</key>
+			<string>101070801</string>
+			<key>py</key>
+			<string>ying kou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>鹰潭</string>
+			<key>cityID</key>
+			<string>101241101</string>
+			<key>py</key>
+			<string>ying tan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>永州</string>
+			<key>cityID</key>
+			<string>101251401</string>
+			<key>py</key>
+			<string>yong zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>玉林</string>
+			<key>cityID</key>
+			<string>101300901</string>
+			<key>py</key>
+			<string>yu lin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>榆林</string>
+			<key>cityID</key>
+			<string>101110401</string>
+			<key>py</key>
+			<string>yu lin</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>玉树</string>
+			<key>cityID</key>
+			<string>101150601</string>
+			<key>py</key>
+			<string>yu shu</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>玉溪</string>
+			<key>cityID</key>
+			<string>101290701</string>
+			<key>py</key>
+			<string>yu xi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>岳阳</string>
+			<key>cityID</key>
+			<string>101251001</string>
+			<key>py</key>
+			<string>yue yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>运城</string>
+			<key>cityID</key>
+			<string>101100801</string>
+			<key>py</key>
+			<string>yun cheng</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>云浮</string>
+			<key>cityID</key>
+			<string>101281401</string>
+			<key>py</key>
+			<string>yun fu</string>
+		</dict>
+	</array>
+	<key>Z</key>
+	<array>
+		<dict>
+			<key>city</key>
+			<string>枣庄</string>
+			<key>cityID</key>
+			<string>101121401</string>
+			<key>py</key>
+			<string>zao zhuang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>湛江</string>
+			<key>cityID</key>
+			<string>101281001</string>
+			<key>py</key>
+			<string>zhan jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>长春</string>
+			<key>cityID</key>
+			<string>101060101</string>
+			<key>py</key>
+			<string>zhang chun</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>张家界</string>
+			<key>cityID</key>
+			<string>101251101</string>
+			<key>py</key>
+			<string>zhang jia jie</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>张家口</string>
+			<key>cityID</key>
+			<string>101090301</string>
+			<key>py</key>
+			<string>zhang jia kou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>长沙</string>
+			<key>cityID</key>
+			<string>101250101</string>
+			<key>py</key>
+			<string>zhang sha</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>张掖</string>
+			<key>cityID</key>
+			<string>101160701</string>
+			<key>py</key>
+			<string>zhang ye</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>长治</string>
+			<key>cityID</key>
+			<string>101100501</string>
+			<key>py</key>
+			<string>zhang zhi</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>漳州</string>
+			<key>cityID</key>
+			<string>101230601</string>
+			<key>py</key>
+			<string>zhang zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>肇庆</string>
+			<key>cityID</key>
+			<string>101280901</string>
+			<key>py</key>
+			<string>zhao qing</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>昭通</string>
+			<key>cityID</key>
+			<string>101291001</string>
+			<key>py</key>
+			<string>zhao tong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>镇江</string>
+			<key>cityID</key>
+			<string>101190301</string>
+			<key>py</key>
+			<string>zhen jiang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>郑州</string>
+			<key>cityID</key>
+			<string>101180101</string>
+			<key>py</key>
+			<string>zheng zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>中山</string>
+			<key>cityID</key>
+			<string>101281701</string>
+			<key>py</key>
+			<string>zhong shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>中卫</string>
+			<key>cityID</key>
+			<string>101170501</string>
+			<key>py</key>
+			<string>zhong wei</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>周口</string>
+			<key>cityID</key>
+			<string>101181401</string>
+			<key>py</key>
+			<string>zhou kou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>舟山</string>
+			<key>cityID</key>
+			<string>101211101</string>
+			<key>py</key>
+			<string>zhou shan</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>珠海</string>
+			<key>cityID</key>
+			<string>101280701</string>
+			<key>py</key>
+			<string>zhu hai</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>驻马店</string>
+			<key>cityID</key>
+			<string>101181601</string>
+			<key>py</key>
+			<string>zhu ma dian</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>株洲</string>
+			<key>cityID</key>
+			<string>101250301</string>
+			<key>py</key>
+			<string>zhu zhou</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>淄博</string>
+			<key>cityID</key>
+			<string>101120301</string>
+			<key>py</key>
+			<string>zi bo</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>自贡</string>
+			<key>cityID</key>
+			<string>101270301</string>
+			<key>py</key>
+			<string>zi gong</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>资阳</string>
+			<key>cityID</key>
+			<string>101271301</string>
+			<key>py</key>
+			<string>zi yang</string>
+		</dict>
+		<dict>
+			<key>city</key>
+			<string>遵义</string>
+			<key>cityID</key>
+			<string>101260201</string>
+			<key>py</key>
+			<string>zun yi</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -4,7 +4,7 @@
 //
 //  Created by wl on 15/11/11.
 //  Copyright © 2015年 wl. All rights reserved.
-//  获得数据的工具
+//  获得网络数据的工具
 
 import Foundation
 import Alamofire
@@ -161,11 +161,34 @@ struct DataTool {
                 return
             }
             let data = JSON(response.result.value!)
+            
             let newsPictureModel = NewsPictureModel(json: data)
             completionHandler(newsPictureModel)
         }
     }
-
+    /**
+    加载天气数据，数据来源是“中华万年历”
+    
+    - parameter cityID:            城市id
+    - parameter completionHandler: 返回数据的回调闭包
+    */
+    static func loadWeatherData(cityID: String, completionHandler: WeatherModel? -> Void) {
+        let urlStr = "http://wthrcdn.etouch.cn/weather_mini"
+        let parameter: [String : AnyObject] = ["citykey" : cityID]
+        
+        Alamofire.request(.GET, urlStr, parameters: parameter).responseJSON { (response) -> Void in
+            guard response.result.error == nil else {
+                print("loadWeatherData error:\(response.request?.URLString)")
+                return
+            }
+            
+            let data = JSON(response.result.value!)
+            // 获得单例对象
+            let weatherModel = WeatherModel.sharedWeatherModel()
+            weatherModel.json = data["data"]
+            completionHandler(weatherModel)
+        }
+    }
 }
 
 extension NSDate {
