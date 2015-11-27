@@ -34,11 +34,17 @@ class DetaillNewsController: UIViewController, UIWebViewDelegate {
         self.automaticallyAdjustsScrollViewInsets = false
 
         assert(self.newsModel?.docid != nil)
+        // 加载本地缓存数据
+        if let newsDetailModel = LocalDataTool.getNewsDetailInfo(self.newsModel!.docid!) as? NewsDetailModel {
+            self.newsDetailModel = newsDetailModel
+        }
         DataTool.loadNewsDetailData(self.newsModel!.docid!) { (newsModel) -> Void in
             guard newsModel != nil else {
                 return
             }
             self.newsDetailModel = newsModel
+            // 本地存储
+            LocalDataTool.saveNewsDetailInfo(self.newsModel!.docid!, anyModel: newsModel!)
         }
         
     }

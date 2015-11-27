@@ -403,6 +403,7 @@
                     </view>
                     <connections>
                         <outlet property="aqiLabel" destination="pkN-PA-9gD" id="ecT-7J-J17"/>
+                        <outlet property="bottomView" destination="BH2-EW-CKH" id="TMr-OT-J1T"/>
                         <outlet property="cityLabel" destination="wt0-kA-421" id="XA3-zz-RTl"/>
                         <outlet property="dateLabel" destination="bFK-pE-Ogy" id="dRA-83-ZHt"/>
                         <outlet property="oneDayAferTemperatureLabel" destination="DIE-iA-Epo" id="K3B-r6-JCS"/>
@@ -416,6 +417,7 @@
                         <outlet property="threeDayAfterWeatherImageView" destination="oIc-hD-5mr" id="N0A-1V-6Li"/>
                         <outlet property="threeDayAfterWeatherTypeLabel" destination="oBw-Dr-pOk" id="xuK-n4-9Gk"/>
                         <outlet property="threeDayAfterWindLabel" destination="E8q-2H-E0E" id="hS9-4P-06U"/>
+                        <outlet property="todayContainerView" destination="JGX-Uk-lvG" id="tJY-pX-vlG"/>
                         <outlet property="twoDayAferTemperatureLabel" destination="OUc-gV-Apo" id="jyj-wP-tXS"/>
                         <outlet property="twoDayAfterDateLabel" destination="Dnw-p0-F6q" id="nQP-WR-Mmw"/>
                         <outlet property="twoDayAfterWeatherImageView" destination="Jgj-OH-8ec" id="Z3Z-Ht-ATb"/>

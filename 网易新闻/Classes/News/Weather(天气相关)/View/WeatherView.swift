@@ -14,13 +14,16 @@ protocol WeatherViewDelegate: class {
 }
 
 class WeatherView: UIView {
-    
+//========================================================
+// MARK: - 一些属性
+//========================================================
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var topBtn: UIButton!
     @IBOutlet weak var outlineBtn: UIButton!
     @IBOutlet weak var nightBtn: UIButton!
     @IBOutlet weak var sweepBtn: UIButton!
     @IBOutlet weak var invitationBtn: UIButton!
+    @IBOutlet weak var loadingLabel: UILabel!
     
     @IBOutlet weak var weatherInfoView: UIView!
     @IBOutlet weak var selecBtn: UIButton!
@@ -34,6 +37,7 @@ class WeatherView: UIView {
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var aqiLabel: UILabel!
     
+    @IBOutlet weak var errorView: UIView!
     
     @IBOutlet weak var bottomViewHeightConstraint: NSLayoutConstraint!
     var btnArray: [UIButton] = []
@@ -43,14 +47,7 @@ class WeatherView: UIView {
     var cityModel: CityModel? {
         didSet {
             selecBtn.hidden = true
-            weatherInfoView.hidden = false
-            DataTool.loadWeatherData(cityModel!.cityUrl) { (respond) -> Void in
-                guard let weathermodel = respond else {
-                    return
-                }
-                
-                self.weatherModel = weathermodel
-            }
+            reLoadBtnClik()
         }
     }
     
@@ -59,7 +56,9 @@ class WeatherView: UIView {
             self.setupWeatherInfo()
         }
     }
-    
+//========================================================
+// MARK: - 初始化相关方法
+//========================================================
     override func awakeFromNib() {
         self.btnArray.append(searchBtn)
         self.btnArray.append(topBtn)
@@ -120,7 +119,9 @@ class WeatherView: UIView {
         let weatherView = NSBundle.mainBundle().loadNibNamed("WeatherView", owner: nil, options: nil).first as! WeatherView
         return weatherView
     }
-    
+//========================================================
+// MARK: - 监听方法
+//========================================================
     @IBAction func selectBtnClik() {
         self.delegate?.selectBtnClik()
     }
@@ -132,6 +133,20 @@ class WeatherView: UIView {
         self.delegate?.detailBtnClik(weatherModel)
     }
     
+    @IBAction func reLoadBtnClik() {
+        loadingLabel.hidden = false
+        errorView.hidden =  true
+        DataTool.loadWeatherData(cityModel!.cityUrl) { (respond) -> Void in
+            guard let weathermodel = respond else {
+                self.errorView.hidden = false
+                self.loadingLabel.hidden = true
+                return
+            }
+            self.loadingLabel.hidden = true
+            self.weatherInfoView.hidden = false
+            self.weatherModel = weathermodel
+        }
+    }
 
     
 }

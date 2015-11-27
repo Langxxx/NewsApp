@@ -33,6 +33,7 @@ class ImportantNewsController: UIViewController {
     }()
     
     let maxScale: CGFloat = 1.5
+    let channelID = "T1429173683626"
     
     let newsListProvider = NewsListProvider()
     var newsModelArray: [NewsModel]? {
@@ -46,11 +47,18 @@ class ImportantNewsController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         self.tableView.contentInset = UIEdgeInsetsMake(tableViewInsetTop, 0, 0, 0)
         self.topView.clipsToBounds = false
-        DataTool.loadNewsData("http://c.m.163.com/nc/article/list/T1429173683626/0-20.html", newsKey: "T1429173683626") { (newsArray) -> Void in
+        // 加载本地缓存数据
+        if let newsArray = LocalDataTool.getNewsList(channelID) {
+            self.newsModelArray = newsArray
+        }
+        
+        DataTool.loadNewsData("http://c.m.163.com/nc/article/list/T1429173683626/0-20.html", newsKey: channelID) { (newsArray) -> Void in
             guard newsArray != nil else {
                 return
             }
             self.newsModelArray = newsArray
+            //本地存储
+            LocalDataTool.saveNewsList(self.channelID, newsModelArray: newsArray!)
         }
 
         self.tableView.dataSource = self.newsListProvider

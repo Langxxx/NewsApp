@@ -60,6 +60,13 @@
 		77DA00551C06DC2100741E6A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA00361C06DC2100741E6A /* WeatherView.swift */; settings = {ASSET_TAGS = (); }; };
 		77DA00561C06DC2100741E6A /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DA00371C06DC2100741E6A /* WeatherView.xib */; settings = {ASSET_TAGS = (); }; };
 		77DA00571C06DC2100741E6A /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DA00381C06DC2100741E6A /* Weather.storyboard */; settings = {ASSET_TAGS = (); }; };
+		77DA00681C072F4600741E6A /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA005E1C072F4600741E6A /* FMDatabase.m */; settings = {ASSET_TAGS = (); }; };
+		77DA00691C072F4600741E6A /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA00601C072F4600741E6A /* FMDatabaseAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		77DA006A1C072F4600741E6A /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA00621C072F4600741E6A /* FMDatabasePool.m */; settings = {ASSET_TAGS = (); }; };
+		77DA006B1C072F4600741E6A /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA00641C072F4600741E6A /* FMDatabaseQueue.m */; settings = {ASSET_TAGS = (); }; };
+		77DA006C1C072F4600741E6A /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA00671C072F4600741E6A /* FMResultSet.m */; settings = {ASSET_TAGS = (); }; };
+		77DA006E1C072F7400741E6A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DA006D1C072F7400741E6A /* libsqlite3.0.tbd */; };
+		77DA00701C072F9200741E6A /* LocalDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA006F1C072F9200741E6A /* LocalDataTool.swift */; settings = {ASSET_TAGS = (); }; };
 		77E37A1E1BF35A04003E2F44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A1C1BF35A04003E2F44 /* Main.storyboard */; };
 		77E37A201BF35A04003E2F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A1F1BF35A04003E2F44 /* Assets.xcassets */; };
 		77E37A231BF35A04003E2F44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A211BF35A04003E2F44 /* LaunchScreen.storyboard */; };
@@ -171,6 +178,19 @@
 		77DA00361C06DC2100741E6A /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		77DA00371C06DC2100741E6A /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		77DA00381C06DC2100741E6A /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
+		77DA005D1C072F4600741E6A /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		77DA005E1C072F4600741E6A /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		77DA005F1C072F4600741E6A /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		77DA00601C072F4600741E6A /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		77DA00611C072F4600741E6A /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		77DA00621C072F4600741E6A /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		77DA00631C072F4600741E6A /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		77DA00641C072F4600741E6A /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		77DA00651C072F4600741E6A /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		77DA00661C072F4600741E6A /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		77DA00671C072F4600741E6A /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		77DA006D1C072F7400741E6A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		77DA006F1C072F9200741E6A /* LocalDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataTool.swift; sourceTree = "<group>"; };
 		77E37A151BF35A04003E2F44 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E37A1D1BF35A04003E2F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77E37A1F1BF35A04003E2F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DA006E1C072F7400741E6A /* libsqlite3.0.tbd in Frameworks */,
 				AB5C5665446058479C2675F9 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,7 +267,8 @@
 				777C969A1BF89DCF00519375 /* UIView+MJExtension.h */,
 				777C969B1BF89DCF00519375 /* UIView+MJExtension.m */,
 			);
-			path = MJRefresh;
+			name = MJRefresh;
+			path = Other/MJRefresh;
 			sourceTree = "<group>";
 		};
 		777C96701BF89DCF00519375 /* Base */ = {
@@ -471,6 +493,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		77DA005B1C072F2F00741E6A /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				777C966F1BF89DCF00519375 /* MJRefresh */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		77DA005C1C072F4600741E6A /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				77DA005D1C072F4600741E6A /* FMDatabase.h */,
+				77DA005E1C072F4600741E6A /* FMDatabase.m */,
+				77DA005F1C072F4600741E6A /* FMDatabaseAdditions.h */,
+				77DA00601C072F4600741E6A /* FMDatabaseAdditions.m */,
+				77DA00611C072F4600741E6A /* FMDatabasePool.h */,
+				77DA00621C072F4600741E6A /* FMDatabasePool.m */,
+				77DA00631C072F4600741E6A /* FMDatabaseQueue.h */,
+				77DA00641C072F4600741E6A /* FMDatabaseQueue.m */,
+				77DA00651C072F4600741E6A /* FMDB.h */,
+				77DA00661C072F4600741E6A /* FMResultSet.h */,
+				77DA00671C072F4600741E6A /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		77E37A0C1BF35A04003E2F44 = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +589,8 @@
 		77E37A591BF361DB003E2F44 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				77DA005C1C072F4600741E6A /* fmdb */,
+				77DA005B1C072F2F00741E6A /* Lib */,
 				77E37A1C1BF35A04003E2F44 /* Main.storyboard */,
 				77E37A841BF38329003E2F44 /* Tool */,
 				77E37A5A1BF361DB003E2F44 /* Controller */,
@@ -561,7 +611,6 @@
 		77E37A5B1BF361DB003E2F44 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				777C966F1BF89DCF00519375 /* MJRefresh */,
 				77E37A5C1BF361DB003E2F44 /* AppDelegate.swift */,
 				777C963C1BF86EFF00519375 /* 网易新闻-Bridging-Header.h */,
 			);
@@ -648,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				77E37A851BF3835F003E2F44 /* DataTool.swift */,
+				77DA006F1C072F9200741E6A /* LocalDataTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -655,6 +705,7 @@
 		FB9253A4C570FF3F73B37B20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				77DA006D1C072F7400741E6A /* libsqlite3.0.tbd */,
 				46874A2F9A228B6B0ECF1983 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -872,6 +923,7 @@
 				77DA003B1C06DC2100741E6A /* NewsModels.swift in Sources */,
 				77DA003F1C06DC2100741E6A /* NormalNewsCell.swift in Sources */,
 				777C96A71BF89DCF00519375 /* MJRefreshGifHeader.m in Sources */,
+				77DA00681C072F4600741E6A /* FMDatabase.m in Sources */,
 				77DA004D1C06DC2100741E6A /* SpecialNewsController.swift in Sources */,
 				77DA004A1C06DC2100741E6A /* DetaillNewsController.swift in Sources */,
 				77DA00481C06DC2100741E6A /* SecondLaunchView.swift in Sources */,
@@ -896,12 +948,17 @@
 				77DA003D1C06DC2100741E6A /* BigPictureCell.swift in Sources */,
 				77DA00401C06DC2100741E6A /* ScrollPictureCell.swift in Sources */,
 				777C96A31BF89DCF00519375 /* MJRefreshAutoStateFooter.m in Sources */,
+				77DA00691C072F4600741E6A /* FMDatabaseAdditions.m in Sources */,
 				777C96A91BF89DCF00519375 /* MJRefreshStateHeader.m in Sources */,
 				77DA004B1C06DC2100741E6A /* ImportantNewsController.swift in Sources */,
+				77DA006A1C072F4600741E6A /* FMDatabasePool.m in Sources */,
+				77DA006C1C072F4600741E6A /* FMResultSet.m in Sources */,
 				777C96A21BF89DCF00519375 /* MJRefreshAutoNormalFooter.m in Sources */,
 				77DA00551C06DC2100741E6A /* WeatherView.swift in Sources */,
 				77DA00411C06DC2100741E6A /* ThreePictureCell.swift in Sources */,
+				77DA00701C072F9200741E6A /* LocalDataTool.swift in Sources */,
 				77DA004E1C06DC2100741E6A /* NewsDetailModels.swift in Sources */,
+				77DA006B1C072F4600741E6A /* FMDatabaseQueue.m in Sources */,
 				777C96A01BF89DCF00519375 /* MJRefreshHeader.m in Sources */,
 				77E37A861BF3835F003E2F44 /* DataTool.swift in Sources */,
 				77DA00451C06DC2100741E6A /* CyclePictureCell.swift in Sources */,

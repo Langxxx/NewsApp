@@ -179,6 +179,7 @@ struct DataTool {
         Alamofire.request(.GET, urlStr, parameters: parameter).responseJSON { (response) -> Void in
             guard response.result.error == nil else {
                 print("loadWeatherData error:\(response.request?.URLString)")
+                completionHandler(nil)
                 return
             }
             

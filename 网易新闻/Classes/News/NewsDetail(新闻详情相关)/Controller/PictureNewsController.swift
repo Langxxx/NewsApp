@@ -42,13 +42,17 @@ class PictureNewsController: UIViewController, CyclePictureViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(self.newsModel?.photosetID != nil)
-        
+        // 加载本地缓存数据
+        if let newsPictureModel = LocalDataTool.getNewsDetailInfo(self.newsModel!.photosetID!) as? NewsPictureModel {
+            self.newsPictureModel = newsPictureModel
+        }
         DataTool.loadPictureNewsData(self.newsModel!.photosetID!) { (newsPictureModel) -> Void in
             guard newsPictureModel != nil else {
                 return
             }
             
             self.newsPictureModel = newsPictureModel
+            LocalDataTool.saveNewsDetailInfo(self.newsModel!.photosetID!, anyModel: newsPictureModel!)
         }
     }
 

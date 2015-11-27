@@ -22,6 +22,8 @@ class NewsListContorller: UITableViewController {
     var newsModelArray: [NewsModel]? {
         didSet {
             self.newsListProvider.newsModelArray = newsModelArray
+            // 本地缓存
+            LocalDataTool.saveNewsList(self.channelUrl, newsModelArray: self.newsModelArray!)
         }
     }
 //========================================================
@@ -35,7 +37,10 @@ class NewsListContorller: UITableViewController {
         
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: Selector("requestInfo"))
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: Selector("requestMoreInfo"))
-    
+        // 加载本地缓存数据
+        if let newsModelArray = LocalDataTool.getNewsList(self.channelUrl) {
+            self.newsModelArray = newsModelArray
+        }
         self.tableView.mj_header.beginRefreshing()
 
     }
@@ -46,18 +51,18 @@ class NewsListContorller: UITableViewController {
     func requestInfo() {
         if self.channel == "热点" {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.Recommend), newsKey: "推荐") { (newsArray) -> Void in
+                self.tableView.mj_header.endRefreshing()
                 guard let newDataes = newsArray else {
                     return
                 }
-                self.tableView.mj_header.endRefreshing()
                 self.newsModelArray = newDataes
             }
         }else {
             DataTool.loadNewsData(self.getUrlStrByType(RequestType.Default), newsKey: channelUrl.channelKey()) { (newsArray) -> Void in
+                self.tableView.mj_header.endRefreshing()
                 guard let newDataes = newsArray else {
                     return
                 }
-                self.tableView.mj_header.endRefreshing()
                 self.newsModelArray = newDataes
             }
         }

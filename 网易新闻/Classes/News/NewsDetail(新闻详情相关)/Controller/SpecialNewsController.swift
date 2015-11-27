@@ -36,12 +36,16 @@ class SpecialNewsController: UIViewController, SpecialNewsHeardViewDelegate {
         
         self.tableView.dataSource =  self.newsListProvider
         self.newsListProvider.tableView = self.tableView
-        
+        // 加载本地缓存数据
+        if let newsSpecialModel = LocalDataTool.getNewsDetailInfo(self.newsModel!.specialID!) as? NewsSpecialModel {
+            self.newsSpecialModel = newsSpecialModel
+        }
         DataTool.loadSpecialNewsData(self.newsModel!.specialID!) { (newsSpecialModel) -> Void in
             guard newsSpecialModel != nil else {
                 return
             }
             self.newsSpecialModel = newsSpecialModel
+            LocalDataTool.saveNewsDetailInfo(self.newsModel!.specialID!, anyModel: newsSpecialModel!)
         }
     }
 

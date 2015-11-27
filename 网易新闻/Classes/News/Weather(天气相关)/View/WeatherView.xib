@@ -367,11 +367,63 @@
                                 <action selector="selectBtnClik" destination="bNI-Aj-9eX" eventType="touchUpInside" id="5fS-fj-mwG"/>
                             </connections>
                         </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在努力加载天气数据..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBJ-4Z-0mC">
+                            <rect key="frame" x="208" y="160" width="184" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Own-vY-9Eh" userLabel="errorView">
+                            <rect key="frame" x="185" y="77" width="231" height="186"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biz_more_menu_no_weather_info" translatesAutoresizingMaskIntoConstraints="NO" id="EPI-Ma-Yox">
+                                    <rect key="frame" x="0.0" y="0.0" width="231" height="141"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天气预报员去火星了..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMq-uG-fQq">
+                                    <rect key="frame" x="0.0" y="141" width="231" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="I9y-Fo-ZpG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4k-Tk-Uk1">
+                                    <rect key="frame" x="0.0" y="158" width="231" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="u1i-uY-Tfo"/>
+                                    </constraints>
+                                    <state key="normal" title="点击重新加载"/>
+                                    <connections>
+                                        <action selector="reLoadBtnClik" destination="bNI-Aj-9eX" eventType="touchUpInside" id="nL3-jx-Eq2"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="JMq-uG-fQq" firstAttribute="leading" secondItem="Own-vY-9Eh" secondAttribute="leading" id="9g8-pq-jYW"/>
+                                <constraint firstAttribute="bottom" secondItem="V4k-Tk-Uk1" secondAttribute="bottom" id="H28-sf-Axl"/>
+                                <constraint firstAttribute="width" constant="231" id="I4r-Yc-hRy"/>
+                                <constraint firstItem="EPI-Ma-Yox" firstAttribute="top" secondItem="Own-vY-9Eh" secondAttribute="top" id="NRX-4B-q5G"/>
+                                <constraint firstAttribute="height" constant="186" id="QWf-sj-ZaM"/>
+                                <constraint firstAttribute="trailing" secondItem="JMq-uG-fQq" secondAttribute="trailing" id="UFD-Ht-gqO"/>
+                                <constraint firstAttribute="trailing" secondItem="EPI-Ma-Yox" secondAttribute="trailing" id="XeE-pb-m5t"/>
+                                <constraint firstItem="EPI-Ma-Yox" firstAttribute="leading" secondItem="Own-vY-9Eh" secondAttribute="leading" id="eav-vp-lb9"/>
+                                <constraint firstAttribute="trailing" secondItem="V4k-Tk-Uk1" secondAttribute="trailing" id="fef-vQ-AEB"/>
+                                <constraint firstItem="V4k-Tk-Uk1" firstAttribute="leading" secondItem="Own-vY-9Eh" secondAttribute="leading" id="qZC-H2-eHy"/>
+                                <constraint firstItem="JMq-uG-fQq" firstAttribute="top" secondItem="EPI-Ma-Yox" secondAttribute="bottom" id="thH-fl-Ql5"/>
+                                <constraint firstItem="V4k-Tk-Uk1" firstAttribute="top" secondItem="JMq-uG-fQq" secondAttribute="bottom" id="yLQ-ms-P7u"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="SBJ-4Z-0mC" firstAttribute="centerX" secondItem="mkA-ge-c45" secondAttribute="centerX" id="4F9-yg-nvv"/>
+                        <constraint firstItem="SBJ-4Z-0mC" firstAttribute="centerY" secondItem="mkA-ge-c45" secondAttribute="centerY" id="7Iq-r2-C5A"/>
                         <constraint firstItem="Dhg-wi-jVY" firstAttribute="centerY" secondItem="mkA-ge-c45" secondAttribute="centerY" id="Amn-fh-sMe"/>
                         <constraint firstItem="757-2h-Wdh" firstAttribute="centerY" secondItem="mkA-ge-c45" secondAttribute="centerY" id="EL3-Ub-ENH"/>
+                        <constraint firstItem="Own-vY-9Eh" firstAttribute="centerX" secondItem="mkA-ge-c45" secondAttribute="centerX" id="NmF-GA-zJr"/>
+                        <constraint firstItem="Own-vY-9Eh" firstAttribute="centerY" secondItem="mkA-ge-c45" secondAttribute="centerY" id="QdV-fI-Sio"/>
                         <constraint firstAttribute="height" constant="250" id="dJ2-e5-fyk"/>
                         <constraint firstAttribute="trailing" secondItem="757-2h-Wdh" secondAttribute="trailing" id="j8n-ud-aqV"/>
                         <constraint firstItem="Dhg-wi-jVY" firstAttribute="centerX" secondItem="mkA-ge-c45" secondAttribute="centerX" id="nS8-yT-KH4"/>
@@ -406,7 +458,9 @@
                 <outlet property="bottomViewHeightConstraint" destination="DQP-4B-hAn" id="F8V-4S-gT3"/>
                 <outlet property="cityLabel" destination="jSC-12-ZsL" id="Yzx-j1-1CO"/>
                 <outlet property="dataLabel" destination="Sha-1E-mx4" id="kJW-42-ynP"/>
+                <outlet property="errorView" destination="Own-vY-9Eh" id="1ES-fA-gp3"/>
                 <outlet property="invitationBtn" destination="19L-sO-ixT" id="WPx-f2-xDS"/>
+                <outlet property="loadingLabel" destination="SBJ-4Z-0mC" id="9IK-Ze-r6Y"/>
                 <outlet property="lowHightLabel" destination="HMx-zF-QMe" id="Xq8-jo-nV2"/>
                 <outlet property="nightBtn" destination="zqr-kV-guf" id="zsS-oh-aMZ"/>
                 <outlet property="outlineBtn" destination="DUs-WA-0CL" id="UBe-0v-ccm"/>
@@ -424,6 +478,7 @@
         </view>
     </objects>
     <resources>
+        <image name="biz_more_menu_no_weather_info" width="251" height="280"/>
         <image name="biz_plugin_weather_select_city" width="170" height="60"/>
         <image name="biz_simple_weather_yin" width="200" height="240"/>
         <image name="downLoad" width="80" height="80"/>

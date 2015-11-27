@@ -16,11 +16,15 @@ class WeatherDetailController: UIViewController {
     var weatherModel: WeatherModel?
     var cityModel: CityModel? {
         didSet {
+            
+            todayContainerView.hidden = true
+            bottomView.hidden = true
             DataTool.loadWeatherData(cityModel!.cityUrl) { (respond) -> Void in
                 guard let weathermodel = respond else {
                     return
                 }
-                
+                self.todayContainerView.hidden = false
+                self.bottomView.hidden = false
                 self.weatherModel = weathermodel
                 self.setupWeatherInfo()
             }
@@ -29,6 +33,10 @@ class WeatherDetailController: UIViewController {
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var todayContainerView: UIView!
+    @IBOutlet weak var bottomView: UIView!
+    
     
     // MARK: 今天天气显示控件
     @IBOutlet weak var weatherImageView: UIImageView!

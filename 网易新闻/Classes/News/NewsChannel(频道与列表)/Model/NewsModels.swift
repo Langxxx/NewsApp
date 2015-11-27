@@ -5,7 +5,10 @@
 //  Created by wl on 15/11/12.
 //  Copyright © 2015年 wl. All rights reserved.
 //  数据模型
-
+//========================================================
+// 加入数据存储后，代码变得更加恶心，如果你有更好的办法一定要联系我
+// 感激不尽！
+//========================================================
 import UIKit
 import SwiftyJSON
 
@@ -90,7 +93,7 @@ struct ModelArrayProvider {
 /**
 *  这个是新闻轮播器的数据模型
 */
-class Ads: NewsModelInitProtocol {
+class Ads: NSObject, NSCoding, NewsModelInitProtocol {
     var title: String
     var tag: String
     var imgsrc: String
@@ -110,11 +113,33 @@ class Ads: NewsModelInitProtocol {
         docid = json["docid"].string
         specialID = json["specialID"].string
     }
+    
+    required init(coder decoder: NSCoder) {
+        title = decoder.decodeObjectForKey("title") as! String
+        tag = decoder.decodeObjectForKey("tag") as! String
+        imgsrc = decoder.decodeObjectForKey("imgsrc") as! String
+        subtitle = decoder.decodeObjectForKey("subtitle") as! String
+        url = decoder.decodeObjectForKey("url") as! String
+        docid = decoder.decodeObjectForKey("tag") as? String
+        specialID = decoder.decodeObjectForKey("specialID") as? String
+    }
+    
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(title, forKey: "title")
+        aCoder.encodeObject(tag, forKey: "tag")
+        aCoder.encodeObject(imgsrc, forKey: "imgsrc")
+        aCoder.encodeObject(subtitle, forKey: "subtitle")
+        aCoder.encodeObject(url, forKey: "url")
+        aCoder.encodeObject(docid, forKey: "docid")
+        aCoder.encodeObject(specialID, forKey: "specialID")
+    }
+    
 }
 /**
 *  这个是新闻数据模型，每一个模型对应一个cell。
 */
-class NewsModel: NewsModelInitProtocol{
+class NewsModel: NSObject, NSCoding, NewsModelInitProtocol {
     // 这个模型对应cell的种类，自定义的数据，不是接受自网络
     var cellType: CellType!
     
@@ -149,7 +174,7 @@ class NewsModel: NewsModelInitProtocol{
     var hasHead: Int?
     
     required init(json: JSON) {
-        
+
         tname = json["tname"].stringValue
         title = json["title"].stringValue
         ptime = json["ptime"].stringValue
@@ -166,10 +191,51 @@ class NewsModel: NewsModelInitProtocol{
         docid = json["docid"].string
         photosetID = json["photosetID"].string
         
+        super.init()
         self.judgeCellType()
+    }
+    
+    required init(coder decoder: NSCoder) {
+        tname = decoder.decodeObjectForKey("tname") as! String
+        title = decoder.decodeObjectForKey("title") as! String
+        ptime = decoder.decodeObjectForKey("ptime") as! String
+        imgsrc = decoder.decodeObjectForKey("imgsrc") as! String
+        digest = decoder.decodeObjectForKey("digest") as? String
+        imgextra = decoder.decodeObjectForKey("imgextra") as? [String]
+        replyCount = decoder.decodeObjectForKey("replyCount") as? Int
+        url_3w = decoder.decodeObjectForKey("url_3w") as? String
+        ads = decoder.decodeObjectForKey("ads") as? [Ads]
+        specialID = decoder.decodeObjectForKey("specialID") as? String
+        tags = decoder.decodeObjectForKey("tags") as? String
+        imgType = decoder.decodeObjectForKey("imgType") as? Int
+        hasHead = decoder.decodeObjectForKey("hasHead") as? Int
+        docid = decoder.decodeObjectForKey("docid") as? String
+        photosetID = decoder.decodeObjectForKey("photosetID") as? String
+        cellType = CellType(rawValue: decoder.decodeObjectForKey("cellType") as! String)
+        
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(tname, forKey: "tname")
+        aCoder.encodeObject(title, forKey: "title")
+        aCoder.encodeObject(ptime, forKey: "ptime")
+        aCoder.encodeObject(imgsrc, forKey: "imgsrc")
+        aCoder.encodeObject(digest, forKey: "digest")
+        aCoder.encodeObject(imgextra, forKey: "imgextra")
+        aCoder.encodeObject(replyCount, forKey: "replyCount")
+        aCoder.encodeObject(url_3w, forKey: "url_3w")
+        aCoder.encodeObject(ads, forKey: "ads")
+        aCoder.encodeObject(specialID, forKey: "specialID")
+        aCoder.encodeObject(tags, forKey: "tags")
+        aCoder.encodeObject(imgType, forKey: "imgType")
+        aCoder.encodeObject(hasHead, forKey: "hasHead")
+        aCoder.encodeObject(docid, forKey: "docid")
+        aCoder.encodeObject(photosetID, forKey: "photosetID")
+        aCoder.encodeObject(cellType.rawValue, forKey: "cellType")
     }
 
 }
+
 extension NewsModel {
     func judgeCellType() {
         if self.ads != nil {
@@ -194,7 +260,7 @@ extension NewsModel {
 - BigPictureCell:    大图新闻(这种cell主要特征是有一大张图片)
 - TopBigPictureCell: 顶部的大图(这种cell主要特征是有一大张图片)
 */
-enum CellType: String{
+enum CellType : String{
     
     case ScrollPictureCell, NormalNewsCell, ThreePictureCell, BigPictureCell, TopBigPictureCell
 
