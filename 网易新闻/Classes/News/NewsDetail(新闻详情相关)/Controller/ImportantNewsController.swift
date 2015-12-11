@@ -47,6 +47,9 @@ class ImportantNewsController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         self.tableView.contentInset = UIEdgeInsetsMake(tableViewInsetTop, 0, 0, 0)
         self.topView.clipsToBounds = false
+        
+        self.tableView.dataSource = self.newsListProvider
+        self.newsListProvider.tableView = self.tableView
         // 加载本地缓存数据
         if let newsArray = LocalDataTool.getNewsList(channelID) {
             self.newsModelArray = newsArray
@@ -60,9 +63,6 @@ class ImportantNewsController: UIViewController {
             //本地存储
             LocalDataTool.saveNewsList(self.channelID, newsModelArray: newsArray!)
         }
-
-        self.tableView.dataSource = self.newsListProvider
-        self.newsListProvider.tableView = self.tableView
     }
 
     

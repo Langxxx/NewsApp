@@ -61,11 +61,14 @@ class NewsDetailModel: NSObject, NSCoding {
     var body: String
     /// 新闻详情的图片模型
     var img: [NewsDetailImgModel]
+    /// 跟帖请求要用到的
+    var replyBoard: String
     init(json: JSON) {
         title = json["title"].stringValue
         ptime = json["ptime"].stringValue
         body = json["body"].stringValue
         img = ModelArrayProvider.arrayModel(NewsDetailImgModel.self, json: json["img"])!
+        replyBoard = json["replyBoard"].stringValue
     }
     
     required init?(coder decoder: NSCoder) {
@@ -73,6 +76,7 @@ class NewsDetailModel: NSObject, NSCoding {
         ptime = decoder.decodeObjectForKey("ptime") as! String
         body = decoder.decodeObjectForKey("body") as! String
         img = decoder.decodeObjectForKey("img") as! [NewsDetailImgModel]
+        replyBoard = decoder.decodeObjectForKey("replyBoard") as! String
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
@@ -80,6 +84,7 @@ class NewsDetailModel: NSObject, NSCoding {
         aCoder.encodeObject(ptime, forKey: "ptime")
         aCoder.encodeObject(body, forKey: "body")
         aCoder.encodeObject(img, forKey: "img")
+        aCoder.encodeObject(replyBoard, forKey: "replyBoard")
     }
     
 }
@@ -151,7 +156,7 @@ class NewsSpecialModel: NSObject, NSCoding {
 }
 
 //========================================================
-// MARK: 专题新闻所用模型
+// MARK: 图片新闻所用模型
 //========================================================
 /**
 *  图片新闻的图片模型
@@ -206,3 +211,36 @@ class NewsPictureModel: NSObject, NSCoding {
     }
     
 }
+
+//========================================================
+// MARK: 新闻评论所用模型
+//========================================================
+/**
+ * 一条评论内容的模型
+ */
+class ReplyModel {
+ /// 用户名
+    var name: String
+ /// 用户的地址信息
+    var userAddress: String
+ /// 用户发言
+    var message: String
+ /// 赞，楼主才有
+    var suppose: String?
+    /// 头像
+    var timg: String?
+ /// 这条评论的楼数
+    var floor: Int
+    init(key: String, json: JSON) {
+
+        floor = (key as NSString).integerValue
+        name = json["n"].string ?? "火星网友"
+        userAddress = json["f"].stringValue
+        message = json["b"].stringValue
+        suppose = json["v"].string
+        timg = json["timg"].string
+    }
+}
+
+
+

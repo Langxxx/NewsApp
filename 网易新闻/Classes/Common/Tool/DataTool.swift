@@ -190,6 +190,53 @@ struct DataTool {
             completionHandler(weatherModel)
         }
     }
+    /**
+     加载评论数据
+     
+     - parameter urlStr:            url的元组
+     - parameter newUrl:            最新跟帖
+     - parameter completionHandler: 返回数据的回调闭包
+     */
+    static func loadReplyData(urlStr: (hotUrl: String,newUrl: String), completionHandler: ([[ReplyModel]]?, [[ReplyModel]]?) -> Void) {
+        // 内嵌函数，用于解析json
+        func analyzeData(response: Response<AnyObject, NSError>, key: String) -> [[ReplyModel]]{
+            let data = JSON(response.result.value!)
+            let posts = data[key]
+            var array: [[ReplyModel]] = []
+            for (_, dict) in posts {
+                
+                var temp: [ReplyModel] = []
+                for (key, value) in dict {
+                    temp.append(ReplyModel(key: key, json: value))
+                }
+                array.append(temp.sort({$0.floor < $1.floor}))
+
+            }
+
+            return array
+        }
+        
+        Alamofire.request(.GET, urlStr.hotUrl).responseJSON { (hotResponse) -> Void in
+            guard hotResponse.result.error == nil else {
+                print("loadReplyData error:\(hotResponse.request?.URLString)")
+                completionHandler(nil, nil)
+                return
+            }
+            print(hotResponse.request?.URLString)
+            Alamofire.request(.GET, urlStr.newUrl).responseJSON { (newResponse) -> Void in
+                guard newResponse.result.error == nil else {
+                    print("loadReplyData error:\(newResponse.request?.URLString)")
+                    completionHandler(nil, nil)
+                    return
+                }
+
+                //解析最热跟帖
+                completionHandler(analyzeData(hotResponse, key: "hotPosts"), analyzeData(newResponse, key: "newPosts"))
+            }
+            
+        }
+        
+    }
 }
 
 extension NSDate {

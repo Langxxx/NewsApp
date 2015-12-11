@@ -144,13 +144,20 @@ class DetaillNewsController: UIViewController, UIWebViewDelegate {
         
         return body
     }
-    
+     // MARK:  监听方法
     @IBAction func backBtnClik() {
         self.navigationController?.popViewControllerAnimated(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let newsDetailModel = self.newsDetailModel else {
+            return
+        }
+        let vc = segue.destinationViewController as! ReplyController
+        vc.replyBoard = newsDetailModel.replyBoard
+        vc.newsID =  self.newsModel!.docid
+    }
      // MARK: - UIWebView代理
     /**
     这里用来显示被点击的那一张图片
