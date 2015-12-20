@@ -198,17 +198,23 @@ struct DataTool {
      - parameter completionHandler: 返回数据的回调闭包
      */
     static func loadReplyData(urlStr: (hotUrl: String,newUrl: String), completionHandler: ([[ReplyModel]]?, [[ReplyModel]]?) -> Void) {
-        // 内嵌函数，用于解析json
+        // 内嵌函数，用于解析json,并按照评论楼层排序
         func analyzeData(response: Response<AnyObject, NSError>, key: String) -> [[ReplyModel]]{
             let data = JSON(response.result.value!)
             let posts = data[key]
             var array: [[ReplyModel]] = []
             for (_, dict) in posts {
                 
+                if dict["NON"].string != nil {
+                    break;
+                }
                 var temp: [ReplyModel] = []
                 for (key, value) in dict {
+//                    print(value)
+//                    print(value["NON"])
                     temp.append(ReplyModel(key: key, json: value))
                 }
+                // 按照评论的楼层排序
                 array.append(temp.sort({$0.floor < $1.floor}))
 
             }

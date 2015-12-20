@@ -156,7 +156,7 @@ class DetaillNewsController: UIViewController, UIWebViewDelegate {
         }
         let vc = segue.destinationViewController as! ReplyController
         vc.replyBoard = newsDetailModel.replyBoard
-        vc.newsID =  self.newsModel!.docid
+        vc.requestID =  newsDetailModel.docid
     }
      // MARK: - UIWebView代理
     /**

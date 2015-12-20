@@ -11,7 +11,7 @@ import UIKit
 // TODO: 子评论没有做
 class ReplyController: UIViewController {
     var replyBoard: String!
-    var newsID: String!
+    var requestID: String!
     
     var hotReplyArray: [[ReplyModel]]?
     var newReplyArray: [[ReplyModel]]?
@@ -21,14 +21,17 @@ class ReplyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.hidden = true
-        let hotUrl = "http://comment.api.163.com/api/json/post/list/new/hot/\(replyBoard)/\(newsID)/0/10/10/2/2"
-        let newUrl = "http://comment.api.163.com/api/json/post/list/new/normal/\(replyBoard)/\(newsID)/desc/0/10/10/2/2"
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.automaticallyAdjustsScrollViewInsets = false
+        let hotUrl = "http://comment.api.163.com/api/json/post/list/new/hot/\(replyBoard)/\(requestID)/0/10/10/2/2"
+        let newUrl = "http://comment.api.163.com/api/json/post/list/new/normal/\(replyBoard)/\(requestID)/desc/0/10/10/2/2"
 
         DataTool.loadReplyData((hotUrl, newUrl)) { (hotResponse, newResponse) -> Void in
             guard let hotReplyArray = hotResponse, newReplyArray = newResponse else {
                 return
             }
-            
+           
             self.hotReplyArray = hotReplyArray
             self.newReplyArray = newReplyArray
             self.tableView.hidden = false
@@ -60,18 +63,10 @@ extension ReplyController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCellWithIdentifier("ReplyCell") as! ReplyCell
         let model = indexPath.section == 0 ? self.hotReplyArray![indexPath.row] : self.newReplyArray![indexPath.row]
         cell.replyModelArray = model
+        cell.tableViewHeightConstrant.constant = cell.subReplyTableView.contentSize.height
         return cell
     }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 
-        
-        return tableView.fd_heightForCellWithIdentifier("ReplyCell", configuration: { (obj) -> Void in
-            let cell = obj as! ReplyCell
-            let model = indexPath.section == 0 ? self.hotReplyArray![indexPath.row] : self.newReplyArray![indexPath.row]
-            cell.replyModelArray = model
-        })
-    }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         

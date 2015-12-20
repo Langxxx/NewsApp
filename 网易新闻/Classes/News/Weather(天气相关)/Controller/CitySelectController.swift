@@ -53,7 +53,7 @@ class CitySelectController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cityModel = self.cityBox[indexPath]
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(false, completion: nil)
         self.delegate?.didSelectCity(cityModel)
     }
     

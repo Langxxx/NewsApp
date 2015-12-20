@@ -26,7 +26,7 @@
         <!--News Controller-->
         <scene sceneID="sv9-W5-wj3">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="dBa-Mm-8Pn" customClass="NewsController" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dBa-Mm-8Pn" customClass="NewsController" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5m4-cE-9np"/>
                         <viewControllerLayoutGuide type="bottom" id="wDB-h2-fXZ"/>
@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWV-kp-zJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="-850"/>
+            <point key="canvasLocation" x="408" y="-846"/>
         </scene>
         <!--NewsListContorller-->
         <scene sceneID="ojk-jw-rf5">
@@ -113,7 +113,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="NewsListContorller" storyboardName="NewsList" referencedIdentifier="NewsListContorller" id="CmP-h5-pYV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb5-FE-KG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="-445"/>
+            <point key="canvasLocation" x="810.5" y="-862"/>
         </scene>
     </scenes>
     <resources>

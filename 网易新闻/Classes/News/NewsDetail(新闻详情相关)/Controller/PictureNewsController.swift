@@ -98,7 +98,14 @@ class PictureNewsController: UIViewController, CyclePictureViewDelegate {
         self.navigationController?.popViewControllerAnimated(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let newsPictureModel = self.newsPictureModel else {
+            return
+        }
+        let vc = segue.destinationViewController as! ReplyController
+        vc.replyBoard = newsPictureModel.boardid
+        vc.requestID =  newsPictureModel.postid
+    }
     
     // MARK: - cyclePictureView代理
     func cyclePictureView(cyclePictureView: CyclePictureView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

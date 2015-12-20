@@ -73,6 +73,7 @@
 		77DA006C1C072F4600741E6A /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA00671C072F4600741E6A /* FMResultSet.m */; };
 		77DA006E1C072F7400741E6A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DA006D1C072F7400741E6A /* libsqlite3.0.tbd */; };
 		77DA00701C072F9200741E6A /* LocalDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA006F1C072F9200741E6A /* LocalDataTool.swift */; };
+		77E186EA1C23E84E0048132E /* SubReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E186E91C23E84E0048132E /* SubReplyCell.swift */; };
 		77E37A1E1BF35A04003E2F44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A1C1BF35A04003E2F44 /* Main.storyboard */; };
 		77E37A201BF35A04003E2F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A1F1BF35A04003E2F44 /* Assets.xcassets */; };
 		77E37A231BF35A04003E2F44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E37A211BF35A04003E2F44 /* LaunchScreen.storyboard */; };
@@ -209,6 +210,7 @@
 		77DA00671C072F4600741E6A /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		77DA006D1C072F7400741E6A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		77DA006F1C072F9200741E6A /* LocalDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataTool.swift; sourceTree = "<group>"; };
+		77E186E91C23E84E0048132E /* SubReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubReplyCell.swift; sourceTree = "<group>"; };
 		77E37A151BF35A04003E2F44 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E37A1D1BF35A04003E2F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77E37A1F1BF35A04003E2F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				77DA002E1C06DC2100741E6A /* SpecialNewsHeardView.swift */,
 				7717E32F1C186573002FE7CE /* ReplyCell.swift */,
 				77FDB3141C1A58FE00EC67BE /* ReplyHeardView.swift */,
+				77E186E91C23E84E0048132E /* SubReplyCell.swift */,
 				77FDB3161C1A590E00EC67BE /* ReplyHeardView.xib */,
 			);
 			path = View;
@@ -955,6 +958,7 @@
 				77DA00531C06DC2100741E6A /* WeatherDetailController.swift in Sources */,
 				77DA004F1C06DC2100741E6A /* DetailPictureView.swift in Sources */,
 				77DA003A1C06DC2100741E6A /* NewsListContorller.swift in Sources */,
+				77E186EA1C23E84E0048132E /* SubReplyCell.swift in Sources */,
 				77DA00511C06DC2100741E6A /* SpecialNewsHeardView.swift in Sources */,
 				777C969D1BF89DCF00519375 /* MJRefreshBackFooter.m in Sources */,
 				777C969F1BF89DCF00519375 /* MJRefreshFooter.m in Sources */,

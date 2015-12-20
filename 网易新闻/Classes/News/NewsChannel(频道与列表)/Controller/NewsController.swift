@@ -137,10 +137,12 @@ class NewsController: UIViewController {
         let weatherView = WeatherView.weatherView()
         weatherView.alpha = 0.9;
         weatherView.frame.size.width = UIScreen.mainScreen().bounds.width
-        weatherView.frame.size.height = UIScreen.mainScreen().bounds.height
+        weatherView.frame.size.height = UIScreen.mainScreen().bounds.height - 64
+        weatherView.frame.origin.y = 64
         weatherView.hidden = true
         weatherView.delegate = self
-        self.view.addSubview(weatherView)
+        let window = UIApplication.sharedApplication().keyWindow
+        window!.addSubview(weatherView)
         self.weatherView = weatherView
     }
     
@@ -150,7 +152,7 @@ class NewsController: UIViewController {
     @IBAction func importantNewsBtnClik(sender: AnyObject) {
         let sb = UIStoryboard(name: "NewsList", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("ImportantNewsController") as! ImportantNewsController
-        
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
             interactivePopGestureRecognizer.delegate = nil
@@ -196,6 +198,7 @@ extension NewsController: WeatherViewDelegate {
         
         let vc = UIStoryboard(name: "Weather", bundle: nil).instantiateInitialViewController() as! WeatherDetailController
         vc.weatherModel = weatherModel
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
             interactivePopGestureRecognizer.delegate = nil
@@ -212,6 +215,7 @@ extension NewsController: WeatherViewDelegate {
         vc.title = "您所在的城市"
         vc.delegate = self
         self.navigationController?.presentViewController(nav, animated: true, completion: nil)
+        self.weatherView.hidden = true
     }
 }
 
@@ -219,6 +223,7 @@ extension NewsController: WeatherViewDelegate {
 extension NewsController: CitySelectControllerDelegate{
     func didSelectCity(citymodel: CityModel) {
         self.weatherView.cityModel = citymodel
+        self.weatherView.hidden = false
     }
 }
 

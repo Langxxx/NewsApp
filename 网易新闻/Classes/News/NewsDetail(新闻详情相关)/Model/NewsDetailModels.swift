@@ -63,12 +63,16 @@ class NewsDetailModel: NSObject, NSCoding {
     var img: [NewsDetailImgModel]
     /// 跟帖请求要用到的
     var replyBoard: String
+    /// 新闻id请求要用到的
+    var docid: String
+    
     init(json: JSON) {
         title = json["title"].stringValue
         ptime = json["ptime"].stringValue
         body = json["body"].stringValue
         img = ModelArrayProvider.arrayModel(NewsDetailImgModel.self, json: json["img"])!
         replyBoard = json["replyBoard"].stringValue
+        docid = json["docid"].stringValue
     }
     
     required init?(coder decoder: NSCoder) {
@@ -77,6 +81,7 @@ class NewsDetailModel: NSObject, NSCoding {
         body = decoder.decodeObjectForKey("body") as! String
         img = decoder.decodeObjectForKey("img") as! [NewsDetailImgModel]
         replyBoard = decoder.decodeObjectForKey("replyBoard") as! String
+        docid = decoder.decodeObjectForKey("docid") as! String
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
@@ -85,6 +90,7 @@ class NewsDetailModel: NSObject, NSCoding {
         aCoder.encodeObject(body, forKey: "body")
         aCoder.encodeObject(img, forKey: "img")
         aCoder.encodeObject(replyBoard, forKey: "replyBoard")
+        aCoder.encodeObject(docid, forKey: "docid")
     }
     
 }
@@ -191,23 +197,33 @@ class NewsPictureModel: NSObject, NSCoding {
     var setname: String
     /// 数量
     var imgsum: Int
+    /// 跟帖请求要用到的
+    var boardid: String
+    /// 新闻id请求要用到的
+    var postid: String
     
     init(json: JSON) {
         setname = json["setname"].stringValue
         imgsum = json["imgsum"].intValue
         photos = ModelArrayProvider.arrayModel(Photo.self, json: json["photos"])!
+        boardid = json["boardid"].stringValue
+        postid = json["postid"].stringValue
     }
     
     required init?(coder decoder: NSCoder) {
         setname = decoder.decodeObjectForKey("setname") as! String
         imgsum = decoder.decodeObjectForKey("imgsum") as! Int
         photos = decoder.decodeObjectForKey("photos") as! [Photo]
+        boardid = decoder.decodeObjectForKey("boardid") as! String
+        postid = decoder.decodeObjectForKey("postid") as! String
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(setname, forKey: "setname")
         aCoder.encodeObject(imgsum, forKey: "imgsum")
         aCoder.encodeObject(photos, forKey: "photos")
+        aCoder.encodeObject(boardid, forKey: "boardid")
+        aCoder.encodeObject(postid, forKey: "postid")
     }
     
 }
@@ -232,7 +248,7 @@ class ReplyModel {
  /// 这条评论的楼数
     var floor: Int
     init(key: String, json: JSON) {
-
+        
         floor = (key as NSString).integerValue
         name = json["n"].string ?? "火星网友"
         userAddress = json["f"].stringValue

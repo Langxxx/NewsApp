@@ -128,7 +128,7 @@ extension NewsListContorller {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let vc = CellProvider.provideSelectedNewsVc(self.newsModelArray!, indexPath: indexPath)
-        
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
             interactivePopGestureRecognizer.delegate = nil
