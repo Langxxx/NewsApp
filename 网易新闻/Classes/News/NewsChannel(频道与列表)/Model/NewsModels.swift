@@ -262,7 +262,7 @@ extension NewsModel {
 */
 enum CellType : String{
     
-    case ScrollPictureCell, NormalNewsCell, ThreePictureCell, BigPictureCell, TopBigPictureCell
+    case ScrollPictureCell, NormalNewsCell, ThreePictureCell, BigPictureCell, TopBigPictureCell, ReadNormalNewsCell, ReadThreePictureCell, ReadBigPictureCell
 
     func cellHeight() -> CGFloat {
         switch self {
@@ -274,6 +274,12 @@ enum CellType : String{
             return 108
         case .BigPictureCell:
             return 177
+        case .ReadBigPictureCell:
+            return 295
+        case .ReadNormalNewsCell:
+            return 143
+        case .ReadThreePictureCell:
+            return 281
         }
     }
 }

@@ -243,6 +243,38 @@ struct DataTool {
         }
         
     }
+    
+    /**
+     加载阅读模块数据
+     
+     - parameter completionHandler: 返回数据的回调闭包
+     */
+    static func loadReadNewsData(completionHandler: [ReadNewsModel]? -> Void) {
+        
+        let urlStr = "http://c.3g.163.com/recommend/getSubDocPic"
+        let parameter: [String : AnyObject] = [
+            "from" : "yuedu",
+            "size" : 20,
+            "timestamp":NSDate.TimeIntervalSince1970()
+        ]
+        
+        Alamofire.request(.GET, urlStr, parameters: parameter).responseJSON { (response) -> Void in
+            guard response.result.error == nil else {
+                print("load news error!")
+                completionHandler(nil)
+                return
+            }
+            let data = JSON(response.result.value!)
+            let news = data["推荐"]
+            var array: [ReadNewsModel] = []
+            for (_, dict) in news {
+                
+                array.append(ReadNewsModel(json: dict))
+            }
+            
+            completionHandler(array)
+        }
+    }
 }
 
 extension NSDate {

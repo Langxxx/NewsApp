@@ -82,17 +82,17 @@ class ImportantNewsController: UIViewController {
     
 }
 // MARK: - Table view 代理
-extension ImportantNewsController: UITableViewDelegate {
+extension ImportantNewsController: UITableViewDelegate, CellAttributeProtocol {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return CellProvider.provideCellHeight(self.newsModelArray!, indexPath: indexPath)
+        return provideCellHeight(self.newsModelArray!, indexPath: indexPath)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //取消选中
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let vc = CellProvider.provideSelectedNewsVc(self.newsModelArray!, indexPath: indexPath)
+        let vc = provideSelectedNewsVc(self.newsModelArray!, indexPath: indexPath)
         
         self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {

@@ -17,6 +17,25 @@ protocol NewsListProtocol: UITableViewDataSource {
     var newsModelArray: [NewsModel]? {get set}
     weak var tableView: UITableView! {get set}
 }
+
+protocol CellAttributeProtocol {
+    /**
+     提供对应新闻类型cell的高度
+     */
+    func provideCellHeight(newsModelArray: [NewsModel], indexPath: NSIndexPath) -> CGFloat
+    /**
+     提供对应新闻类型cell
+     */
+    func provideCell(tableView: UITableView, newsModelArray: [NewsModel], indexPath: NSIndexPath) -> NewsCell
+    
+    // TODO: 为了方便当前的测试，先暂时这样设置，以后肯定要改
+    /**
+    提供对被点击cell对应的需要跳转的控制器
+    */
+    func provideSelectedNewsVc(newsModelArray: [NewsModel], indexPath: NSIndexPath) -> UIViewController
+    func provideVcWithNewsModel(newsModel: NewsModel) -> UIViewController
+}
+
 /**
 *  遵守了新闻列表协议的类，主要用来充当数据源的功能
 */
@@ -42,7 +61,7 @@ class NewsListProvider:NSObject, NewsListProtocol{
 /**
 *  NewsListProvider数据源的实现
 */
-extension NewsListProvider: UITableViewDataSource{
+extension NewsListProvider: UITableViewDataSource, CellAttributeProtocol {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var sections: Int = 0
@@ -74,18 +93,21 @@ extension NewsListProvider: UITableViewDataSource{
             newsModelArray = array
         }
         
-        return CellProvider.provideCell(tableView, newsModelArray: newsModelArray, indexPath: indexPath)
+        return provideCell(tableView, newsModelArray: newsModelArray, indexPath: indexPath)
     }
     
 }
+
+
+
 /**
 *  一些cell属性的提供工具
 */
-struct CellProvider {
+extension CellAttributeProtocol {
     /**
     提供对应新闻类型cell的高度
     */
-    static func provideCellHeight(newsModelArray: [NewsModel], indexPath: NSIndexPath) -> CGFloat {
+    func provideCellHeight(newsModelArray: [NewsModel], indexPath: NSIndexPath) -> CGFloat {
        
         let newsModel = newsModelArray[indexPath.row]
         return newsModel.cellType!.cellHeight()
@@ -93,7 +115,7 @@ struct CellProvider {
     /**
     提供对应新闻类型cell
     */
-    static func provideCell(tableView: UITableView, newsModelArray: [NewsModel], indexPath: NSIndexPath) -> NewsCell {
+    func provideCell(tableView: UITableView, newsModelArray: [NewsModel], indexPath: NSIndexPath) -> NewsCell {
         let newsModel = newsModelArray[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier(newsModel.cellType.rawValue, forIndexPath: indexPath) as! NewsCell
         cell.newsModel = newsModel
@@ -105,13 +127,13 @@ struct CellProvider {
     /**
     提供对被点击cell对应的需要跳转的控制器
     */
-    static func provideSelectedNewsVc(newsModelArray: [NewsModel], indexPath: NSIndexPath) -> UIViewController {
+    func provideSelectedNewsVc(newsModelArray: [NewsModel], indexPath: NSIndexPath) -> UIViewController {
 
         let newsModel = newsModelArray[indexPath.row]
-        return CellProvider.provideVcWithNewsModel(newsModel)
+        return provideVcWithNewsModel(newsModel)
        
     }
-    static func provideVcWithNewsModel(newsModel: NewsModel) -> UIViewController {
+    func provideVcWithNewsModel(newsModel: NewsModel) -> UIViewController {
         if newsModel.specialID != nil {
             let sb = UIStoryboard(name: "NewsList", bundle: nil)
             let vc = sb.instantiateViewControllerWithIdentifier("SpecialNewsController") as! SpecialNewsController

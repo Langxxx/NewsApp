@@ -79,11 +79,11 @@ class SpecialNewsController: UIViewController, SpecialNewsHeardViewDelegate {
 }
 
 // MARK: - tableView代理
-extension SpecialNewsController: UITableViewDelegate {
+extension SpecialNewsController: UITableViewDelegate, CellAttributeProtocol {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let topics = self.newsSpecialModel?.topics[indexPath.section]
-        return CellProvider.provideCellHeight(topics!.docs, indexPath: indexPath)
+        return provideCellHeight(topics!.docs, indexPath: indexPath)
     }
     /**
     自定义HeaderSection，达到当前话题的索引颜色
@@ -114,7 +114,7 @@ extension SpecialNewsController: UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let topics = self.newsSpecialModel?.topics[indexPath.section]
-        let vc = CellProvider.provideSelectedNewsVc(topics!.docs, indexPath: indexPath)
+        let vc = provideSelectedNewsVc(topics!.docs, indexPath: indexPath)
         
         self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {

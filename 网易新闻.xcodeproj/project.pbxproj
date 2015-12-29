@@ -12,6 +12,9 @@
 		770ECE6F1C19271900771232 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 770ECE6A1C19271900771232 /* UITableView+FDTemplateLayoutCell.m */; };
 		770ECE701C19271900771232 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 770ECE6C1C19271900771232 /* UITableView+FDTemplateLayoutCellDebug.m */; };
 		7717E3301C186573002FE7CE /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717E32F1C186573002FE7CE /* ReplyCell.swift */; };
+		77256FF31C30D0B70052AD7F /* ReadNormalNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77256FF21C30D0B70052AD7F /* ReadNormalNewsCell.swift */; };
+		77256FF51C30D0C90052AD7F /* ReadThreePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77256FF41C30D0C90052AD7F /* ReadThreePictureCell.swift */; };
+		77256FF71C30D0D60052AD7F /* ReadBigPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77256FF61C30D0D60052AD7F /* ReadBigPictureCell.swift */; };
 		772A3CBE1C12CED80048E4C6 /* ReplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A3CBD1C12CED80048E4C6 /* ReplyController.swift */; };
 		77501B3C1BFA1968001B8F28 /* Details.css in Resources */ = {isa = PBXBuildFile; fileRef = 77501B3B1BFA1968001B8F28 /* Details.css */; };
 		775DAE121C0558B60082BDB8 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 775DAE111C0558B60082BDB8 /* city.plist */; };
@@ -34,7 +37,11 @@
 		777C96AC1BF89DCF00519375 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 777C96971BF89DCF00519375 /* UIScrollView+MJExtension.m */; };
 		777C96AD1BF89DCF00519375 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 777C96991BF89DCF00519375 /* UIScrollView+MJRefresh.m */; };
 		777C96AE1BF89DCF00519375 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 777C969B1BF89DCF00519375 /* UIView+MJExtension.m */; };
+		77B02BCB1C2F847900E31517 /* ReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B02BCA1C2F847900E31517 /* ReadController.swift */; };
+		77B02BCE1C2F90C300E31517 /* ReadHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B02BCD1C2F90C300E31517 /* ReadHeadView.swift */; };
+		77B02BD01C2F90F700E31517 /* ReadHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B02BCF1C2F90F700E31517 /* ReadHeadView.xib */; };
 		77B78C251BFC230300FA7F69 /* NewsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B78C231BFC230300FA7F69 /* NewsList.storyboard */; };
+		77CAD3D01C30059A0089DAB5 /* ReadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAD3CF1C30059A0089DAB5 /* ReadModel.swift */; };
 		77DA00391C06DC2100741E6A /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA000D1C06DC2100741E6A /* NewsController.swift */; };
 		77DA003A1C06DC2100741E6A /* NewsListContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA000E1C06DC2100741E6A /* NewsListContorller.swift */; };
 		77DA003B1C06DC2100741E6A /* NewsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA00101C06DC2100741E6A /* NewsModels.swift */; };
@@ -122,6 +129,9 @@
 		770ECE6B1C19271900771232 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
 		770ECE6C1C19271900771232 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
 		7717E32F1C186573002FE7CE /* ReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
+		77256FF21C30D0B70052AD7F /* ReadNormalNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadNormalNewsCell.swift; sourceTree = "<group>"; };
+		77256FF41C30D0C90052AD7F /* ReadThreePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadThreePictureCell.swift; sourceTree = "<group>"; };
+		77256FF61C30D0D60052AD7F /* ReadBigPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadBigPictureCell.swift; sourceTree = "<group>"; };
 		772A3CBD1C12CED80048E4C6 /* ReplyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyController.swift; sourceTree = "<group>"; };
 		77501B3B1BFA1968001B8F28 /* Details.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Details.css; sourceTree = "<group>"; };
 		775C216BA8EC4AA967E13C66 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +175,11 @@
 		777C96991BF89DCF00519375 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		777C969A1BF89DCF00519375 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		777C969B1BF89DCF00519375 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		77B02BCA1C2F847900E31517 /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
+		77B02BCD1C2F90C300E31517 /* ReadHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadHeadView.swift; sourceTree = "<group>"; };
+		77B02BCF1C2F90F700E31517 /* ReadHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadHeadView.xib; sourceTree = "<group>"; };
 		77B78C241BFC230300FA7F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "网易新闻/Base.lproj/NewsList.storyboard"; sourceTree = SOURCE_ROOT; };
+		77CAD3CF1C30059A0089DAB5 /* ReadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadModel.swift; sourceTree = "<group>"; };
 		77DA000D1C06DC2100741E6A /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		77DA000E1C06DC2100741E6A /* NewsListContorller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListContorller.swift; sourceTree = "<group>"; };
 		77DA00101C06DC2100741E6A /* NewsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModels.swift; sourceTree = "<group>"; };
@@ -289,6 +303,16 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		77256FF11C30D0580052AD7F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77256FF21C30D0B70052AD7F /* ReadNormalNewsCell.swift */,
+				77256FF41C30D0C90052AD7F /* ReadThreePictureCell.swift */,
+				77256FF61C30D0D60052AD7F /* ReadBigPictureCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		777C966F1BF89DCF00519375 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +405,24 @@
 				777C96911BF89DCF00519375 /* MJRefreshStateHeader.m */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		77B02BCC1C2F90A700E31517 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77256FF11C30D0580052AD7F /* Cell */,
+				77B02BCD1C2F90C300E31517 /* ReadHeadView.swift */,
+				77B02BCF1C2F90F700E31517 /* ReadHeadView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77CAD3CE1C3005560089DAB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77CAD3CF1C30059A0089DAB5 /* ReadModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		77DA000B1C06DC2100741E6A /* NewsChannel(频道与列表) */ = {
@@ -725,6 +767,8 @@
 			isa = PBXGroup;
 			children = (
 				77E37A4C1BF35D50003E2F44 /* Read.storyboard */,
+				77CAD3CE1C3005560089DAB5 /* Model */,
+				77B02BCC1C2F90A700E31517 /* View */,
 				77E37A661BF361DB003E2F44 /* Controller */,
 			);
 			path = Read;
@@ -733,6 +777,7 @@
 		77E37A661BF361DB003E2F44 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				77B02BCA1C2F847900E31517 /* ReadController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -870,6 +915,7 @@
 				77E37A201BF35A04003E2F44 /* Assets.xcassets in Resources */,
 				77B78C251BFC230300FA7F69 /* NewsList.storyboard in Resources */,
 				77DA00501C06DC2100741E6A /* DetailPictureView.xib in Resources */,
+				77B02BD01C2F90F700E31517 /* ReadHeadView.xib in Resources */,
 				77E37A511BF35DC5003E2F44 /* Media.storyboard in Resources */,
 				77F2C3E51BF482FA000BB753 /* channels.plist in Resources */,
 				77E37A1E1BF35A04003E2F44 /* Main.storyboard in Resources */,
@@ -960,16 +1006,20 @@
 				77DA003A1C06DC2100741E6A /* NewsListContorller.swift in Sources */,
 				77E186EA1C23E84E0048132E /* SubReplyCell.swift in Sources */,
 				77DA00511C06DC2100741E6A /* SpecialNewsHeardView.swift in Sources */,
+				77256FF51C30D0C90052AD7F /* ReadThreePictureCell.swift in Sources */,
 				777C969D1BF89DCF00519375 /* MJRefreshBackFooter.m in Sources */,
 				777C969F1BF89DCF00519375 /* MJRefreshFooter.m in Sources */,
 				77E37A671BF361DB003E2F44 /* AppDelegate.swift in Sources */,
 				77DA00431C06DC2100741E6A /* ChannelLabel.swift in Sources */,
 				777C96AB1BF89DCF00519375 /* MJRefreshConst.m in Sources */,
+				77B02BCE1C2F90C300E31517 /* ReadHeadView.swift in Sources */,
 				77DA004C1C06DC2100741E6A /* PictureNewsController.swift in Sources */,
 				77DA003B1C06DC2100741E6A /* NewsModels.swift in Sources */,
 				77DA003F1C06DC2100741E6A /* NormalNewsCell.swift in Sources */,
 				770ECE6D1C19271900771232 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				777C96A71BF89DCF00519375 /* MJRefreshGifHeader.m in Sources */,
+				77B02BCB1C2F847900E31517 /* ReadController.swift in Sources */,
+				77256FF31C30D0B70052AD7F /* ReadNormalNewsCell.swift in Sources */,
 				77DA00681C072F4600741E6A /* FMDatabase.m in Sources */,
 				77DA004D1C06DC2100741E6A /* SpecialNewsController.swift in Sources */,
 				77DA004A1C06DC2100741E6A /* DetaillNewsController.swift in Sources */,
@@ -984,6 +1034,7 @@
 				777C96A81BF89DCF00519375 /* MJRefreshNormalHeader.m in Sources */,
 				77FDB3151C1A58FE00EC67BE /* ReplyHeardView.swift in Sources */,
 				77DA003C1C06DC2100741E6A /* CellProvider.swift in Sources */,
+				77CAD3D01C30059A0089DAB5 /* ReadModel.swift in Sources */,
 				777C969E1BF89DCF00519375 /* MJRefreshComponent.m in Sources */,
 				777C96AE1BF89DCF00519375 /* UIView+MJExtension.m in Sources */,
 				77DA00471C06DC2100741E6A /* NewsContainerView.swift in Sources */,
@@ -1000,6 +1051,7 @@
 				77DA00691C072F4600741E6A /* FMDatabaseAdditions.m in Sources */,
 				777C96A91BF89DCF00519375 /* MJRefreshStateHeader.m in Sources */,
 				77DA004B1C06DC2100741E6A /* ImportantNewsController.swift in Sources */,
+				77256FF71C30D0D60052AD7F /* ReadBigPictureCell.swift in Sources */,
 				77DA006A1C072F4600741E6A /* FMDatabasePool.m in Sources */,
 				77DA006C1C072F4600741E6A /* FMResultSet.m in Sources */,
 				777C96A21BF89DCF00519375 /* MJRefreshAutoNormalFooter.m in Sources */,

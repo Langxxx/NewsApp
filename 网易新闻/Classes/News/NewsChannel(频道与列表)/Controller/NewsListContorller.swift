@@ -118,16 +118,16 @@ class NewsListContorller: UITableViewController {
 }
 
 // MARK: - Table view 代理
-extension NewsListContorller {
+extension NewsListContorller: CellAttributeProtocol {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return CellProvider.provideCellHeight(self.newsModelArray!, indexPath: indexPath)
+        return provideCellHeight(self.newsModelArray!, indexPath: indexPath)
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //取消选中
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let vc = CellProvider.provideSelectedNewsVc(self.newsModelArray!, indexPath: indexPath)
+        let vc = provideSelectedNewsVc(self.newsModelArray!, indexPath: indexPath)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
@@ -158,7 +158,7 @@ extension NewsListContorller: CyclePictureViewDelegate {
             newsModel.specialID = ads.specialID
         }
         
-        let vc = CellProvider.provideVcWithNewsModel(newsModel)
+        let vc = provideVcWithNewsModel(newsModel)
         
         self.navigationController?.pushViewController(vc, animated: true)
         if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {

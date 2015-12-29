@@ -11,7 +11,8 @@ import UIKit
 class ReplyCell: UITableViewCell {
 
     
-    @IBOutlet weak var iconImageVIew: UIImageView!
+
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var supposeLabel: UILabel!
