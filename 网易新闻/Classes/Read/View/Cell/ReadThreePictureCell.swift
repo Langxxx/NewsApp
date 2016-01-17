@@ -40,8 +40,12 @@ class ReadThreePictureCell: NewsCell {
             self.recommendView.hidden = true
             self.title2recommendConstraint.priority = 500
         }
-        self.oneImageView.sd_setImageWithURL(NSURL(string: readNewsModel.imgextra![0]), placeholderImage: UIImage(named: "placeholder"))
-        self.twoImageView.sd_setImageWithURL(NSURL(string: readNewsModel.imgextra![1]), placeholderImage: UIImage(named: "placeholder"))
+
+        // 可能出现imgextra为0的情况
+        if let imgextra = readNewsModel.imgextra where imgextra.count > 0 {
+            self.oneImageView.sd_setImageWithURL(NSURL(string: imgextra[0]), placeholderImage: UIImage(named: "placeholder"))
+            self.twoImageView.sd_setImageWithURL(NSURL(string: imgextra[1]), placeholderImage: UIImage(named: "placeholder"))
+        }
         self.threeImageView.sd_setImageWithURL(NSURL(string: readNewsModel.imgsrc), placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = readNewsModel.title
         self.sourceLabel.text = readNewsModel.source
