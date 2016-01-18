@@ -275,6 +275,41 @@ struct DataTool {
             completionHandler(array)
         }
     }
+    
+    /**
+     加载视听模块数据
+     
+     - parameter completionHandler: 返回数据的回调闭包
+     */
+    static func loadMediaNewsData(urlStr:String, completionHandler: ([VideoSidModel]?, [VideoNewsModel]?) -> Void) {
+
+        
+        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
+            guard response.result.error == nil else {
+                print("load news error!")
+                completionHandler(nil, nil)
+                return
+            }
+            let data = JSON(response.result.value!)
+            
+            let videoSidJSON = data["videoSidList"]
+            var videoSidArray: [VideoSidModel] = []
+            for (_, dict) in videoSidJSON {
+                
+                videoSidArray.append(VideoSidModel(json: dict))
+            }
+            
+            let videoNewsJSON = data["videoList"]
+            var videoNewsArray: [VideoNewsModel] = []
+            for (_, dict) in videoNewsJSON {
+                
+                videoNewsArray.append(VideoNewsModel(json: dict))
+            }
+            
+            completionHandler(videoSidArray, videoNewsArray)
+        }
+    }
+
 }
 
 extension NSDate {

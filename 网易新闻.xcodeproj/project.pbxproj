@@ -16,6 +16,11 @@
 		77256FF51C30D0C90052AD7F /* ReadThreePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77256FF41C30D0C90052AD7F /* ReadThreePictureCell.swift */; };
 		77256FF71C30D0D60052AD7F /* ReadBigPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77256FF61C30D0D60052AD7F /* ReadBigPictureCell.swift */; };
 		772A3CBE1C12CED80048E4C6 /* ReplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A3CBD1C12CED80048E4C6 /* ReplyController.swift */; };
+		774ADCAD1C4B7D5C002AF79B /* MediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774ADCAC1C4B7D5C002AF79B /* MediaController.swift */; };
+		774ADCB01C4B7EBF002AF79B /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774ADCAF1C4B7EBF002AF79B /* MediaModel.swift */; };
+		774ADCB31C4B8B1D002AF79B /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774ADCB21C4B8B1D002AF79B /* VideoCell.swift */; };
+		774ADCB51C4B8C1C002AF79B /* VideoListHeardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774ADCB41C4B8C1C002AF79B /* VideoListHeardView.swift */; };
+		774ADCB71C4B8C26002AF79B /* VideoListHeardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 774ADCB61C4B8C26002AF79B /* VideoListHeardView.xib */; };
 		77501B3C1BFA1968001B8F28 /* Details.css in Resources */ = {isa = PBXBuildFile; fileRef = 77501B3B1BFA1968001B8F28 /* Details.css */; };
 		775DAE121C0558B60082BDB8 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 775DAE111C0558B60082BDB8 /* city.plist */; };
 		777C969C1BF89DCF00519375 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 777C96721BF89DCF00519375 /* MJRefreshAutoFooter.m */; };
@@ -133,6 +138,11 @@
 		77256FF41C30D0C90052AD7F /* ReadThreePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadThreePictureCell.swift; sourceTree = "<group>"; };
 		77256FF61C30D0D60052AD7F /* ReadBigPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadBigPictureCell.swift; sourceTree = "<group>"; };
 		772A3CBD1C12CED80048E4C6 /* ReplyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyController.swift; sourceTree = "<group>"; };
+		774ADCAC1C4B7D5C002AF79B /* MediaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaController.swift; sourceTree = "<group>"; };
+		774ADCAF1C4B7EBF002AF79B /* MediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
+		774ADCB21C4B8B1D002AF79B /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		774ADCB41C4B8C1C002AF79B /* VideoListHeardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListHeardView.swift; sourceTree = "<group>"; };
+		774ADCB61C4B8C26002AF79B /* VideoListHeardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListHeardView.xib; sourceTree = "<group>"; };
 		77501B3B1BFA1968001B8F28 /* Details.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Details.css; sourceTree = "<group>"; };
 		775C216BA8EC4AA967E13C66 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		775DAE111C0558B60082BDB8 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
@@ -311,6 +321,24 @@
 				77256FF61C30D0D60052AD7F /* ReadBigPictureCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		774ADCAE1C4B7E67002AF79B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				774ADCAF1C4B7EBF002AF79B /* MediaModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		774ADCB11C4B8B09002AF79B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				774ADCB21C4B8B1D002AF79B /* VideoCell.swift */,
+				774ADCB41C4B8C1C002AF79B /* VideoListHeardView.swift */,
+				774ADCB61C4B8C26002AF79B /* VideoListHeardView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		777C966F1BF89DCF00519375 /* MJRefresh */ = {
@@ -739,6 +767,8 @@
 			isa = PBXGroup;
 			children = (
 				77E37A4F1BF35DC5003E2F44 /* Media.storyboard */,
+				774ADCB11C4B8B09002AF79B /* View */,
+				774ADCAE1C4B7E67002AF79B /* Model */,
 				77E37A621BF361DB003E2F44 /* Controller */,
 			);
 			path = Media;
@@ -747,6 +777,7 @@
 		77E37A621BF361DB003E2F44 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				774ADCAC1C4B7D5C002AF79B /* MediaController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -919,6 +950,7 @@
 				77E37A511BF35DC5003E2F44 /* Media.storyboard in Resources */,
 				77F2C3E51BF482FA000BB753 /* channels.plist in Resources */,
 				77E37A1E1BF35A04003E2F44 /* Main.storyboard in Resources */,
+				774ADCB71C4B8C26002AF79B /* VideoListHeardView.xib in Resources */,
 				77E37A4E1BF35D50003E2F44 /* Read.storyboard in Resources */,
 				777C96AA1BF89DCF00519375 /* MJRefresh.bundle in Resources */,
 				77E37A541BF35DFC003E2F44 /* Discover.storyboard in Resources */,
@@ -1025,6 +1057,7 @@
 				77DA004A1C06DC2100741E6A /* DetaillNewsController.swift in Sources */,
 				77DA00481C06DC2100741E6A /* SecondLaunchView.swift in Sources */,
 				777C96AC1BF89DCF00519375 /* UIScrollView+MJExtension.m in Sources */,
+				774ADCB01C4B7EBF002AF79B /* MediaModel.swift in Sources */,
 				777C96A41BF89DCF00519375 /* MJRefreshBackGifFooter.m in Sources */,
 				77DA00391C06DC2100741E6A /* NewsController.swift in Sources */,
 				77DA00461C06DC2100741E6A /* CyclePictureView.swift in Sources */,
@@ -1055,6 +1088,7 @@
 				77DA006A1C072F4600741E6A /* FMDatabasePool.m in Sources */,
 				77DA006C1C072F4600741E6A /* FMResultSet.m in Sources */,
 				777C96A21BF89DCF00519375 /* MJRefreshAutoNormalFooter.m in Sources */,
+				774ADCAD1C4B7D5C002AF79B /* MediaController.swift in Sources */,
 				77DA00551C06DC2100741E6A /* WeatherView.swift in Sources */,
 				77DA00411C06DC2100741E6A /* ThreePictureCell.swift in Sources */,
 				770ECE6F1C19271900771232 /* UITableView+FDTemplateLayoutCell.m in Sources */,
@@ -1064,10 +1098,12 @@
 				77DA006B1C072F4600741E6A /* FMDatabaseQueue.m in Sources */,
 				777C96A01BF89DCF00519375 /* MJRefreshHeader.m in Sources */,
 				77E37A861BF3835F003E2F44 /* DataTool.swift in Sources */,
+				774ADCB31C4B8B1D002AF79B /* VideoCell.swift in Sources */,
 				77DA00451C06DC2100741E6A /* CyclePictureCell.swift in Sources */,
 				7717E3301C186573002FE7CE /* ReplyCell.swift in Sources */,
 				777C96A61BF89DCF00519375 /* MJRefreshBackStateFooter.m in Sources */,
 				777C96AD1BF89DCF00519375 /* UIScrollView+MJRefresh.m in Sources */,
+				774ADCB51C4B8C1C002AF79B /* VideoListHeardView.swift in Sources */,
 				77E37A6B1BF36B38003E2F44 /* NavgationBarExtension.swift in Sources */,
 				770ECE701C19271900771232 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 			);
