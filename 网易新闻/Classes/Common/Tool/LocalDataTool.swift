@@ -32,10 +32,9 @@ struct LocalDataTool {
             do {
                 
                 let data = NSKeyedArchiver.archivedDataWithRootObject(newsModelArray)
-                
-                try database.executeUpdate("create table if not exists t_NewsList(id integer primary key, NewsListData blob not null, channelID text not null)", values: nil)
-                try database.executeUpdate("delete from t_NewsList where channelID = ?", values: [channelID])
-                try database.executeUpdate("insert into t_NewsList (NewsListData, channelID) values (?, ?)", values: [data, channelID])
+                             
+                try database.executeUpdate("create table if not exists t_NewsList(channelID text primary key, NewsListData blob not null)", values: nil)
+                try database.executeUpdate("replace into t_NewsList (channelID, NewsListData) values (?, ?)", values: [channelID, data])
                 
             } catch let error as NSError {
                 print("failed: \(error.localizedDescription)")
@@ -73,6 +72,12 @@ struct LocalDataTool {
         return array
     }
     
+    /**
+     将新闻详情保存到本地
+     
+     - parameter key:      新闻对应的唯一标识
+     - parameter anyModel: 新闻模型
+     */
     static func saveNewsDetailInfo<T: NSObject> (key: String, anyModel: T) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
@@ -86,9 +91,8 @@ struct LocalDataTool {
                 
                 let data = NSKeyedArchiver.archivedDataWithRootObject(anyModel)
                 
-                try database.executeUpdate("create table if not exists t_NewsDetail(id integer primary key, NewsDetailData blob not null, key text not null)", values: nil)
-                try database.executeUpdate("delete from t_NewsDetail where key = ?", values: [key])
-                try database.executeUpdate("insert into t_NewsDetail (NewsDetailData, key) values (?, ?)", values: [data, key])
+                try database.executeUpdate("create table if not exists t_NewsDetail(key text primary key, NewsDetailData blob not null)", values: nil)
+                try database.executeUpdate("replace into t_NewsDetail (key, NewsDetailData) values (?, ?)", values: [key, data])
                 
             } catch let error as NSError {
                 print("failed: \(error.localizedDescription)")
@@ -97,6 +101,13 @@ struct LocalDataTool {
         }
     }
     
+    /**
+     从本地获取缓存的新闻详情
+     
+     - parameter key: 新闻对应的唯一标识
+     
+     - returns: 新闻模型
+     */
     static func getNewsDetailInfo<T: NSObject> (key: String) -> T? {
         
         if !database.open() {
