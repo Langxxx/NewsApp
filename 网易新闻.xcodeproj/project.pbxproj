@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77073A2F1C79A94700B83506 /* PlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77073A2E1C79A94700B83506 /* PlayerControlView.xib */; };
+		77073A331C79B5DB00B83506 /* NewsPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77073A321C79B5DB00B83506 /* NewsPlayerController.swift */; };
 		770ECE6D1C19271900771232 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 770ECE661C19271900771232 /* UITableView+FDIndexPathHeightCache.m */; };
 		770ECE6E1C19271900771232 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 770ECE681C19271900771232 /* UITableView+FDKeyedHeightCache.m */; };
 		770ECE6F1C19271900771232 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 770ECE6A1C19271900771232 /* UITableView+FDTemplateLayoutCell.m */; };
@@ -125,6 +127,8 @@
 
 /* Begin PBXFileReference section */
 		46874A2F9A228B6B0ECF1983 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77073A2E1C79A94700B83506 /* PlayerControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerControlView.xib; sourceTree = "<group>"; };
+		77073A321C79B5DB00B83506 /* NewsPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsPlayerController.swift; sourceTree = "<group>"; };
 		770ECE651C19271900771232 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		770ECE661C19271900771232 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		770ECE671C19271900771232 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 				774ADCB21C4B8B1D002AF79B /* VideoCell.swift */,
 				774ADCB41C4B8C1C002AF79B /* VideoListHeardView.swift */,
 				774ADCB61C4B8C26002AF79B /* VideoListHeardView.xib */,
+				77073A2E1C79A94700B83506 /* PlayerControlView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -778,6 +783,7 @@
 			isa = PBXGroup;
 			children = (
 				774ADCAC1C4B7D5C002AF79B /* MediaController.swift */,
+				77073A321C79B5DB00B83506 /* NewsPlayerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -956,6 +962,7 @@
 				77E37A541BF35DFC003E2F44 /* Discover.storyboard in Resources */,
 				77501B3C1BFA1968001B8F28 /* Details.css in Resources */,
 				77DA00561C06DC2100741E6A /* WeatherView.xib in Resources */,
+				77073A2F1C79A94700B83506 /* PlayerControlView.xib in Resources */,
 				775DAE121C0558B60082BDB8 /* city.plist in Resources */,
 				77FDB3171C1A590E00EC67BE /* ReplyHeardView.xib in Resources */,
 				77DA00491C06DC2100741E6A /* SecondLaunchView.xib in Resources */,
@@ -1087,6 +1094,7 @@
 				77256FF71C30D0D60052AD7F /* ReadBigPictureCell.swift in Sources */,
 				77DA006A1C072F4600741E6A /* FMDatabasePool.m in Sources */,
 				77DA006C1C072F4600741E6A /* FMResultSet.m in Sources */,
+				77073A331C79B5DB00B83506 /* NewsPlayerController.swift in Sources */,
 				777C96A21BF89DCF00519375 /* MJRefreshAutoNormalFooter.m in Sources */,
 				774ADCAD1C4B7D5C002AF79B /* MediaController.swift in Sources */,
 				77DA00551C06DC2100741E6A /* WeatherView.swift in Sources */,

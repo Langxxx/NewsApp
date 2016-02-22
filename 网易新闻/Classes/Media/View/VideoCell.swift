@@ -8,8 +8,10 @@
 
 import UIKit
 
+let PlayerButtonDidClikNotification = "PlayerButtonDidClikNotification"
+
 class VideoCell: UITableViewCell {
-    
+ 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var coverImageView: UIImageView!
@@ -17,6 +19,8 @@ class VideoCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playCountLabel: UILabel!
     @IBOutlet weak var replyCountButton: UIButton!
+    
+    @IBOutlet weak var playerView: UIView!
     
     
     var newsModel: VideoNewsModel! {
@@ -33,7 +37,16 @@ class VideoCell: UITableViewCell {
         self.timeLabel.text = String(format:"%02d:%02d", self.newsModel.length/60, self.newsModel.length%60)
         self.playCountLabel.text = String(self.newsModel.playCount)
         self.replyCountButton.setTitle(String(self.newsModel.replyCount), forState: .Normal)
-        
     }
-    
+    /**
+     当点击播放按钮的时候，通知控制器进行播放操作
+     */
+    @IBAction func playBtnClik(sender: UIButton) {
+        let userInfo = [
+            "inView" : self.playerView,
+            "url" : self.newsModel.mp4_url,
+            "cell" : self
+        ]
+        NSNotificationCenter.defaultCenter().postNotificationName(PlayerButtonDidClikNotification, object: self, userInfo: userInfo)
+    }
 }
