@@ -25,11 +25,15 @@ class MediaController: UIViewController {
     /// 正在播放视频的URL
     var playingNewsUrl: String = ""
     /// 正在播放视频的播放器
-    var playingPlayer: NewsPlayerController?
+    var playingPlayer: WLVideoPlayerView?
     /// 播放视频的那个cell，解决重用问题
     var playingCell: VideoCell?
     /// 播放视频的那个cell的索引，解决重用问题
     var playingCellIndexPath: NSIndexPath?
+    
+    lazy var controlView = {
+        return NSBundle.mainBundle().loadNibNamed("PlayerControlView", owner: nil, options: nil).last as! PlayerControlView
+    }()
     
  // MARK: - 方法
     override func viewDidLoad() {
@@ -103,21 +107,24 @@ class MediaController: UIViewController {
             return
         }
         
-        self.playingPlayer?.view.removeFromSuperview()
+        self.playingPlayer?.removeFromSuperview()
         self.playingPlayer = nil
         
         self.playingCell = playingCell
         self.playingCellIndexPath = self.tableView.indexPathForCell(playingCell)
-        self.playingPlayer = NewsPlayerController()
-        self.playingPlayer?.playWithUrl(NSURL(string: urlStr)!, inView: inView)
+        
+        self.playingPlayer = WLVideoPlayerView(url: NSURL(string: urlStr))
+        self.playingPlayer?.customControlView = controlView
+        self.playingPlayer?.placeholderView = UIImageView(image: UIImage(named: "placeholder"))
+        self.playingPlayer?.playInView(inView)
         
     }
     /**
      重置播放器的一些参数,在重新刷新数据、当前控制器失去焦点的时候调用的时候调用
      */
     func resetPlayer() {
-        self.playingPlayer?.pause()
-        self.playingPlayer?.view.removeFromSuperview()
+//        self.playingPlayer?.pause()
+        self.playingPlayer?.removeFromSuperview()
         self.playingPlayer = nil
         self.playingCell = nil
         self.playingCellIndexPath = nil
@@ -147,10 +154,10 @@ extension MediaController: UITableViewDelegate, UITableViewDataSource {
             // 判断这个重用的cell是原本就应该播放视频的，还是其他行重用的
             if let playingCellIndexPath = self.playingCellIndexPath where playingCellIndexPath == indexPath {
                 // 走到这里表示这个cell就是原本需要播放视频的那一行
-                self.playingPlayer?.view.hidden = false
+                self.playingPlayer?.hidden = false
             }else {
                 // 走到这里表示这个cell是重用的原本需要播放视频的那一行
-                self.playingPlayer?.view.hidden = true
+                self.playingPlayer?.hidden = true
             }
         }
         
