@@ -42,9 +42,12 @@ class ReplyCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
         subReplyTableView.delegate = self
         subReplyTableView.dataSource = self
         subReplyTableView.bounces = false
+          subReplyTableView.separatorStyle = .None
+        subReplyTableView.registerNib(UINib(nibName: "SubReplyCell", bundle: nil), forCellReuseIdentifier: "SubReplyCell")
     }
 }
 

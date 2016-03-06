@@ -29,28 +29,30 @@ class VideoSidModel {
 }
 
 class VideoNewsModel: NewsModelInitProtocol {
- /// 回帖数
+    /// 回帖数
     var replyCount: Int
- /// 图片
+    /// 图片
     var cover: String
- /// 播放次数
+    /// 播放次数
     var playCount: Int
- /// 题目
+    /// 题目
     var title: String
- /// 来源
+    /// 来源
     var videosource: String
- /// 暂时不知道干啥
+    /// 暂时不知道干啥
     var replyBoard: String
- /// 简单描述信息
+    /// 简单描述信息
     var description: String
     
     var replyid: String
- /// 播放地址
+    /// 播放地址
     var mp4_url: String
- /// 发布时间
+    /// 发布时间
     var ptime: String
     ///  视频时长(秒)
     var length: Int
+    /// 获取视频详情里的推荐数据的id
+    var vid: String
     
     required init(json: JSON) {
         replyCount = json["replyCount"].intValue
@@ -64,6 +66,7 @@ class VideoNewsModel: NewsModelInitProtocol {
         mp4_url = json["mp4_url"].stringValue
         ptime = json["ptime"].stringValue
         length = json["length"].intValue
+        vid = json["vid"].stringValue
     }
 }
 

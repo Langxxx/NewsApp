@@ -18,7 +18,7 @@ class SubReplyCell: UITableViewCell {
     var replyModel: ReplyModel! {
         didSet {
             self.userNameLabel.text = replyModel.name
-            self.addressLabel.text = replyModel.userAddress.componentsSeparatedByString(" ").first
+            self.addressLabel.text = replyModel.userAddress.componentsSeparatedByString("&nbsp").first
             self.messageLabel.text = replyModel.message
             self.floorLabel.text = String(replyModel.floor)
         }
@@ -26,13 +26,10 @@ class SubReplyCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(red: 251/255.0, green: 245/255.0, blue: 221/255.0, alpha: 1)
+        let imageView =  UIImageView(frame: self.bounds)
+        imageView.image = UIImage(named: "comment_roof_1")
+        self.backgroundView = imageView
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }

@@ -16,6 +16,8 @@ class ReplyController: UIViewController {
     var hotReplyArray: [[ReplyModel]]?
     var newReplyArray: [[ReplyModel]]?
     
+    let replyCellProvider = ReplyCellProvider()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,6 +26,12 @@ class ReplyController: UIViewController {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.automaticallyAdjustsScrollViewInsets = false
+        
+        self.tableView.delegate = self.replyCellProvider
+        self.tableView.dataSource = self.replyCellProvider
+        self.replyCellProvider.tableView = self.tableView
+        
+        self.tableView.registerNib(UINib(nibName: "ReplyCell", bundle: nil), forCellReuseIdentifier: "ReplyCell")
         let hotUrl = "http://comment.api.163.com/api/json/post/list/new/hot/\(replyBoard)/\(requestID)/0/10/10/2/2"
         let newUrl = "http://comment.api.163.com/api/json/post/list/new/normal/\(replyBoard)/\(requestID)/desc/0/10/10/2/2"
 
@@ -34,6 +42,8 @@ class ReplyController: UIViewController {
            
             self.hotReplyArray = hotReplyArray
             self.newReplyArray = newReplyArray
+            self.replyCellProvider.hotReplyArray = hotReplyArray
+            self.replyCellProvider.newReplyArray = newReplyArray
             self.tableView.hidden = false
             self.tableView.reloadData()
         }
@@ -47,31 +57,3 @@ class ReplyController: UIViewController {
 
 }
 
-extension ReplyController: UITableViewDelegate, UITableViewDataSource{
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return self.hotReplyArray == nil ? 0 : 2;
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? self.hotReplyArray!.count : self.newReplyArray!.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("ReplyCell") as! ReplyCell
-        let model = indexPath.section == 0 ? self.hotReplyArray![indexPath.row] : self.newReplyArray![indexPath.row]
-        cell.replyModelArray = model
-        cell.tableViewHeightConstrant.constant = cell.subReplyTableView.contentSize.height
-        return cell
-    }
-
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let heardView = section == 0 ? ReplyHeardView.ReplyHeardViewWithTitle("热门评论") : ReplyHeardView.ReplyHeardViewWithTitle("最新评论")
-        
-        return heardView
-    }
-}

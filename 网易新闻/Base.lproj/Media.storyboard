@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--视听-->
@@ -230,10 +231,191 @@
             </objects>
             <point key="canvasLocation" x="-478" y="184"/>
         </scene>
+        <!--Media Detail Controller-->
+        <scene sceneID="JZK-e2-DnD">
+            <objects>
+                <viewController storyboardIdentifier="MediaDetailController" id="Tye-ml-Afs" customClass="MediaDetailController" customModule="网易新闻" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fK0-i5-c7A"/>
+                        <viewControllerLayoutGuide type="bottom" id="oVh-r9-1lK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fAb-TH-QeN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8r-Oc-VxF" userLabel="videoView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="K8r-Oc-VxF" secondAttribute="height" multiplier="2:1" id="a72-UE-Jsf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1b-iE-tRw" userLabel="topVIew">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-Sg-Rxv" userLabel="back">
+                                        <rect key="frame" x="0.0" y="12" width="42" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="QSF-12-YC2"/>
+                                            <constraint firstAttribute="height" constant="35" id="zYJ-0o-CjI"/>
+                                        </constraints>
+                                        <state key="normal" title="ttttttt" image="back">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtnClik" destination="Tye-ml-Afs" eventType="touchUpInside" id="Jv4-dg-Laj"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALi-Am-1RZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="gcF-3H-zEj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="5xw-Gh-6TV"/>
+                                    <constraint firstAttribute="trailing" secondItem="ALi-Am-1RZ" secondAttribute="trailing" id="Ifj-6J-ecL"/>
+                                    <constraint firstItem="ALi-Am-1RZ" firstAttribute="leading" secondItem="o1b-iE-tRw" secondAttribute="leading" id="ZB0-5f-j7p"/>
+                                    <constraint firstItem="ALi-Am-1RZ" firstAttribute="leading" secondItem="Ojf-Sg-Rxv" secondAttribute="trailing" id="ZhE-oN-Hu5"/>
+                                    <constraint firstItem="ALi-Am-1RZ" firstAttribute="top" secondItem="o1b-iE-tRw" secondAttribute="top" id="bfj-a0-HoI"/>
+                                    <constraint firstItem="Ojf-Sg-Rxv" firstAttribute="top" secondItem="o1b-iE-tRw" secondAttribute="top" constant="12" id="dTK-y7-kx3"/>
+                                    <constraint firstItem="Ojf-Sg-Rxv" firstAttribute="leading" secondItem="o1b-iE-tRw" secondAttribute="leading" id="gie-h1-Auv"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="mVV-D2-q61"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZhE-oN-Hu5"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc7-Tv-0Eo" userLabel="bottomView">
+                                <rect key="frame" x="0.0" y="320" width="600" height="280"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykk-Fn-5Rd" userLabel="channelView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57W-BQ-Ll3" customClass="ChannelLabel" customModule="网易新闻" customModuleProvider="target">
+                                                <rect key="frame" x="311" y="0.0" width="26" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Le8-3N-FC6">
+                                                <rect key="frame" x="556" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="ycR-wg-AWR"/>
+                                                </constraints>
+                                                <state key="normal" image="night_channel_nav_arrow"/>
+                                                <state key="selected" image="night_comment_arrow_down"/>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWK-m1-Vg6">
+                                                <rect key="frame" x="300" y="0.0" width="1" height="44"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="17e-Ld-sSw"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112跟帖" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhW-aF-QbW" customClass="ChannelLabel" customModule="网易新闻" customModuleProvider="target">
+                                                <rect key="frame" x="244" y="0.0" width="46" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="sWK-m1-Vg6" firstAttribute="leading" secondItem="uhW-aF-QbW" secondAttribute="trailing" constant="10" id="26W-HE-szi"/>
+                                            <constraint firstItem="57W-BQ-Ll3" firstAttribute="leading" secondItem="uhW-aF-QbW" secondAttribute="trailing" constant="5" id="7ug-GM-xHg"/>
+                                            <constraint firstAttribute="bottom" secondItem="uhW-aF-QbW" secondAttribute="bottom" id="BzG-We-ZYd"/>
+                                            <constraint firstItem="57W-BQ-Ll3" firstAttribute="top" secondItem="ykk-Fn-5Rd" secondAttribute="top" id="DnA-Dy-8bA"/>
+                                            <constraint firstItem="sWK-m1-Vg6" firstAttribute="centerX" secondItem="ykk-Fn-5Rd" secondAttribute="centerX" id="FZE-vh-Mwt"/>
+                                            <constraint firstItem="Le8-3N-FC6" firstAttribute="top" secondItem="ykk-Fn-5Rd" secondAttribute="top" id="Fmw-Mq-1R6"/>
+                                            <constraint firstAttribute="height" constant="44" id="HDg-oz-V8v"/>
+                                            <constraint firstAttribute="bottom" secondItem="Le8-3N-FC6" secondAttribute="bottom" id="J28-yV-lFv"/>
+                                            <constraint firstItem="57W-BQ-Ll3" firstAttribute="leading" secondItem="uhW-aF-QbW" secondAttribute="trailing" constant="5" id="L70-ya-V25"/>
+                                            <constraint firstAttribute="bottom" secondItem="sWK-m1-Vg6" secondAttribute="bottom" id="Lmj-s0-fXU"/>
+                                            <constraint firstItem="57W-BQ-Ll3" firstAttribute="leading" secondItem="sWK-m1-Vg6" secondAttribute="trailing" constant="10" id="Ohm-BY-dai"/>
+                                            <constraint firstItem="57W-BQ-Ll3" firstAttribute="width" secondItem="ykk-Fn-5Rd" secondAttribute="width" multiplier="0.5" id="Y7a-ab-oCa"/>
+                                            <constraint firstAttribute="trailing" secondItem="Le8-3N-FC6" secondAttribute="trailing" id="eJ6-9m-RHf"/>
+                                            <constraint firstAttribute="bottom" secondItem="57W-BQ-Ll3" secondAttribute="bottom" id="qdC-Dt-RWF"/>
+                                            <constraint firstItem="uhW-aF-QbW" firstAttribute="width" secondItem="ykk-Fn-5Rd" secondAttribute="width" multiplier="0.5" id="uFp-WX-YJW"/>
+                                            <constraint firstItem="sWK-m1-Vg6" firstAttribute="top" secondItem="ykk-Fn-5Rd" secondAttribute="top" id="xnv-NM-wuf"/>
+                                            <constraint firstItem="uhW-aF-QbW" firstAttribute="top" secondItem="ykk-Fn-5Rd" secondAttribute="top" id="yJh-uI-i2o"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="uFp-WX-YJW"/>
+                                                <exclude reference="Y7a-ab-oCa"/>
+                                                <exclude reference="L70-ya-V25"/>
+                                                <exclude reference="7ug-GM-xHg"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-3e-yal" customClass="NewsContainerView" customModule="网易新闻" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="236"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ykk-Fn-5Rd" secondAttribute="trailing" id="3wA-yh-F9h"/>
+                                    <constraint firstItem="ZTi-3e-yal" firstAttribute="leading" secondItem="bc7-Tv-0Eo" secondAttribute="leading" id="DBn-Iw-X2m"/>
+                                    <constraint firstItem="ykk-Fn-5Rd" firstAttribute="leading" secondItem="bc7-Tv-0Eo" secondAttribute="leading" id="NNi-gf-ksC"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZTi-3e-yal" secondAttribute="bottom" id="Nqa-PF-8Xv"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZTi-3e-yal" secondAttribute="bottom" id="RKw-XZ-aPa"/>
+                                    <constraint firstItem="ZTi-3e-yal" firstAttribute="top" secondItem="ykk-Fn-5Rd" secondAttribute="bottom" id="RNg-91-Aio"/>
+                                    <constraint firstItem="ykk-Fn-5Rd" firstAttribute="top" secondItem="bc7-Tv-0Eo" secondAttribute="top" id="TWg-0j-04M"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZTi-3e-yal" secondAttribute="trailing" id="YPY-Ve-84D"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RKw-XZ-aPa"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bc7-Tv-0Eo" firstAttribute="top" secondItem="K8r-Oc-VxF" secondAttribute="bottom" id="4uO-Mb-eBP"/>
+                            <constraint firstAttribute="trailing" secondItem="K8r-Oc-VxF" secondAttribute="trailing" id="8Nr-5t-t2T"/>
+                            <constraint firstItem="K8r-Oc-VxF" firstAttribute="top" secondItem="fK0-i5-c7A" secondAttribute="bottom" id="K2M-Mc-Fy1"/>
+                            <constraint firstItem="bc7-Tv-0Eo" firstAttribute="leading" secondItem="fAb-TH-QeN" secondAttribute="leading" id="QfB-cE-Jg2"/>
+                            <constraint firstAttribute="trailing" secondItem="bc7-Tv-0Eo" secondAttribute="trailing" id="RQz-g4-g90"/>
+                            <constraint firstItem="K8r-Oc-VxF" firstAttribute="leading" secondItem="fAb-TH-QeN" secondAttribute="leading" id="UyN-1n-ejE"/>
+                            <constraint firstItem="o1b-iE-tRw" firstAttribute="top" secondItem="fAb-TH-QeN" secondAttribute="top" id="Vsv-Hm-F0u"/>
+                            <constraint firstAttribute="trailing" secondItem="o1b-iE-tRw" secondAttribute="trailing" id="tJC-OS-JuS"/>
+                            <constraint firstItem="oVh-r9-1lK" firstAttribute="top" secondItem="bc7-Tv-0Eo" secondAttribute="bottom" id="u84-4J-ExI"/>
+                            <constraint firstItem="o1b-iE-tRw" firstAttribute="leading" secondItem="fAb-TH-QeN" secondAttribute="leading" id="vIQ-b6-8OQ"/>
+                            <constraint firstItem="o1b-iE-tRw" firstAttribute="top" secondItem="fK0-i5-c7A" secondAttribute="bottom" id="vhW-5c-BWG"/>
+                            <constraint firstAttribute="bottom" secondItem="bc7-Tv-0Eo" secondAttribute="bottom" id="zCL-RS-0Z3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vhW-5c-BWG"/>
+                                <exclude reference="u84-4J-ExI"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="containerScrollView" destination="ZTi-3e-yal" id="zMS-fj-ODc"/>
+                        <outlet property="recommendLabel" destination="57W-BQ-Ll3" id="615-Lf-dlp"/>
+                        <outlet property="replyLabel" destination="uhW-aF-QbW" id="2CY-oJ-Z7S"/>
+                        <outlet property="videoView" destination="K8r-Oc-VxF" id="mDV-3h-xQV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kop-rD-yRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40" y="200"/>
+        </scene>
     </scenes>
     <resources>
         <image name="audionews_index_play" width="40" height="40"/>
         <image name="audionews_playlist_duration" width="16" height="16"/>
+        <image name="back" width="50" height="50"/>
+        <image name="night_channel_nav_arrow" width="14" height="8"/>
+        <image name="night_comment_arrow_down" width="11" height="6"/>
         <image name="tabbar_icon_media_highlight" width="19" height="19"/>
         <image name="tabbar_icon_media_normal" width="19" height="19"/>
         <image name="video_category_comment" width="68" height="33"/>

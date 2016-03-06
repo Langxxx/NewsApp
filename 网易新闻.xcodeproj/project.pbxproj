@@ -15,6 +15,12 @@
 		77256FF31C30D0B70052AD7F /* ReadNormalNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77256FF21C30D0B70052AD7F /* ReadNormalNewsCell.swift */; };
 		77256FF51C30D0C90052AD7F /* ReadThreePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77256FF41C30D0C90052AD7F /* ReadThreePictureCell.swift */; };
 		77256FF71C30D0D60052AD7F /* ReadBigPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77256FF61C30D0D60052AD7F /* ReadBigPictureCell.swift */; };
+		7729B0881C8C205A00F86544 /* SubReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7729B0871C8C205A00F86544 /* SubReplyCell.xib */; };
+		7729B08A1C8C221E00F86544 /* ReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7729B0891C8C221E00F86544 /* ReplyCell.xib */; };
+		7729B08C1C8C4FD100F86544 /* MediaDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729B08B1C8C4FD100F86544 /* MediaDetailController.swift */; };
+		7729B08F1C8C58F900F86544 /* ReplyCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729B08E1C8C58F900F86544 /* ReplyCellProvider.swift */; };
+		7729B0911C8C5E5B00F86544 /* RecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7729B0901C8C5E5B00F86544 /* RecommendCell.xib */; };
+		7729B0931C8C5E7400F86544 /* RecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729B0921C8C5E7400F86544 /* RecommendCell.swift */; };
 		772A3CBE1C12CED80048E4C6 /* ReplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A3CBD1C12CED80048E4C6 /* ReplyController.swift */; };
 		774ADCAD1C4B7D5C002AF79B /* MediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774ADCAC1C4B7D5C002AF79B /* MediaController.swift */; };
 		774ADCB01C4B7EBF002AF79B /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774ADCAF1C4B7EBF002AF79B /* MediaModel.swift */; };
@@ -143,6 +149,12 @@
 		77256FF21C30D0B70052AD7F /* ReadNormalNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadNormalNewsCell.swift; sourceTree = "<group>"; };
 		77256FF41C30D0C90052AD7F /* ReadThreePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadThreePictureCell.swift; sourceTree = "<group>"; };
 		77256FF61C30D0D60052AD7F /* ReadBigPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadBigPictureCell.swift; sourceTree = "<group>"; };
+		7729B0871C8C205A00F86544 /* SubReplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubReplyCell.xib; sourceTree = "<group>"; };
+		7729B0891C8C221E00F86544 /* ReplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyCell.xib; sourceTree = "<group>"; };
+		7729B08B1C8C4FD100F86544 /* MediaDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDetailController.swift; sourceTree = "<group>"; };
+		7729B08E1C8C58F900F86544 /* ReplyCellProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyCellProvider.swift; sourceTree = "<group>"; };
+		7729B0901C8C5E5B00F86544 /* RecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendCell.xib; sourceTree = "<group>"; };
+		7729B0921C8C5E7400F86544 /* RecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCell.swift; sourceTree = "<group>"; };
 		772A3CBD1C12CED80048E4C6 /* ReplyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyController.swift; sourceTree = "<group>"; };
 		774ADCAC1C4B7D5C002AF79B /* MediaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaController.swift; sourceTree = "<group>"; };
 		774ADCAF1C4B7EBF002AF79B /* MediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
@@ -335,6 +347,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7729B08D1C8C587000F86544 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				7729B08E1C8C58F900F86544 /* ReplyCellProvider.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		774ADCAE1C4B7E67002AF79B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +370,8 @@
 				774ADCB21C4B8B1D002AF79B /* VideoCell.swift */,
 				774ADCB41C4B8C1C002AF79B /* VideoListHeardView.swift */,
 				774ADCB61C4B8C26002AF79B /* VideoListHeardView.xib */,
+				7729B0901C8C5E5B00F86544 /* RecommendCell.xib */,
+				7729B0921C8C5E7400F86544 /* RecommendCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -591,6 +613,8 @@
 				77FDB3141C1A58FE00EC67BE /* ReplyHeardView.swift */,
 				77E186E91C23E84E0048132E /* SubReplyCell.swift */,
 				77FDB3161C1A590E00EC67BE /* ReplyHeardView.xib */,
+				7729B0871C8C205A00F86544 /* SubReplyCell.xib */,
+				7729B0891C8C221E00F86544 /* ReplyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -793,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				77E37A4F1BF35DC5003E2F44 /* Media.storyboard */,
+				7729B08D1C8C587000F86544 /* Other */,
 				774ADCB11C4B8B09002AF79B /* View */,
 				774ADCAE1C4B7E67002AF79B /* Model */,
 				77E37A621BF361DB003E2F44 /* Controller */,
@@ -804,6 +829,7 @@
 			isa = PBXGroup;
 			children = (
 				774ADCAC1C4B7D5C002AF79B /* MediaController.swift */,
+				7729B08B1C8C4FD100F86544 /* MediaDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -970,13 +996,16 @@
 				77E37A231BF35A04003E2F44 /* LaunchScreen.storyboard in Resources */,
 				77DA00571C06DC2100741E6A /* Weather.storyboard in Resources */,
 				77E37A201BF35A04003E2F44 /* Assets.xcassets in Resources */,
+				7729B0881C8C205A00F86544 /* SubReplyCell.xib in Resources */,
 				77B78C251BFC230300FA7F69 /* NewsList.storyboard in Resources */,
 				77DA00501C06DC2100741E6A /* DetailPictureView.xib in Resources */,
 				77B02BD01C2F90F700E31517 /* ReadHeadView.xib in Resources */,
 				77E37A511BF35DC5003E2F44 /* Media.storyboard in Resources */,
 				77F2C3E51BF482FA000BB753 /* channels.plist in Resources */,
+				7729B08A1C8C221E00F86544 /* ReplyCell.xib in Resources */,
 				77E37A1E1BF35A04003E2F44 /* Main.storyboard in Resources */,
 				774ADCB71C4B8C26002AF79B /* VideoListHeardView.xib in Resources */,
+				7729B0911C8C5E5B00F86544 /* RecommendCell.xib in Resources */,
 				77E37A4E1BF35D50003E2F44 /* Read.storyboard in Resources */,
 				777C96AA1BF89DCF00519375 /* MJRefresh.bundle in Resources */,
 				77E37A541BF35DFC003E2F44 /* Discover.storyboard in Resources */,
@@ -1079,6 +1108,7 @@
 				77DA003B1C06DC2100741E6A /* NewsModels.swift in Sources */,
 				77DA003F1C06DC2100741E6A /* NormalNewsCell.swift in Sources */,
 				770ECE6D1C19271900771232 /* UITableView+FDIndexPathHeightCache.m in Sources */,
+				7729B08C1C8C4FD100F86544 /* MediaDetailController.swift in Sources */,
 				777C96A71BF89DCF00519375 /* MJRefreshGifHeader.m in Sources */,
 				77B02BCB1C2F847900E31517 /* ReadController.swift in Sources */,
 				77256FF31C30D0B70052AD7F /* ReadNormalNewsCell.swift in Sources */,
@@ -1111,11 +1141,13 @@
 				77DA003D1C06DC2100741E6A /* BigPictureCell.swift in Sources */,
 				77DA00401C06DC2100741E6A /* ScrollPictureCell.swift in Sources */,
 				777C96A31BF89DCF00519375 /* MJRefreshAutoStateFooter.m in Sources */,
+				7729B0931C8C5E7400F86544 /* RecommendCell.swift in Sources */,
 				77DA00691C072F4600741E6A /* FMDatabaseAdditions.m in Sources */,
 				777C96A91BF89DCF00519375 /* MJRefreshStateHeader.m in Sources */,
 				77DA004B1C06DC2100741E6A /* ImportantNewsController.swift in Sources */,
 				77256FF71C30D0D60052AD7F /* ReadBigPictureCell.swift in Sources */,
 				77DA006A1C072F4600741E6A /* FMDatabasePool.m in Sources */,
+				7729B08F1C8C58F900F86544 /* ReplyCellProvider.swift in Sources */,
 				77DA006C1C072F4600741E6A /* FMResultSet.m in Sources */,
 				777C96A21BF89DCF00519375 /* MJRefreshAutoNormalFooter.m in Sources */,
 				774BFEB31C897BA900EC59F1 /* PlayerControlView.swift in Sources */,

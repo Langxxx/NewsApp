@@ -309,6 +309,29 @@ struct DataTool {
             completionHandler(videoSidArray, videoNewsArray)
         }
     }
+    
+    static func loadVideoNewsData(urlStr:String, completionHandler: [VideoNewsModel]? -> Void) {
+        
+        
+        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
+            guard response.result.error == nil else {
+                print("load news error!")
+                completionHandler(nil)
+                return
+            }
+            let data = JSON(response.result.value!)
+            
+            let videoNewsJSON = data["recommend"]
+            var videoNewsArray: [VideoNewsModel] = []
+            for (_, dict) in videoNewsJSON {
+                
+                videoNewsArray.append(VideoNewsModel(json: dict))
+            }
+            
+            completionHandler(videoNewsArray)
+        }
+    }
+
 
 }
 

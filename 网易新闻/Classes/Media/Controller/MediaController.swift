@@ -166,7 +166,19 @@ extension MediaController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        print("select")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let newsModel = self.videoNewsArray![indexPath.section]
+        
+        let sb = UIStoryboard(name: "Media", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("MediaDetailController") as! MediaDetailController
+        vc.newsModel = newsModel
+        
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        if let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer {
+            interactivePopGestureRecognizer.delegate = nil
+        }
     }
 }
 
