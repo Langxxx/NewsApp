@@ -10,38 +10,74 @@ import UIKit
 
 class MediaDetailController: UIViewController {
 
-    var newsModel: VideoNewsModel!
+    var currentVideoModel: VideoNewsModel!
     
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var replyLabel: ChannelLabel!
     @IBOutlet weak var recommendLabel: ChannelLabel!
-    @IBOutlet weak var containerScrollView: NewsContainerView!
+    @IBOutlet weak var containerScrollView: UIScrollView!
     
     var hotReplyArray: [[ReplyModel]]?
     var newReplyArray: [[ReplyModel]]?
     
-    var replyTableView: UITableView!
+    var replyTableView: UITableView?
     let replyCellProvider = ReplyCellProvider()
 
     var recommendVideoArray: [VideoNewsModel]?
     
-    var recommendTableView: UITableView!
+    var recommendTableView: UITableView?
+    
+    lazy var controlView = {
+        return NSBundle.mainBundle().loadNibNamed("PlayerControlView", owner: nil, options: nil).last as! PlayerControlView
+    }()
+    
+    var playerView: WLVideoPlayerView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupGestureRecognizer()
+        self.setupContainerScrollView()
+        self.loadReplyData()
+        self.loadRecommendData()
+    }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+       self.playerView?.removeFromSuperview()
+        self.playerView = nil
+    }
+    deinit {
+        print("MediaDetailController===deinit")
+    }
+    
+    
+    func setupGestureRecognizer() {
         let replyLabelTap = UITapGestureRecognizer(target: self, action: "replyLabelTap")
         self.replyLabel.addGestureRecognizer(replyLabelTap)
         
         let recommendLabelTap = UITapGestureRecognizer(target: self, action: "recommendLabelTap")
         self.recommendLabel.addGestureRecognizer(recommendLabelTap)
+    }
+    
+    func setupVideoPlayer() {
+        if self.playerView == nil {
+            self.playerView = WLVideoPlayerView(url: NSURL(string: self.currentVideoModel.mp4_url))
+            self.playerView?.customControlView = controlView
+            self.playerView?.placeholderView = UIImageView(image: UIImage(named: "placeholder"))
+            self.playerView?.playInView(self.videoView)
+        }
+    }
+    
+    func loadReplyData() {
         
-        self.replyLabel.text = "\(self.newsModel.replyCount)跟帖"
-        
-        setupContainerScrollView()
-        
-        let hotUrl = "http://comment.api.163.com/api/json/post/list/new/hot/\(newsModel.replyBoard)/\(newsModel.replyid)/0/10/10/2/2"
-        let newUrl = "http://comment.api.163.com/api/json/post/list/new/normal/\(newsModel.replyBoard)/\(newsModel.replyid)/desc/0/10/10/2/2"
+        let hotUrl = "http://comment.api.163.com/api/json/post/list/new/hot/\(currentVideoModel.replyBoard)/\(currentVideoModel.replyid)/0/10/10/2/2"
+        let newUrl = "http://comment.api.163.com/api/json/post/list/new/normal/\(currentVideoModel.replyBoard)/\(currentVideoModel.replyid)/desc/0/10/10/2/2"
         
         DataTool.loadReplyData((hotUrl, newUrl)) { (hotResponse, newResponse) -> Void in
             guard let hotReplyArray = hotResponse, newReplyArray = newResponse else {
@@ -49,34 +85,28 @@ class MediaDetailController: UIViewController {
             }
             
             self.setupReplyTableView()
+            self.setupVideoPlayer()
             
             self.hotReplyArray = hotReplyArray
             self.newReplyArray = newReplyArray
             self.replyCellProvider.hotReplyArray = hotReplyArray
             self.replyCellProvider.newReplyArray = newReplyArray
-            self.showReplyView()
-            self.recommendTableView.reloadData()
+            self.replyTableView?.reloadData()
         }
-        
-        DataTool.loadVideoNewsData("http://c.3g.163.com/nc/video/detail/\(newsModel.vid).html") { (response) -> Void in
-
+    }
+    
+    func loadRecommendData() {
+        DataTool.loadVideoNewsData("http://c.3g.163.com/nc/video/detail/\(currentVideoModel.vid).html") { (response) -> Void in
+            
             guard let recommendVideoArray = response else {
                 return
             }
+            
             self.setupRecommendTableView()
+            
             self.recommendVideoArray = recommendVideoArray
-            self.recommendTableView.reloadData()
+            self.recommendTableView?.reloadData()
         }
-        
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-
-    deinit {
-        print("MediaDetailController===deinit")
     }
     
     func setupContainerScrollView() {
@@ -88,26 +118,42 @@ class MediaDetailController: UIViewController {
     }
     
     func setupReplyTableView() {
-        self.replyTableView = UITableView()
-        self.replyTableView.registerNib(UINib(nibName: "ReplyCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "ReplyCell")
-        self.replyTableView.estimatedRowHeight = 100
-        self.replyTableView.rowHeight = UITableViewAutomaticDimension
-        self.replyTableView.dataSource = replyCellProvider
-        self.replyTableView.delegate = replyCellProvider
-        self.replyCellProvider.tableView = self.replyTableView
-        replyTableView.frame = self.containerScrollView.bounds
-        self.containerScrollView.addSubview(self.replyTableView)
+        
+        if self.replyTableView == nil {
+            
+            let replyTableView = UITableView()
+            replyTableView.registerNib(UINib(nibName: "ReplyCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "ReplyCell")
+            replyTableView.estimatedRowHeight = 100
+            replyTableView.rowHeight = UITableViewAutomaticDimension
+            replyTableView.dataSource = replyCellProvider
+            replyTableView.delegate = replyCellProvider
+            replyCellProvider.tableView = replyTableView
+            replyTableView.frame = self.containerScrollView.bounds
+            self.containerScrollView.addSubview(replyTableView)
+            
+            self.replyTableView = replyTableView
+        }
+        
+        
+        self.replyLabel.text = "\(self.currentVideoModel.replyCount)跟帖"
     }
     
     
     func setupRecommendTableView() {
-        self.recommendTableView = UITableView()
-        self.recommendTableView.registerNib(UINib(nibName: "RecommendCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "RecommendCell")
-        self.recommendTableView.rowHeight = 80
-        self.recommendTableView.dataSource = self
-//        self.recommendTableView.delegate = self
-        recommendTableView.frame = CGRect(x: self.containerScrollView.bounds.width, y: 0, width: self.containerScrollView.bounds.width, height: self.containerScrollView.bounds.size.height)
-        self.containerScrollView.addSubview(self.recommendTableView)
+        
+        if self.recommendTableView == nil {
+            
+            let recommendTableView = UITableView()
+            
+            recommendTableView.registerNib(UINib(nibName: "RecommendCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "RecommendCell")
+            recommendTableView.rowHeight = 80
+            recommendTableView.dataSource = self
+            recommendTableView.delegate = self
+            recommendTableView.frame = CGRect(x: self.containerScrollView.bounds.width, y: 0, width: self.containerScrollView.bounds.width, height: self.containerScrollView.bounds.size.height)
+            self.containerScrollView.addSubview(recommendTableView)
+            
+            self.recommendTableView = recommendTableView
+        }
     }
 
     
@@ -145,7 +191,7 @@ class MediaDetailController: UIViewController {
         return .LightContent
     }
 }
-extension MediaDetailController:  UITableViewDataSource {
+extension MediaDetailController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -161,7 +207,19 @@ extension MediaDetailController:  UITableViewDataSource {
         cell.videoNewsModel = model
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let newVideoModel = self.recommendVideoArray![indexPath.row]
+        
+        self.replyLabel.text = "\(newVideoModel.replyCount)跟帖"
+        self.playerView?.contentURL = NSURL(string: newVideoModel.mp4_url)
+        self.playerView?.play()
+        self.currentVideoModel = newVideoModel
+        self.loadReplyData()
+    }
 }
 
 extension MediaDetailController: UIScrollViewDelegate {
@@ -170,10 +228,13 @@ extension MediaDetailController: UIScrollViewDelegate {
      */
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
+        if scrollView.isKindOfClass(UITableView.self) {
+            return
+        }
+        
         let currentIndex = scrollView.contentOffset.x / scrollView.bounds.width
         let leftIndex = Int(currentIndex)
         let rightIndex = leftIndex + 1
-        print(scrollView.contentOffset.x)
         guard currentIndex == 0 || rightIndex == 1 else {
             return
         }

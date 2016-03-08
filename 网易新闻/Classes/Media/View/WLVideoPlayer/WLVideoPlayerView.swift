@@ -105,6 +105,9 @@ class WLVideoPlayerView: UIView {
     deinit {
         print("WLVideoPlayerView===deinit")
         NSNotificationCenter.defaultCenter().removeObserver(self)
+        removeProgressTimer()
+        playerControlHandler.removeAutoHiddenTimer()
+        player.pause()
     }
     /**
      为了防止定制器造成循环引用

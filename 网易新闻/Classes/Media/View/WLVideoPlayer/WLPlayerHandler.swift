@@ -28,24 +28,27 @@ class WLPlayerHandler: NSObject {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("playerDidEnterFullscreen"), name: WLPlayerDidEnterFullscreenNotification, object: nil)
     }
     deinit {
-        //        print("WLPlayerHandler===deinit")
+        print("WLPlayerHandler===deinit")
+         NSNotificationCenter.defaultCenter().removeObserver(self)
+        removeAutoHiddenTimer()
     }
     
     /**
      自定义控制面板显示的时候变会调用,
      用来添加一个定时器，为了在适合的时候隐藏控制面板
      */
-    private func addAutoHiddenTimer() {
+    func addAutoHiddenTimer() {
         removeAutoHiddenTimer()
         let timer = NSTimer(timeInterval: customControlViewAutoHiddenInterval, target: self, selector: Selector("hiddenCustomControlView"), userInfo: nil, repeats: false)
         NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         autoHiddenTimer = timer
     }
     
-    private func removeAutoHiddenTimer() {
+   func removeAutoHiddenTimer() {
         autoHiddenTimer?.invalidate()
         autoHiddenTimer = nil
     }
+
     
     /**
      更新自定义控制面板的进度条以及时间

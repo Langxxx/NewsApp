@@ -318,8 +318,8 @@
                                                     <constraint firstAttribute="width" constant="1" id="17e-Ld-sSw"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112跟帖" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhW-aF-QbW" customClass="ChannelLabel" customModule="网易新闻" customModuleProvider="target">
-                                                <rect key="frame" x="244" y="0.0" width="46" height="44"/>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0跟帖" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhW-aF-QbW" customClass="ChannelLabel" customModule="网易新闻" customModuleProvider="target">
+                                                <rect key="frame" x="255" y="0.0" width="35" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -348,13 +348,13 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="uFp-WX-YJW"/>
-                                                <exclude reference="Y7a-ab-oCa"/>
-                                                <exclude reference="L70-ya-V25"/>
                                                 <exclude reference="7ug-GM-xHg"/>
+                                                <exclude reference="L70-ya-V25"/>
+                                                <exclude reference="Y7a-ab-oCa"/>
                                             </mask>
                                         </variation>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-3e-yal" customClass="NewsContainerView" customModule="网易新闻" customModuleProvider="target">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-3e-yal">
                                         <rect key="frame" x="0.0" y="44" width="600" height="236"/>
                                     </scrollView>
                                 </subviews>

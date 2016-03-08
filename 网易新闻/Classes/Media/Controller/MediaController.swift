@@ -172,7 +172,7 @@ extension MediaController: UITableViewDelegate, UITableViewDataSource {
         
         let sb = UIStoryboard(name: "Media", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("MediaDetailController") as! MediaDetailController
-        vc.newsModel = newsModel
+        vc.currentVideoModel = newsModel
         
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
