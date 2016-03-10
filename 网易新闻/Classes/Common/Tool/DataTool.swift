@@ -5,11 +5,16 @@
 //  Created by wl on 15/11/11.
 //  Copyright © 2015年 wl. All rights reserved.
 //  获得网络数据的工具
-
+/***************************************************
+*  如果您发现任何BUG,或者有更好的建议或者意见，请您的指教。
+*邮箱:wxl19950606@163.com.感谢您的支持
+***************************************************/
 import Foundation
 import Alamofire
 import SwiftyJSON
 
+
+// TODO: 此结构体存在大量重复代码，需要进行重构
 struct DataTool {
     
     static let imageUrlKey = "imageUrlKey"

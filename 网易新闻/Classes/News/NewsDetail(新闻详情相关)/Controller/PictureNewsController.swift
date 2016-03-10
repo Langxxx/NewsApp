@@ -5,7 +5,10 @@
 //  Created by wl on 15/11/20.
 //  Copyright © 2015年 wl. All rights reserved.
 //  图片新闻界面控制器
-
+/***************************************************
+*  如果您发现任何BUG,或者有更好的建议或者意见，请您的指教。
+*邮箱:wxl19950606@163.com.感谢您的支持
+***************************************************/
 import UIKit
 // TODO: 最后一页推荐页使用cyclePictureView是做不了的，暂时先这样
 class PictureNewsController: UIViewController, CyclePictureViewDelegate {

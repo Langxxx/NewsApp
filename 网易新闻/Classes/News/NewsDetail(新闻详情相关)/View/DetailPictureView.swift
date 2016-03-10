@@ -6,7 +6,10 @@
 //  Copyright © 2015年 wl. All rights reserved.
 //  用于新闻详情页面，类似于图片查看器当点击
 //  webVIew中某一张图片的时候显示
-
+/***************************************************
+*  如果您发现任何BUG,或者有更好的建议或者意见，请您的指教。
+*邮箱:wxl19950606@163.com.感谢您的支持
+***************************************************/
 import UIKit
 
 class DetailPictureView: UIView, CyclePictureViewDelegate {

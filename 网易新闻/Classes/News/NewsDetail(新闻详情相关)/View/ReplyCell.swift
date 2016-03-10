@@ -5,7 +5,10 @@
 //  Created by wl on 15/12/9.
 //  Copyright © 2015年 wl. All rights reserved.
 //  显示评论内容的cell，其子评论用tableview实现
-
+/***************************************************
+*  如果您发现任何BUG,或者有更好的建议或者意见，请您的指教。
+*邮箱:wxl19950606@163.com.感谢您的支持
+***************************************************/
 import UIKit
 
 class ReplyCell: UITableViewCell {

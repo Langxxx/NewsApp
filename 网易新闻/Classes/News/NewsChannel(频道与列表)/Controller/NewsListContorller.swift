@@ -5,7 +5,10 @@
 //  Created by wl on 15/11/12.
 //  Copyright © 2015年 wl. All rights reserved.
 //  新闻列表控制器，用来展示当前频道所有新闻
-
+/***************************************************
+*  如果您发现任何BUG,或者有更好的建议或者意见，请您的指教。
+*邮箱:wxl19950606@163.com.感谢您的支持
+***************************************************/
 import UIKit
 
 class NewsListContorller: UITableViewController {

@@ -4,12 +4,15 @@
 //
 //  Created by wl on 15/11/13.
 //  Copyright © 2015年 wl. All rights reserved.
-//  这个类原本打算用来循环利用，但是实际作用并不大
-
+//  这个类原本打算用来循环利用，但是实际作用并不大()
+/***************************************************
+*  如果您发现任何BUG,或者有更好的建议或者意见，请您的指教。
+*邮箱:wxl19950606@163.com.感谢您的支持
+***************************************************/
 import UIKit
 
+// TODO: 删除此类
 class NewsContainerView: UIScrollView, CycleCacheProtocol {
-
     var buffer: [Int : UIView] = [:]
     var maxBufferCount: Int = 3
     

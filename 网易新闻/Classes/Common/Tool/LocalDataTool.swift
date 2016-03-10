@@ -6,10 +6,14 @@
 //  Copyright © 2015年 wl. All rights reserved.
 //  本地缓存
 
+/***************************************************
+*  如果您发现任何BUG,或者有更好的建议或者意见，请您的指教。
+*邮箱:wxl19950606@163.com.感谢您的支持
+***************************************************/
+
 import Foundation
 
 struct LocalDataTool {
-    
     static let documents = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
     static let fileURL = documents.URLByAppendingPathComponent("News.sqlite")
     static let database = FMDatabase(path: fileURL.path)

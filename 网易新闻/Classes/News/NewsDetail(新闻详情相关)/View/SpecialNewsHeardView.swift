@@ -5,7 +5,10 @@
 //  Created by wl on 15/11/19.
 //  Copyright © 2015年 wl. All rights reserved.
 //  专题新闻的头部
-
+/***************************************************
+*  如果您发现任何BUG,或者有更好的建议或者意见，请您的指教。
+*邮箱:wxl19950606@163.com.感谢您的支持
+***************************************************/
 import UIKit
 
 protocol SpecialNewsHeardViewDelegate : class{
