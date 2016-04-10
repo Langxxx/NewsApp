@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770A06F71CB78F2000D57198 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770A06F61CB78F2000D57198 /* NetworkResult.swift */; };
+		770A06FC1CB8FA7300D57198 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770A06FB1CB8FA7300D57198 /* Result.swift */; };
 		770ECE6D1C19271900771232 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 770ECE661C19271900771232 /* UITableView+FDIndexPathHeightCache.m */; };
 		770ECE6E1C19271900771232 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 770ECE681C19271900771232 /* UITableView+FDKeyedHeightCache.m */; };
 		770ECE6F1C19271900771232 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 770ECE6A1C19271900771232 /* UITableView+FDTemplateLayoutCell.m */; };
@@ -137,6 +139,8 @@
 
 /* Begin PBXFileReference section */
 		46874A2F9A228B6B0ECF1983 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		770A06F61CB78F2000D57198 /* NetworkResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		770A06FB1CB8FA7300D57198 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		770ECE651C19271900771232 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		770ECE661C19271900771232 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		770ECE671C19271900771232 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -870,6 +874,8 @@
 			children = (
 				77E37A851BF3835F003E2F44 /* DataTool.swift */,
 				77DA006F1C072F9200741E6A /* LocalDataTool.swift */,
+				770A06F61CB78F2000D57198 /* NetworkResult.swift */,
+				770A06FB1CB8FA7300D57198 /* Result.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1116,6 +1122,7 @@
 				77DA004D1C06DC2100741E6A /* SpecialNewsController.swift in Sources */,
 				77DA004A1C06DC2100741E6A /* DetaillNewsController.swift in Sources */,
 				77DA00481C06DC2100741E6A /* SecondLaunchView.swift in Sources */,
+				770A06FC1CB8FA7300D57198 /* Result.swift in Sources */,
 				777C96AC1BF89DCF00519375 /* UIScrollView+MJExtension.m in Sources */,
 				774ADCB01C4B7EBF002AF79B /* MediaModel.swift in Sources */,
 				777C96A41BF89DCF00519375 /* MJRefreshBackGifFooter.m in Sources */,
@@ -1168,6 +1175,7 @@
 				777C96A61BF89DCF00519375 /* MJRefreshBackStateFooter.m in Sources */,
 				777C96AD1BF89DCF00519375 /* UIScrollView+MJRefresh.m in Sources */,
 				774ADCB51C4B8C1C002AF79B /* VideoListHeardView.swift in Sources */,
+				770A06F71CB78F2000D57198 /* NetworkResult.swift in Sources */,
 				77E37A6B1BF36B38003E2F44 /* NavgationBarExtension.swift in Sources */,
 				770ECE701C19271900771232 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 			);

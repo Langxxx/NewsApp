@@ -14,6 +14,7 @@ import Alamofire
 import SwiftyJSON
 
 
+
 // TODO: 此结构体存在大量重复代码，需要进行重构
 struct DataTool {
     
@@ -32,16 +33,12 @@ struct DataTool {
             "location" : 1,
             "timestamp":NSDate.TimeIntervalSince1970()
         ]
-        Alamofire.request(.GET, urlStr, parameters: parameter).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("getLuanchImageUrl error:\(response.result.error)")
-                return
-            }
-            let data = JSON(response.result.value!)
-            let ads = data["ads"]
-            
+        
+        let json = fetchJsonFromNet(urlStr, parameter)
+            .map(jsonWithKey("ads"))
+        json.jsonToModel(nil) { result in
             var imageArray: [String] = []
-            for (_, ad) in ads {
+            for (_, ad) in result {
                 for (_, imageUrlJSOn) in ad["res_url"] {
                     if let imageUrl = imageUrlJSOn.string where imageUrl != "" {
                         imageArray.append(imageUrl)
@@ -83,25 +80,17 @@ struct DataTool {
     - parameter completionHandler: 返回数据的回调闭包
     */
     static func loadNewsData(urlStr: String, newsKey: String, completionHandler: [NewsModel]? -> Void) {
-
         
-        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("load news error!")
-                completionHandler(nil)
-                return
+        let json = fetchJsonFromNet(urlStr)
+            .map(jsonWithKey(newsKey))
+        
+        json.jsonToModel(nil) { result in
+            let r = result.map { _, dict in
+                NewsModel(json: dict)
             }
-            
-            let data = JSON(response.result.value!)
-            let news = data[newsKey]
-            var array: [NewsModel] = []
-            for (_, dict) in news {
-                
-                array.append(NewsModel(json: dict))
-            }
-            
-            completionHandler(array)
+            completionHandler(r)
         }
+
     }
     
     /**
@@ -112,18 +101,12 @@ struct DataTool {
     */
     static func loadNewsDetailData(docid: String, completionHandler: NewsDetailModel? -> Void) {
         let urlStr = "http://c.m.163.com/nc/article/\(docid)/full.html"
-        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("loadNewsDetailData error!")
-                completionHandler(nil)
-                return
-            }
-            let data = JSON(response.result.value!)
-            let news = data[docid]
-            
-            let newsDetailModel = NewsDetailModel(json: news)
-            completionHandler(newsDetailModel)
+        
+        let json = fetchJsonFromNet(urlStr).map(jsonWithKey(docid))
+        json.jsonToModel(nil) { result in
+            completionHandler(NewsDetailModel(json: result))
         }
+
     }
     
     /**
@@ -134,18 +117,12 @@ struct DataTool {
     */
     static func loadSpecialNewsData(specialID: String, completionHandler: NewsSpecialModel? -> Void) {
         let urlStr = "http://c.3g.163.com/nc/special/\(specialID).html"
-        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("loadSpecialNewsData error!")
-                completionHandler(nil)
-                return
-            }
-            let data = JSON(response.result.value!)
-            let news = data[specialID]
-            
-            let newsSpecialModel = NewsSpecialModel(json: news)
-            completionHandler(newsSpecialModel)
+        
+        let json = fetchJsonFromNet(urlStr).map(jsonWithKey(specialID))
+        json.jsonToModel(nil) { result in
+            completionHandler(NewsSpecialModel(json: result))
         }
+
     }
     /**
     获得图片新闻数据
@@ -159,17 +136,12 @@ struct DataTool {
         let strArray = subStr.componentsSeparatedByString("|")
         
         let urlStr = "http://c.m.163.com/photo/api/set/\(strArray.first!)/\(strArray.last!).json"
-        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("loadPictureNewsData error!")
-                completionHandler(nil)
-                return
-            }
-            let data = JSON(response.result.value!)
-            
-            let newsPictureModel = NewsPictureModel(json: data)
-            completionHandler(newsPictureModel)
+        
+        let json = fetchJsonFromNet(urlStr)
+        json.jsonToModel(nil) { result in
+            completionHandler(NewsPictureModel(json: result))
         }
+
     }
     /**
     加载天气数据，数据来源是“中华万年历”
@@ -181,19 +153,13 @@ struct DataTool {
         let urlStr = "http://wthrcdn.etouch.cn/weather_mini"
         let parameter: [String : AnyObject] = ["citykey" : cityID]
         
-        Alamofire.request(.GET, urlStr, parameters: parameter).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("loadWeatherData error:\(response.request?.URLString)")
-                completionHandler(nil)
-                return
-            }
-            
-            let data = JSON(response.result.value!)
-            // 获得单例对象
+        let json = fetchJsonFromNet(urlStr, parameter).map(jsonWithKey("data"))
+        json.jsonToModel(nil) { result in
             let weatherModel = WeatherModel.sharedWeatherModel()
-            weatherModel.json = data["data"]
+            weatherModel.json = result
             completionHandler(weatherModel)
         }
+
     }
     /**
      加载评论数据
@@ -215,8 +181,6 @@ struct DataTool {
                 }
                 var temp: [ReplyModel] = []
                 for (key, value) in dict {
-//                    print(value)
-//                    print(value["NON"])
                     temp.append(ReplyModel(key: key, json: value))
                 }
                 // 按照评论的楼层排序
@@ -233,7 +197,6 @@ struct DataTool {
                 completionHandler(nil, nil)
                 return
             }
-            print(hotResponse.request?.URLString)
             Alamofire.request(.GET, urlStr.newUrl).responseJSON { (newResponse) -> Void in
                 guard newResponse.result.error == nil else {
                     print("loadReplyData error:\(newResponse.request?.URLString)")
@@ -263,21 +226,12 @@ struct DataTool {
             "timestamp":NSDate.TimeIntervalSince1970()
         ]
         
-        Alamofire.request(.GET, urlStr, parameters: parameter).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("load news error!")
-                completionHandler(nil)
-                return
+        let json = fetchJsonFromNet(urlStr, parameter).map(jsonWithKey("推荐"))
+        json.jsonToModel(nil) { result in
+            let r = result.map { _, dict in
+                ReadNewsModel(json: dict)
             }
-            let data = JSON(response.result.value!)
-            let news = data["推荐"]
-            var array: [ReadNewsModel] = []
-            for (_, dict) in news {
-                
-                array.append(ReadNewsModel(json: dict))
-            }
-            
-            completionHandler(array)
+            completionHandler(r)
         }
     }
     
@@ -289,51 +243,27 @@ struct DataTool {
     static func loadMediaNewsData(urlStr:String, completionHandler: ([VideoSidModel]?, [VideoNewsModel]?) -> Void) {
 
         
-        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("load news error!")
-                completionHandler(nil, nil)
-                return
+        let json = fetchJsonFromNet(urlStr)
+        json.jsonToModel(nil) { result in
+            let videoSidArray = result["videoSidList"].map { _, dict in
+                VideoSidModel(json: dict)
             }
-            let data = JSON(response.result.value!)
-            
-            let videoSidJSON = data["videoSidList"]
-            var videoSidArray: [VideoSidModel] = []
-            for (_, dict) in videoSidJSON {
-                
-                videoSidArray.append(VideoSidModel(json: dict))
+            let videoNewsArray = result["videoList"].map { _, dict in
+                VideoNewsModel(json: dict)
             }
-            
-            let videoNewsJSON = data["videoList"]
-            var videoNewsArray: [VideoNewsModel] = []
-            for (_, dict) in videoNewsJSON {
-                
-                videoNewsArray.append(VideoNewsModel(json: dict))
-            }
-            
             completionHandler(videoSidArray, videoNewsArray)
         }
+
     }
     
     static func loadVideoNewsData(urlStr:String, completionHandler: [VideoNewsModel]? -> Void) {
-        
-        
-        Alamofire.request(.GET, urlStr).responseJSON { (response) -> Void in
-            guard response.result.error == nil else {
-                print("load news error!")
-                completionHandler(nil)
-                return
+
+        let json = fetchJsonFromNet(urlStr).map(jsonWithKey("recommend"))
+        json.jsonToModel(nil) { result in
+            let r = result.map { _, dict in
+                VideoNewsModel(json: dict)
             }
-            let data = JSON(response.result.value!)
-            
-            let videoNewsJSON = data["recommend"]
-            var videoNewsArray: [VideoNewsModel] = []
-            for (_, dict) in videoNewsJSON {
-                
-                videoNewsArray.append(VideoNewsModel(json: dict))
-            }
-            
-            completionHandler(videoNewsArray)
+            completionHandler(r)
         }
     }
 
@@ -346,8 +276,3 @@ extension NSDate {
         return nowTime.timeIntervalSince1970
     }
 }
-
-
-
-
-
